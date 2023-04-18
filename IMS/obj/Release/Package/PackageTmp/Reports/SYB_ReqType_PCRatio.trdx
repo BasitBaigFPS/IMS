@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="10.622917175293in" Name="SYB_ReqType_PCRatio" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <Style Visible="True" />
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT   [fkcomID]&#xD;&#xA;      ,[fkcityID]&#xD;&#xA;      ,[fkacdID]&#xD;&#xA;      , SYB_SYSTEM&#xD;&#xA;      ,[Grade]&#xD;&#xA;      ,[Strength]&#xD;&#xA;      ,[fkReqTypID]&#xD;&#xA;      ,[fkReqSubTypID]&#xD;&#xA;      ,[RequisitionType]&#xD;&#xA;      ,[RequisitionSubType]&#xD;&#xA;      ,[fkItemID]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[Unit]&#xD;&#xA;      ,[Rate]&#xD;&#xA;      ,[PerChildRatio]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_SybReqTypeWise_PCRatio]&#xD;&#xA; where Isactive=1&#xD;&#xA;  order by Grade" Name="INVENTORY" />
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.1000394821167in" Name="detailSection1">
+      <Style Visible="False" />
+    </DetailSection>
+    <PageHeaderSection Height="0.400000095367432in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="26.9822091775121cm" Height="1.01600021397272cm" Left="0in" Top="0in" Value="S Y S T E M   W I S E   S Y L L A B U S   R E Q U I S I T I O N" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.20003875096639in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="4cm" Height="0.507998391167368cm" Left="9.04811414082845in" Top="0in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="True">
+      <Margins>
+        <MarginsU Left="0.25in" Right="0in" Top="0.25in" Bottom="0.25in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Sortings>
+    <Sorting Expression="=Fields.Grade" Direction="Asc" />
+  </Sortings>
+  <Groups>
+    <Group Name="Grp_System">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="False" PageBreak="None" Height="1.49999984105428in" Name="groupHeaderSection1">
+          <Items>
+            <Table DataSourceName="INVENTORY" Width="10.3298650242728in" Height="0.749999906393056in" Left="0.170137087504069in" Top="0in" Anchoring="Top" Name="table5">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="3.44328844404237in" Height="0.104166670119275in" Left="0in" Top="0in" Value="" Name="textBox25">
+                        <Style Visible="False" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="3.44328844404237in" Height="0.104166670119275in" Left="0in" Top="0in" Value="" Name="textBox45">
+                        <Style Visible="False" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="3.44328844404237in" Height="0.104166670119275in" Left="0in" Top="0in" Name="textBox47">
+                        <Style Visible="False" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="3.44328813618829in" />
+                  <Column Width="3.44328813618829in" />
+                  <Column Width="3.44328813618829in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.104166658632755in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <RowGroups>
+                <TableGroup Name="detailTableGroup">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="tableGroup">
+                  <ReportItem>
+                    <TextBox Width="10.3298647164192in" Height="0.229166690886586in" Left="0in" Top="0in" Value="= Fields.SYB_SYSTEM" Name="textBox23">
+                      <Style TextAlign="Center" VerticalAlign="Middle">
+                        <Font Size="14pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group2">
+                      <ReportItem>
+                        <TextBox Width="3.4432882388064in" Height="0.187499971048869in" Left="0in" Top="0in" Value="=&quot;Grade:&quot; + Fields.Grade" Name="textBox19" StyleName="">
+                          <Style>
+                            <Font Bold="True" Underline="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group1">
+                          <ReportItem>
+                            <TextBox Width="3.44328844404225in" Height="0.229166657932757in" Left="0in" Top="0in" Value="=&quot;Strength:&quot; + Fields.Strength" Name="textBox22" StyleName="">
+                              <Style>
+                                <Font Bold="True" Underline="True" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                    <TableGroup Name="group8">
+                      <ReportItem>
+                        <TextBox Width="3.4432882388064in" Height="0.187499971048869in" Left="0in" Top="0in" Name="textBox20" StyleName="" />
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group10">
+                          <ReportItem>
+                            <TextBox Width="3.44328844404225in" Height="0.229166657932757in" Left="0in" Top="0in" Name="textBox24" StyleName="" />
+                          </ReportItem>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                    <TableGroup Name="group9">
+                      <ReportItem>
+                        <TextBox Width="3.4432882388064in" Height="0.187499971048869in" Left="0in" Top="0in" Value="" Name="textBox21" StyleName="" />
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group11">
+                          <ReportItem>
+                            <TextBox Width="3.44328844404225in" Height="0.229166657932757in" Left="0in" Top="0in" Name="textBox35" StyleName="" />
+                          </ReportItem>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ColumnGroups>
+              <Filters>
+                <Filter Expression="=Fields.SYB_SYSTEM" Operator="Equal" Value="=Parameters.System.Value" />
+                <Filter Expression="=Fields.Grade" Operator="Equal" Value="=Parameters.Grade.Value" />
+              </Filters>
+            </Table>
+            <Table DataSourceName="INVENTORY" Width="5.21041646015405in" Height="0.639583426134616in" Left="0.170137802759806in" Top="0.799999872843424in" RowHeadersPrintOnEveryPage="False" Anchoring="Top" Name="table1" StyleName="Normal.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.81041700665799in" Height="0.200000060796734in" Left="0in" Top="0in" Value="=Fields.ItemTitle" Name="textBox15" StyleName="Normal.TableBody" />
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Unit" Name="textBox16" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Rate" Name="textBox17" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.PerChildRatio" Name="textBox18" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="2.81041655304184in" />
+                  <Column Width="0.799999969037403in" />
+                  <Column Width="0.799999969037403in" />
+                  <Column Width="0.799999969037403in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.200000122151565in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <RowGroups>
+                <TableGroup Name="Detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group">
+                  <ReportItem>
+                    <TextBox Width="5.21041630487158in" Height="0.239583289574095in" Left="0in" Top="0in" Value="= Fields.RequisitionSubType" Name="textBox1" StyleName="Normal.TableHeader">
+                      <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                        <Font Size="12pt" Bold="False" Underline="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group3">
+                      <ReportItem>
+                        <TextBox Width="2.81041700665799in" Height="0.200000000943733in" Left="0in" Top="0in" Value="Item Title" Name="textBox6" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group4">
+                      <ReportItem>
+                        <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="Unit" Name="textBox7" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group5">
+                      <ReportItem>
+                        <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="Rate" Name="textBox8" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group6">
+                      <ReportItem>
+                        <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="Per Child Ratio" Name="textBox9" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ColumnGroups>
+              <Filters>
+                <Filter Expression="=Fields.fkReqTypID" Operator="Equal" Value="1" />
+                <Filter Expression="=Fields.fkReqSubTypID" Operator="Equal" Value="1" />
+                <Filter Expression="= Fields.SYB_SYSTEM" Operator="Equal" Value="= Parameters.System.Value" />
+                <Filter Expression="=Fields.Grade" Operator="Equal" Value="=Parameters.Grade.Value" />
+              </Filters>
+              <NoDataStyle Visible="False" />
+            </Table>
+            <Table DataSourceName="INVENTORY" Width="5.02291600869372in" Height="0.639583383924954in" Left="5.47708638509115in" Top="0.800000031789144in" Anchoring="Top" Name="table2" StyleName="Normal.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.62291643629757in" Height="0.200000068545588in" Left="0in" Top="0in" Value="=Fields.ItemTitle" Name="textBox2" StyleName="Normal.TableBody" />
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.Unit" Name="textBox3" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.Rate" Name="textBox4" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.PerChildRatio" Name="textBox5" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="2.62291608453707in" />
+                  <Column Width="0.799999999667976in" />
+                  <Column Width="0.799999999667976in" />
+                  <Column Width="0.799999999667976in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.200000070830305in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <Style Visible="True" />
+              <RowGroups>
+                <TableGroup Name="Detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group7">
+                  <ReportItem>
+                    <TextBox Width="5.02291653262474in" Height="0.239583313819823in" Left="0in" Top="0in" Value="= Fields.RequisitionSubType" Name="textBox14" StyleName="Normal.TableHeader">
+                      <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                        <Font Size="12pt" Bold="False" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group3">
+                      <ReportItem>
+                        <TextBox Width="2.62291643629757in" Height="0.200000008692584in" Left="0in" Top="0in" Value="Item Title" Name="textBox10" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group4">
+                      <ReportItem>
+                        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Unit" Name="textBox11" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group5">
+                      <ReportItem>
+                        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Rate" Name="textBox12" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group6">
+                      <ReportItem>
+                        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Per Child Ratio" Name="textBox13" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ColumnGroups>
+              <Filters>
+                <Filter Expression="=Fields.fkReqTypID" Operator="Equal" Value="1" />
+                <Filter Expression="=Fields.fkReqSubTypID" Operator="Equal" Value="2" />
+                <Filter Expression="= Fields.SYB_SYSTEM" Operator="Equal" Value="= Parameters.System.Value" />
+                <Filter Expression="=Fields.Grade" Operator="Equal" Value="=Parameters.Grade.Value" />
+              </Filters>
+              <NoDataStyle Visible="False" />
+            </Table>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="None" Height="0.100000381469727in" Name="groupFooterSection1">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.SYB_SYSTEM" />
+      </Groupings>
+    </Group>
+    <Group Name="Grp_Grade">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" PageBreak="None" Height="0.800000190734861in" Name="groupHeaderSection">
+          <Items>
+            <Table DataSourceName="INVENTORY" Width="5.21041677917033in" Height="0.639583360570718in" Left="0.170137802759806in" Top="0.100000063578288in" Name="table3" StyleName="Normal.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.72082677162067in" Height="0.200000059012105in" Left="0in" Top="0in" Value="=Fields.ItemTitle" Name="textBox26" StyleName="Normal.TableBody" />
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.829863077045729in" Height="0.200000059012105in" Left="0in" Top="0in" Value="=Fields.Unit" Name="textBox27" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.829863077045729in" Height="0.200000059012105in" Left="0in" Top="0in" Value="=Fields.Rate" Name="textBox28" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.829863077045729in" Height="0.200000059012105in" Left="0in" Top="0in" Value="=Fields.PerChildRatio" Name="textBox29" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="2.72082678540344in" />
+                  <Column Width="0.829863331255631in" />
+                  <Column Width="0.829863331255631in" />
+                  <Column Width="0.829863331255631in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.20000006352735in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <Style Visible="True" />
+              <RowGroups>
+                <TableGroup Name="Detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group7">
+                  <ReportItem>
+                    <TextBox Width="5.21041600275786in" Height="0.23958330239951in" Left="0in" Top="0in" Value="= Fields.RequisitionSubType" Name="textBox34" StyleName="Normal.TableHeader">
+                      <Style BackgroundColor="191, 191, 191" TextAlign="Center">
+                        <Font Size="12pt" Bold="False" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group3">
+                      <ReportItem>
+                        <TextBox Width="2.72082677162067in" Height="0.199999999159104in" Left="0in" Top="0in" Value="Item Title" Name="textBox30" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="191, 191, 191" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group4">
+                      <ReportItem>
+                        <TextBox Width="0.829863077045729in" Height="0.199999999159104in" Left="0in" Top="0in" Value="Unit" Name="textBox31" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="191, 191, 191" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group5">
+                      <ReportItem>
+                        <TextBox Width="0.829863077045729in" Height="0.199999999159104in" Left="0in" Top="0in" Value="Rate" Name="textBox32" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="191, 191, 191" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group6">
+                      <ReportItem>
+                        <TextBox Width="0.829863077045729in" Height="0.199999999159104in" Left="0in" Top="0in" Value="Per Child Ratio" Name="textBox33" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="191, 191, 191" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ColumnGroups>
+              <Filters>
+                <Filter Expression="=Fields.fkReqTypID" Operator="Equal" Value="1" />
+                <Filter Expression="=Fields.fkReqSubTypID" Operator="Equal" Value="3" />
+                <Filter Expression="= Fields.SYB_SYSTEM" Operator="Equal" Value="= Parameters.System.Value" />
+                <Filter Expression="=Fields.Grade" Operator="Equal" Value="=Parameters.Grade.Value" />
+              </Filters>
+              <NoDataStyle Visible="False" />
+            </Table>
+            <Table DataSourceName="INVENTORY" Width="5.02291585402564in" Height="0.639583381980869in" Left="5.47708638509115in" Top="0.100000063578288in" Name="table4" StyleName="Normal.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.62291646003723in" Height="0.200000062584877in" Left="0in" Top="0in" Value="=Fields.ItemTitle" Name="textBox36" StyleName="Normal.TableBody" />
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.Unit" Name="textBox37" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.Rate" Name="textBox38" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.PerChildRatio" Name="textBox39" StyleName="Normal.TableBody">
+                        <Style TextAlign="Center" VerticalAlign="Middle" />
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="2.62291600377096in" />
+                  <Column Width="0.799999900186707in" />
+                  <Column Width="0.799999900186707in" />
+                  <Column Width="0.799999900186707in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.200000070222383in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <Style Visible="True" />
+              <RowGroups>
+                <TableGroup Name="Detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group7">
+                  <ReportItem>
+                    <TextBox Width="5.02291631698608in" Height="0.239583313465118in" Left="0in" Top="0in" Value="= Fields.RequisitionSubType" Name="textBox44" StyleName="Normal.TableHeader">
+                      <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+                        <Font Size="12pt" Bold="False" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group3">
+                      <ReportItem>
+                        <TextBox Width="2.62291646003723in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Item Title" Name="textBox40" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group4">
+                      <ReportItem>
+                        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Unit" Name="textBox41" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group5">
+                      <ReportItem>
+                        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Rate" Name="textBox42" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                    <TableGroup Name="group6">
+                      <ReportItem>
+                        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Per Child Ratio" Name="textBox43" StyleName="Normal.TableHeader">
+                          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ColumnGroups>
+              <Filters>
+                <Filter Expression="=Fields.fkReqTypID" Operator="Equal" Value="1" />
+                <Filter Expression="=Fields.fkReqSubTypID" Operator="Equal" Value="4" />
+                <Filter Expression="= Fields.SYB_SYSTEM" Operator="Equal" Value="= Parameters.System.Value" />
+                <Filter Expression="=Fields.Grade" Operator="Equal" Value="=Parameters.Grade.Value" />
+              </Filters>
+              <NoDataStyle Visible="False" />
+            </Table>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="None" Height="0.0520833333333333in" Name="groupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.Grade" />
+      </Groupings>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="System" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="INVENTORY" DisplayMember="= Fields.SYB_SYSTEM" ValueMember="= Fields.SYB_SYSTEM" />
+      <Value>
+        <String></String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Grade" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="INVENTORY" DisplayMember="= Fields.Grade" ValueMember="= Fields.Grade" />
+      <Value>
+        <String></String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

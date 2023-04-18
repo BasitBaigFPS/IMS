@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="7.71801249186198in" Name="GIN_GRN_Info" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="  select pkstoreid,fkbrhid,StoreName&#xD;&#xA;  FROM [INVENTORY].[dbo].[tblStores]&#xD;&#xA;where isactive=1" Name="sqlDataSource2" />
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="  select distinct ginnumber,GINCode,MIRNumber,convert(date,CreatedDate,102)&#xD;&#xA;    FROM [INVENTORY].[dbo].[tblIssued]&#xD;&#xA;  where iscancel is null and fkIssueByStoreID=@fkstoreid and fkIssueToBranchID=@fkbrhid&#xD;&#xA;  order by ginnumber" Name="sqlDataSource1" ParameterValues="{&quot;@fkstoreid&quot;:&quot;1&quot;,&quot;@fkbrhid&quot;:&quot;21&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@fkstoreid">
+          <Value>
+            <String>= Parameters.fkstoreid.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@fkbrhid">
+          <Value>
+            <String>= Parameters.fkbrhid.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand=" select distinct ginnumber,grnnumber,grncode,dcdate&#xD;&#xA;   FROM [INVENTORY].[dbo].[tblReceived]&#xD;&#xA;  where iscancel is null and fkRecvFromStoreID=@fkstoreid and fkRecvByBranchID=@fkbrhid&#xD;&#xA;  order  by ginnumber" Name="sqlDataSource3" ParameterValues="{&quot;@fkstoreid&quot;:&quot;1&quot;,&quot;@fkbrhid&quot;:&quot;21&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@fkstoreid">
+          <Value>
+            <String>= Parameters.fkstoreid.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@fkbrhid">
+          <Value>
+            <String>= Parameters.fkbrhid.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.5in" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="sqlDataSource1" Width="3.45208457893369in" Height="0.4in" Left="0.200000047683716in" Top="0in" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.716667426156361in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.[1].Date" Format="{0:d}" Name="textBox4" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.44583269362096in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.GINCode" Name="textBox5" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.727084384452098in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ginnumber" Name="textBox6" StyleName="Normal.TableBody">
+                    <Style TextAlign="Center">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.562500003978699in" Height="0.2in" Left="0in" Top="0in" Value="=MIRNumber" Name="textBox8" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.716667359006537in" />
+              <Column Width="0.562499981154379in" />
+              <Column Width="1.44583290576075in" />
+              <Column Width="0.727084384452098in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="Detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.716667426156361in" Height="0.2in" Left="0in" Top="0in" Value="Issue Date" Name="textBox1" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group1">
+              <ReportItem>
+                <TextBox Width="0.562500003978699in" Height="0.2in" Left="0in" Top="0in" Value="MIR" Name="textBox7" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="1.44583269362096in" Height="0.2in" Left="0in" Top="0in" Value="GIN Code" Name="textBox2" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.727084384452098in" Height="0.2in" Left="0in" Top="0in" Value="GIN Number" Name="textBox3" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+        <Table DataSourceName="sqlDataSource3" Width="3.86384586941414in" Height="0.400000005960464in" Left="3.74583466847738in" Top="0in" Name="table2" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.815324690728434in" Height="0.200000002980232in" Left="0in" Top="0in" Value="= Fields.dcdate" Format="{0:d}" Name="textBox9" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.64547795051561in" Height="0.200000002980232in" Left="0in" Top="0in" Value="= Fields.GRNCode" Name="textBox10" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.642188732781705in" Height="0.200000002980232in" Left="0in" Top="0in" Value="= Fields.grnnumber" Name="textBox11" StyleName="Normal.TableBody">
+                    <Style TextAlign="Center">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.760854509690128in" Height="0.200000002980232in" Left="0in" Top="0in" Value="= Fields.ginnumber" Name="textBox16" StyleName="Normal.TableBody">
+                    <Style TextAlign="Center">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.815324891276583in" />
+              <Column Width="0.760854393813042in" />
+              <Column Width="1.64547773639123in" />
+              <Column Width="0.642188732781705in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.200000002980232in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="Detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.815324690728434in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Receive Date" Name="textBox12" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="group">
+              <ReportItem>
+                <TextBox Width="0.760854509690128in" Height="0.200000002980232in" Left="0in" Top="0in" Value="GIN Number" Name="textBox15" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="1.64547795051561in" Height="0.200000002980232in" Left="0in" Top="0in" Value="GRN Code" Name="textBox13" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.642188732781705in" Height="0.200000002980232in" Left="0in" Top="0in" Value="GRN Number" Name="textBox14" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Size="8pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="0.400000015894572in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="7.71797302224447in" Height="0.300000009084025in" Left="0in" Top="0in" Value="GIN ISSUED FROM AND GRN RECEIVED BY" Name="ReportNameTextBox">
+          <Style TextAlign="Center">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.400000095367432in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.193700659843424in" Left="6.14317003885905in" Top="0.100000063578288in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.400000015894572in" Name="reportHeaderSection1">
+      <Items>
+        <TextBox Width="3.40967973073324in" Height="0.200000047683716in" Left="4.20000012715658in" Top="0.100000063578288in" Value="= Parameters.fkbrhid.Label" Name="textBox17">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.00967979431152in" Height="0.200000047683716in" Left="0.0999999046325684in" Top="0.0999999841054281in" Value="= Parameters.fkstoreid.Label" Name="textBox18">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="0.12in" Right="0in" Top="0.12in" Bottom="0in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="fkstoreid" Text="Select Store:" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="sqlDataSource2" DisplayMember="= Fields.StoreName" ValueMember="= Fields.pkstoreid" />
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="fkbrhid" Text="Select Branch:" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="sqlDataSource2" DisplayMember="= Fields.StoreName" ValueMember="= Fields.fkbrhid" />
+    </ReportParameter>
+  </ReportParameters>
+</Report>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="BW_DateW_ConsStockInhand" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="INVENTORY8" SelectCommand="sp_ConsolidateItemLedger" SelectCommandType="StoredProcedure" Name="sqlDataSource1" ParameterValues="{&quot;@Uptodate&quot;:&quot;2020-04-15&quot;,&quot;@Token&quot;:&quot;ITS&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Uptodate">
+          <Value>
+            <String>= Parameters.AsofDate.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Token">
+          <Value>
+            <String>ITS</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.0520833333333333in" Name="detailSection1">
+      <Style Visible="False" />
+    </DetailSection>
+    <PageHeaderSection Height="0.400000095367432in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="6.40000020323405in" Height="0.300000009084025in" Left="0in" Top="0in" Value="Branch Wise Consolidated Stock Balance As of Date: {Parameters.AsofDate.Value}" Name="ReportNameTextBox">
+          <Style>
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.300000031789144in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.199999996594727in" Left="4.925196852in" Top="0.100000063578288in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="1.29999987284342in" Name="reportHeaderSection1">
+      <Items>
+        <Crosstab DataSourceName="sqlDataSource1" Width="3.27291574841975in" Height="1.09791628151353in" Left="0.100000063578288in" Top="0.100000063578288in" RowHeadersPrintOnEveryPage="True" ColumnHeadersPrintOnEveryPage="True" Name="crosstab1" StyleName="Corporate.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.464583014242212in" Height="0.199999903669122in" Left="0in" Top="0in" Value="= Sum(Fields.CRBALANCE)" Format="{0:N0}" Name="textBox4" StyleName="Corporate.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                      <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                      <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.464583014242212in" Height="0.291666438247913in" Left="0in" Top="0in" Name="textBox8" StyleName="Corporate.TableBody">
+                    <Style BackgroundColor="220, 230, 242" TextAlign="Center" VerticalAlign="Middle">
+                      <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                      <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                      <BorderWidth Default="1px" Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.464583014242212in" Height="0.10416655003091in" Left="0in" Top="0in" Name="textBox10" StyleName="Corporate.TableBody">
+                    <Style Visible="False" TextAlign="Center" VerticalAlign="Middle">
+                      <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+                      <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                      <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.464582965471966in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.291666438247913in" />
+              <Row Height="0.199999903669122in" />
+              <Row Height="0.10416655003091in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.70416598311842in" Height="0.200000046045324in" Left="0in" Top="0in" Value="Item Title" Name="textBox3" StyleName="Corporate.TableHeader">
+                    <Style TextAlign="Center">
+                      <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                      <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                      <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104166664069134in" Height="0.199999874714124in" Left="0in" Top="0in" Value="item Head Title" Name="textBox6" StyleName="Corporate.TableHeader">
+                    <Style Visible="False" TextAlign="Center">
+                      <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+                      <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                      <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104166660309023in" Height="0.302083425354467in" Left="0in" Top="0in" Name="textBox18" StyleName="Corporate.TableHeader">
+                    <Style Visible="False" TextAlign="Center" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.70416670461981in" Height="0.302083425354467in" Left="0in" Top="0in" Name="textBox19" StyleName="Corporate.TableHeader">
+                    <Style TextAlign="Center">
+                      <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <Style>
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+          <RowGroups>
+            <TableGroup Name="itemHeadTitle">
+              <ReportItem>
+                <TextBox Width="0.104166664069134in" Height="0.595832904744608in" Left="0in" Top="0in" Value="=Fields.ItemHeadTitle" Name="textBox5" StyleName="Corporate.TableGroup">
+                  <Style Visible="False">
+                    <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+                    <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                    <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group">
+                  <ReportItem>
+                    <TextBox Width="2.70416608865455in" Height="0.291666368929493in" Left="0in" Top="0in" Value="=Fields.ItemHeadTitle" Name="textBox7" StyleName="Corporate.TableGroup">
+                      <Style BackgroundColor="220, 230, 242" VerticalAlign="Middle">
+                        <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="None" />
+                        <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                        <BorderWidth Default="1px" Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                        <Font Bold="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="itemtitle1">
+                  <ReportItem>
+                    <TextBox Width="2.70416598311842in" Height="0.199999938756965in" Left="0in" Top="0in" Value="= Fields.itemtitle" Name="textBox2" StyleName="Corporate.TableGroup">
+                      <Style BackgroundColor="White" VerticalAlign="Middle">
+                        <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                        <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                        <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <Groupings>
+                    <Grouping Expression="= Fields.itemtitle" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.itemtitle" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+                <TableGroup Name="group1">
+                  <ReportItem>
+                    <TextBox Width="2.70416608865455in" Height="0.104166670318858in" Left="0in" Top="0in" Name="textBox9" StyleName="Corporate.TableGroup">
+                      <Style Visible="False">
+                        <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+                        <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                        <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="=Fields.ItemHeadTitle" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="=Fields.ItemHeadTitle" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="sysID">
+              <ReportItem>
+                <TextBox Width="0.464583014242212in" Height="0.302083420455554in" Left="0in" Top="0in" Value="=iif(Fields.SysID=1,&quot;FPS Karachil&quot;,iif(Fields.SysID=2,&quot;FPS Hyderabad&quot; , &quot;Head Start School System&quot;))" Name="textBox17" StyleName="">
+                  <Style TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                    <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                    <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="ComSystem">
+                  <ChildGroups>
+                    <TableGroup Name="group4">
+                      <ChildGroups>
+                        <TableGroup Name="group3">
+                          <ChildGroups>
+                            <TableGroup Name="group2">
+                              <ReportItem>
+                                <TextBox Width="0.464583014242212in" Height="0.199999969110032in" Left="0in" Top="0in" Value="= Fields.BranchCode" Name="textBox1" StyleName="Corporate.TableGroup">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                                    <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                                    <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                                    <Font Bold="True" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableGroup>
+                          </ChildGroups>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.BranchCode" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="=Fields.SysID" Direction="Asc" />
+                    <Sorting Expression="= Fields.BranchID" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="=Fields.SysID" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="=Fields.SysID" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </ColumnGroups>
+          <Sortings>
+            <Sorting Expression="= Fields.itemtitle" Direction="Asc" />
+          </Sortings>
+        </Crosstab>
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Corporate.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="227, 230, 237">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="LegalExtra" Landscape="True">
+      <Margins>
+        <MarginsU Left="0.100000001490116in" Right="0in" Top="0.100000001490116in" Bottom="0.100000001490116in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="AsofDate" Text="AsofDate" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>2020-04-15</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Token" Text="REPORT TYPE" Visible="True">
+      <Value>
+        <String>ITS</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

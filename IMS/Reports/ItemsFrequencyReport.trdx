@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="INVENTORY" Width="7.70000076293945in" Name="ItemsFrequencyReport" xmlns="http://schemas.telerik.com/reporting/2012/3.4">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="dbo.sp_ItemFrequencyHistory " SelectCommandType="StoredProcedure" Name="INVENTORY">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@token">
+          <Value>
+            <String>=Parameters.FType.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="Int32" Name="@topn">
+          <Value>
+            <String>=Parameters.Topn.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1.59988180796305in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="7.49992179870605in" Height="0.399999936421712in" Left="0.00003941853841161in" Top="0.300000031789144in" Value="ITEM FREQUENCY REPORT" Name="textBox6">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="7.49992243448893in" Height="0.199999888737996in" Left="0.00003941853841116in" Top="0.799999952316284in" Value="=IIF(Fields.FType='T','Transaction Wise Frequency',IIF(Fields.FType='Q','Quantity Wise Frequency','Amount Wise Frequency'))" Name="textBox7">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Bold="True" Italic="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.899921099344889in" Height="0.299882014592489in" Left="0.5in" Top="1.29999979337056in" Value="ITEM CODE" Name="textBox8">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.19992132981618in" Height="0.299882024526596in" Left="1.39999993642171in" Top="1.29996045430501in" Value="ITEM NAME / TITLE" Name="textBox9">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.09992190202077in" Height="0.299882024526596in" Left="4.60000006357829in" Top="1.29996045430501in" Value="TOTAL TRANS." Name="textBox10">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.799920439720154in" Height="0.299882024526596in" Left="5.70000076293945in" Top="1.29996045430501in" Value="QUANTITY" Name="textBox11">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.999961256980896in" Height="0.299882024526596in" Left="6.5in" Top="1.29996045430501in" Value="AMOUNT" Name="textBox12">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.80000019073486in" Height="0.29992135365804in" Left="0in" Top="0in" Value="= Now()" Name="textBox13">
+          <Style VerticalAlign="Middle" />
+        </TextBox>
+        <TextBox Width="1.29996045430501in" Height="0.29992135365804in" Left="6.20000076293945in" Top="0in" Value="= PageNumber" Name="textBox14">
+          <Style TextAlign="Right" VerticalAlign="Middle" />
+        </TextBox>
+        <TextBox Width="0.499881764252981in" Height="0.299882024526596in" Left="0.00003941853841146in" Top="1.29996045430501in" Value="S.No" Name="textBox16">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <DetailSection Height="0.300118287404378in" Name="detailSection1">
+      <Items>
+        <TextBox Width="0.89992094039917in" Height="0.300000031789144in" Left="0.5in" Top="0in" Value="=Fields.itemcode" Name="textBox1">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.19992129007975in" Height="0.300000031789144in" Left="1.39999993642171in" Top="0in" Value="=Fields.itemtitle" Name="textBox2">
+          <Style VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.09992249806722in" Height="0.300000190734863in" Left="4.59999974568685in" Top="0in" Value="=Fields.totaltimes" Name="textBox3">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.799920399983724in" Height="0.300000031789144in" Left="5.70000076293945in" Top="0in" Value="=Fields.totqtty" Name="textBox4">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.999961217244466in" Height="0.300000031789144in" Left="6.5in" Top="0in" Value="=Fields.amount" Format="{0:N0}" Name="textBox5">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.499881744384765in" Height="0.300000031789144in" Left="0.00003941853841161in" Top="0in" Value="= RowNumber() +&quot;.&quot;" Name="textBox15">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0.300000031789144in" Name="pageFooterSection1" />
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="False">
+      <Margins>
+        <MarginsU Left="0.25in" Right="0in" Top="0.25in" Bottom="0.25in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Filters>
+    <Filter Expression="=Fields.FType" Operator="Equal" Value="=Parameters.FType.Value" />
+  </Filters>
+  <ReportParameters>
+    <ReportParameter Name="FType" Text="Select Frequency Type (T=Transaction / Q=Quantity  /  A=Amount)" Visible="True" AutoRefresh="True">
+      <AvailableValues ValueMember="= Fields.FType" />
+      <Value>
+        <String>T</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Topn" Type="Integer" Text="Select Top N Value" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>20</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

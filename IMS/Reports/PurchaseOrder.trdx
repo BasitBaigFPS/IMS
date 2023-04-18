@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="INVENTORY" Width="19.3039988170942cm" Name="PurchaseOrder" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT   [pkPOID],[fkcomid],[brhName],[deptName],[empName],[fkbrhID],[fkDeptID],[POReqCode],[ReqTitle],[DocCode],[POType],[IssueDate],[fkQuotID],[QuotDate],[VendorName],[ContactPerson],&#xD;&#xA; [ShipAt],[ShipDate],[TermsConditions],[GrossAmount],[AmountWords],[Discount],[IsApproved],[IsActive],&#xD;&#xA; [fkreqpoID],[fkItemID],[ItemTitle],[ItemDescription],[Unit],[Rate],[Qtty],[Amount],[TranIsActive]&#xD;&#xA; from View_PurchaseOrder" Name="INVENTORY" />
+  </DataSources>
+  <Items>
+    <ReportFooterSection Height="6.28037067746085cm" Name="reportFooter">
+      <Style Visible="True">
+        <BorderStyle Top="Solid" />
+        <BorderColor Top="Black" />
+        <BorderWidth Top="1pt" />
+      </Style>
+      <Items>
+        <TextBox Width="2.09960006277879cm" Height="0.68cm" Left="13.5143749801293cm" Top="0.254000961867941cm" Value="=Sum(IsNull(Fields.Qtty,0))" Format="{0:N2}" CanGrow="True" Name="qttySumFunctionTextBox3" StyleName="Data">
+          <Style TextAlign="Right">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.7618048599059cm" Height="0.679999656836201cm" Left="10.699995811383cm" Top="0.254000961867941cm" Value="Gross Total:" Name="textBox9">
+          <Style TextAlign="Right" VerticalAlign="Middle" />
+        </TextBox>
+        <TextBox Width="2.3487467112492cm" Height="0.680000007152557cm" Left="16.4512498984387cm" Top="0.254000961867941cm" Value="=Sum(IsNull(Fields.Amount,0))" Format="{0:N2}" CanGrow="True" Name="textBox11" StyleName="Data">
+          <Style TextAlign="Right">
+            <BorderStyle Default="Solid" />
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.97000185970458cm" Height="0.679999649524689cm" Left="0.329996805548757cm" Top="5.28996765681198cm" Value="Issuing Authority" Name="textBox12">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.82599963115851cm" Height="0.679999649524689cm" Left="3.555998932155cm" Top="5.28996765681198cm" Value="Recommended/Reviewed By" Name="textBox13">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.0298971691637cm" Height="0.679999649524689cm" Left="13.9699996114175cm" Top="5.28996765681198cm" Value="Vendor/Contractor" Name="textBox10">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.97007973988851in" Height="1.10000038146972in" Left="0.129920323689779in" Top="0.882664362589518in" Value="= Fields.TermsConditions" CanShrink="False" Name="textBox27" />
+        <TextBox Width="3.97007973988851in" Height="0.200000127156576in" Left="0.129920323689779in" Top="0.68258539835612in" Value="Terms &amp; Conditions:" Name="textBox28">
+          <Style>
+            <Font Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.02989721298218cm" Height="0.679999649524689cm" Left="8.6359995982965cm" Top="5.28996765681198cm" Value="=&quot;Issue Date :&quot; +  Fields.IssueDate " Format="{0}" Name="textBox5">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" />
+          </Style>
+        </TextBox>
+        <TextBox Width="7.27165349324544in" Height="0.200000127156576in" Left="0.129920323689779in" Top="0.382664362589518in" Value="=&quot;Rupees:&quot; + Fields.AmountWords" Name="textBox14">
+          <Style>
+            <Font Underline="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportFooterSection>
+    <PageHeaderSection Height="10.5590418866742cm" Name="pageHeader">
+      <Items>
+        <TextBox Width="7.48184967041016in" Height="0.199999968210856in" Left="0.118110338846842in" Top="3.30007870992025in" Value="=&quot;With Reference to your quotation number dated:                                   , we are pleased to place an order for the following items(s) / goods(s);&quot;" CanShrink="True" Name="textBox18">
+          <Style>
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="7.36216481526693in" Height="1.75196838378906in" Left="0.118110338846843in" Top="0.748031457265218in" Stretch="True" Name="shape1">
+          <Style BackgroundColor="242, 242, 242" />
+          <ShapeType>
+            <PolygonShape VertexCount="4" Rounding="0" StartAngle="45" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="10.0999984987544cm" Height="0.794166417284151cm" Left="5.09999984860421cm" Top="0.299999848604206cm" Value="Purchase / Job Order" Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" />
+        </TextBox>
+        <TextBox Width="3.30179964179755cm" Height="0.69cm" Left="0.507999905125303cm" Top="2.03199982236227cm" Value="Requisition No:" CanGrow="True" Name="brhNameCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="217, 217, 217" Color="Black" TextAlign="Left" />
+        </TextBox>
+        <TextBox Width="6.23708389496967cm" Height="0.69cm" Left="3.80999989402294cm" Top="2.03199982236227cm" Value="=Fields.POReqCode" CanGrow="True" Name="POReqCode" StyleName="Data">
+          <Style>
+            <Font Name="Arial" Size="10pt" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.01599548537745cm" Height="0.69cm" Left="11.6839998364925cm" Top="3.53242761640949cm" Value="Issue Date:" CanGrow="True" Name="deptNameCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="217, 217, 217" Color="Black" TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="7.6197994409458cm" Height="0.637084545971585cm" Left="3.80999989402294cm" Top="3.87271489497421cm" Value="=Fields.deptName" CanGrow="True" Name="deptName" StyleName="Data">
+          <Style>
+            <Font Name="Arial" Size="10pt" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.30179965693713cm" Height="0.69cm" Left="0.507999905125303cm" Top="3.04799983447393cm" Value="Requisition Title :" CanGrow="True" Name="storeNameCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="217, 217, 217" Color="Black" TextAlign="Left" />
+        </TextBox>
+        <TextBox Width="6.23708389496967cm" Height="0.69cm" Left="3.80999989402294cm" Top="3.04799983447393cm" Value="= Fields.ReqTitle" CanGrow="True" Name="ReqTitle" StyleName="Data">
+          <Style>
+            <Font Name="Arial" Size="10pt" Underline="True" />
+          </Style>
+        </TextBox>
+        <PictureBox Url="=IIF(Substr(Fields.DocCode,0,3)='FPS',&quot;http://nhnuae.com/fpswebsite/images/fpslogo.jpg&quot;,&quot;http://hss.wpsitie.com/wp-content/uploads/2018/11/HSS-Logo.png&quot;)" Width="1.84708358713156cm" Height="1.88999965178967cm" Left="0.300000252326323cm" Top="0cm" Sizing="ScaleProportional" MimeType="" Name="pictureBox1" />
+        <TextBox Width="3.0159959748905cm" Height="0.747083536666296cm" Left="11.6839998364925cm" Top="2.28599977492492cm" Value="P.O/Job Order No:" CanGrow="True" Name="invCodeCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="217, 217, 217" Color="Black" TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="4.09979805072381cm" Height="0.747083536666296cm" Left="14.7001988836074cm" Top="2.28599977492492cm" Value="= Fields.DocCode" CanGrow="True" Name="DocCode" StyleName="Data">
+          <Style BackgroundColor="64, 64, 64" Color="White">
+            <Font Name="Arial" Size="9pt" Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.01599627768209cm" Height="0.7cm" Left="11.6839998364925cm" Top="4.49822740758422cm" Value="Delivery Date:" Name="lbldatefrom">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Right" VerticalAlign="Middle" />
+        </TextBox>
+        <TextBox Width="4.09980040987888cm" Height="0.699999988079071cm" Left="14.7001988836074cm" Top="4.50908430272901cm" Value="= Fields.ShipDate " Format="{0:d}" Name="txtDateFrom">
+          <Style VerticalAlign="Middle">
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.30179974272808cm" Height="0.699799602434647cm" Left="0.507999905125303cm" Top="3.80999989402294cm" Value="Department:" CanGrow="True" Name="itemTitleCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="217, 217, 217" Color="Black" TextAlign="Left" />
+        </TextBox>
+        <TextBox Width="4.09980208794496cm" Height="0.699799602434647cm" Left="14.7001956538305cm" Top="3.5484396392541cm" Value="= Fields.IssueDate" Format="{0:d}" CanGrow="True" Name="itemTitleDataTextBox" StyleName="Data">
+          <Style>
+            <Font Name="Arial" Size="10pt" Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.30179964179754cm" Height="0.699999988079071cm" Left="0.507999905125303cm" Top="5.33400041684309cm" Value="Ship/Deliver At:" Name="lbldateto">
+          <Style BackgroundColor="217, 217, 217" VerticalAlign="Middle" />
+        </TextBox>
+        <TextBox Width="14.9899971539522cm" Height="0.699999988079071cm" Left="3.80999989402294cm" Top="5.33400041684309cm" Value="= Fields.ShipAt" Format="{0:D}" Name="txtDateTo">
+          <Style VerticalAlign="Middle">
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.963083346916904cm" Height="0.599999697208413cm" Left="0.0529166651947631cm" Top="9.65200021599133cm" Value="S.no." CanGrow="False" Name="textBox1">
+          <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="10.4136001373704cm" Height="0.59999972383182cm" Left="1.01619985455912cm" Top="9.65200021599133cm" Value="Item Description" CanGrow="False" Name="textBox3">
+          <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.52379982337548cm" Height="0.59999972383182cm" Left="13.4620009174585cm" Top="9.65200021599133cm" Value="Quantity" CanGrow="False" Name="textBox6">
+          <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.41380009408392cm" Height="0.59999972383182cm" Left="14.9860002291123cm" Top="9.65200021599133cm" Value="Rate" CanGrow="False" Name="textBox7">
+          <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.90390289687425cm" Height="0.59999972383182cm" Left="16.3999997981389cm" Top="9.65200021599133cm" Value="Amount" CanGrow="False" Name="textBox8">
+          <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.03180099114971cm" Height="0.599999725818634cm" Left="11.4299996820688cm" Top="9.65200021599133cm" Value="Unit" CanGrow="False" Name="textBox2">
+          <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.43306986490885in" Height="0.199999809265137in" Left="0.118110338846843in" Top="2.60000006357829in" Value="= Fields.VendorName" Name="textBox15">
+          <Style>
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.0700798034668in" Height="0.199999809265137in" Left="0.129920323689779in" Top="3.10000006357829in" Value="= Fields.ContactPerson" Name="textBox16" />
+        <TextBox Width="1.69291321436564in" Height="0.200000127156576in" Left="0.118110338846842in" Top="2.89992078145345in" Value="Dear Sir(s)/Madams(s)," Name="textBox17" />
+        <TextBox Width="19.2509824195699cm" Height="0.599999725818634cm" Left="0.0529166651947631cm" Top="9.05180027261336cm" Value="Purchase / Job Order Detail(s)" CanGrow="False" Name="textBox19">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.39999961853027in" Height="0.200000127156576in" Left="2.89999993642171in" Top="3.30007870992025in" Value="= Fields.IssueDate" Format="{0:dd-MMMM-yyyy}" Name="textBox20">
+          <Style VerticalAlign="Top">
+            <Font Size="9pt" Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.600000302791592cm" Name="pageFooter">
+      <Items>
+        <TextBox Width="3.64708306360246cm" Height="0.547083637596825cm" Left="0.0529166651947631cm" Top="0.0529166651947631cm" Value="=NOW()" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Width="4.49989960571244cm" Height="0.547083637596825cm" Left="14.4999995269362cm" Top="0.0529166651947631cm" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="10.0999984987544cm" Height="0.547083435735767cm" Left="4cm" Top="0.0529166651947631cm" Value="= Fields.empName" Name="reportNameTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <DetailSection Height="0.782699649417811cm" Name="detail">
+      <Style>
+        <BorderStyle Bottom="Solid" />
+        <Font Size="7in" />
+      </Style>
+      <Items>
+        <TextBox Width="0.963083177877474cm" Height="0.682499302317719cm" Left="0.0999999495347355cm" Top="0.10019979198218cm" Value="= RowNumber()" Format="{0:#.}" CanGrow="True" Name="trDateDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <Font Name="Arial" Size="10pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="10.4135994123007cm" Height="0.682499302317719cm" Left="1.06808366236322cm" Top="0.10019979198218cm" Value="= Fields.ItemDescription" CanGrow="True" Name="descriptionDataTextBox" StyleName="Data">
+          <Style>
+            <Font Name="Arial Narrow" Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.52379965342377cm" Height="0.682499302317719cm" Left="13.5143749801293cm" Top="0.10019979198218cm" Value="= Fields.Qtty" Format="{0:N2}" CanGrow="True" Name="txtRecv" StyleName="Data">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="1.35084102886562cm" Height="0.68cm" Left="15.0489582707775cm" Top="0.10019979198218cm" Value="= Fields.Rate" Format="{0:N2}" CanGrow="True" Name="txtIsu" StyleName="Data">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="2.39999851266547cm" Height="0.680000007152557cm" Left="16.3999997981389cm" Top="0.102699639324755cm" Value="= Fields.Amount" Format="{0:N2}" CanGrow="True" Name="textBox4" StyleName="Data">
+          <Style TextAlign="Right">
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.779495239257812in" Height="0.267716725667318in" Left="4.52042643229167in" Top="0.040432612101237in" Value="= Fields.Unit" Name="textBox26">
+          <Style VerticalAlign="Middle">
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <ReportHeaderSection Height="0.0520833333333334in" Name="reportHeaderSection1" />
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="28, 58, 112">
+        <Font Name="Tahoma" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="False">
+      <Margins>
+        <MarginsU Left="0.75cm" Right="0.15cm" Top="1cm" Bottom="1cm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+</Report>

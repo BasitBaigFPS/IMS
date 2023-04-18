@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="IMS_RPT_Conn" Width="6.33570671081543in" Name="SYB_DistributionList" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="  SELECT DISTINCT SYSTEMCHOICE, BRANCH, DListNo&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_SyllabusDistributionList]" Name="IMS_RPT_Conn" />
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT   [fkcomID]&#xD;&#xA;      ,[fkcityID]&#xD;&#xA;      ,[SystemChoice]&#xD;&#xA;      ,[fkbrhid]&#xD;&#xA;      ,[Branch]&#xD;&#xA;      ,[fkReqTypID]&#xD;&#xA;      ,[fkReqSubTypID]&#xD;&#xA;&#x9;  ,RequisitionSubType&#xD;&#xA;&#x9;  ,Strength&#xD;&#xA;&#x9;  ,fkgrdMastID&#xD;&#xA;&#x9;  ,Grade&#xD;&#xA;      ,[fkItemID]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[Unit]&#xD;&#xA;      ,[Rate]&#xD;&#xA;      ,[InStock]&#xD;&#xA;      ,[GrossQuantity]&#xD;&#xA;      ,[NetQuantity]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_SyllabusDistributionList]&#xD;&#xA;WHERE Branch=@Branch&#xD;&#xA; AND DListNo=@DListNo  order by fkReqSubTypID" Name="sqlDataSource1" ParameterValues="{&quot;@Branch&quot;:&quot;Elementary Section (HYD)&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@Branch">
+          <Value>
+            <String>= Parameters.Branch.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@DListNo">
+          <Value>
+            <String>= Parameters.DListNo.Value</String>
+          </Value>
+        </SqlDataSourceParameter>        
+        
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection PageBreak="None" KeepTogether="True" Height="1.60000006357829in" Name="detailSection1">
+      <Style Visible="True" />
+      <Items>
+        <Crosstab DataSourceName="sqlDataSource1" Width="6.13570630523632in" Height="1.2895827242039in" Left="0.199999968210856in" Top="0.200000047683716in" RowHeadersPrintOnEveryPage="False" ColumnHeadersPrintOnEveryPage="True" Name="crosstab1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.51525613796529in" Height="0.199999814385422in" Left="0in" Top="0in" Value="= Sum(Fields.GrossQuantity)" Format="{0:N0}" Name="textBox12" StyleName="Normal.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.598589662091388in" Height="0.199999814385422in" Left="0in" Top="0in" Value="= Sum(Fields.GrossQuantity)" Format="{0:N0}" Name="textBox13" StyleName="Normal.GrandTotal">
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.51525613796529in" Height="0.199999814385422in" Left="0in" Top="0in" KeepTogether="True" Value="= Sum(Fields.GrossQuantity)" Format="{0:N0}" Name="textBox16" StyleName="Normal.SubTotal">
+                    <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.598589662091388in" Height="0.199999814385422in" Left="0in" Top="0in" KeepTogether="True" Value="= Sum(Fields.GrossQuantity)" Format="{0:N0}" Name="textBox17" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.51525613796529in" Height="0.199999814385422in" Left="0in" Top="0in" Value="= Sum(Fields.GrossQuantity)" Format="{0:N0}" Name="textBox18" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.598589662091388in" Height="0.199999814385422in" Left="0in" Top="0in" Value="= Sum(Fields.GrossQuantity)" Format="{0:N0}" Name="textBox19" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.655319291829932in" Height="0.199999814385422in" Left="0in" Top="0in" Value="= Fields.InStock" Format="{0:N0}" Name="textBox21" StyleName="Normal.GrandTotal"  >
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.655319291829932in" Height="0.199999814385422in" Left="0in" Top="0in" KeepTogether="True" Value=""  Format="{0:N0}" Name="textBox23" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.655319291829932in" Height="0.199999814385422in" Left="0in" Top="0in" Value="" Format="{0:N0}" Name="textBox24"  StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.04618087509904in" Height="0.199999991208301in" Left="0in" Top="0in" 
+                           Value="=iif((Sum(Fields.GrossQuantity)- Fields.InStock) > 0, (Sum(Fields.GrossQuantity)- Fields.InStock),0)"  Format="{0:N0}" Name="textBox26" StyleName="Normal.GrandTotal">
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.04618087509904in" Height="0.199999991208301in" Left="0in" Top="0in" KeepTogether="True" Value="" Format="{0:N0}" Name="textBox28" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="191, 191, 191" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.04618087509904in" Height="0.199999991208301in" Left="0in" Top="0in" Value="" Format="{0:N0}" Name="textBox29" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.51525613796529in" Height="0.187500027757274in" Left="0in" Top="0in" Name="textBox33" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.598589662091388in" Height="0.187500027757274in" Left="0in" Top="0in" Name="textBox34" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.655319291829932in" Height="0.187500027757274in" Left="0in" Top="0in" Name="textBox35" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.04618131899815in" Height="0.187500005896714in" Left="0in" Top="0in" Name="textBox36" StyleName="Normal.GrandTotal">
+                    <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Name="Calibri" Size="9pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.515256236073532in" />
+              <Column Width="0.598589607936697in" />
+              <Column Width="0.655319291829932in" />
+              <Column Width="1.04618141679168in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.187500027757274in" />
+              <Row Height="0.199999814385422in" />
+              <Row Height="0.199999814385422in" />
+              <Row Height="0.199999814385422in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.10416666233839in" Height="0.199999860345238in" Left="0in" Top="0in" Value="Requisition Type" Name="textBox9" StyleName="Normal.TableHeader">
+                    <Style Visible="False" TextAlign="Center">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.34676991216187in" Height="0.19999998687488in" Left="0in" Top="0in" Value="Item Title" Name="textBox10" StyleName="Normal.TableHeader">
+                    <Style TextAlign="Center" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.411089581737712in" Height="0.199999991208301in" Left="0in" Top="0in" Value="Unit" Name="textBox11" StyleName="Normal.TableHeader">
+                    <Style TextAlign="Center" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.10416666829073in" Height="0.199999860345238in" Left="0in" Top="0in" Value="row Group" Name="textBox30" StyleName="Normal.TableHeader">
+                    <Style Visible="False" TextAlign="Center">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.10416666829073in" Height="0.302083305418703in" Left="0in" Top="0in" Value="" Name="textBox44" StyleName="Normal.TableHeader">
+                    <Style Visible="False" TextAlign="Left">
+                      <Font Name="Calibri" Size="12pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.10416666233839in" Height="0.302083305418703in" Left="0in" Top="0in" Name="textBox45" StyleName="Normal.TableHeader">
+                    <Style Visible="False">
+                      <Font Name="Calibri" Size="12pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.354166445491782in" Height="0.200000042549582in" Left="0in" Top="0in" Value="S.no" Name="textBox38" StyleName="Normal.TableHeader">
+                    <Style TextAlign="Center" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                      <Font Name="Calibri" Size="9pt" Bold="True" />
+                   
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="3">
+                <ReportItem>
+                  <TextBox Width="3.11202633923314in" Height="0.302083265958418in" Left="0in" Top="0in" Value="= Fields.Branch" Name="textBox47" StyleName="Normal.TableHeader">
+                    <Style BackgroundColor="242, 242, 242">
+                      <Font Name="Calibri" Size="12pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="rowGroup">
+              <ReportItem>
+                <TextBox Width="0.104166665341628in" Height="0.587499557203374in" Left="0in" Top="0in" Value="= Fields.Branch" Name="textBox22" StyleName="Normal.TableGroup">
+                  <Style Visible="False" VerticalAlign="Middle">
+                    <Font Name="Calibri" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="RequisitionSubType1">
+                  <ReportItem>
+                    <TextBox Width="0.104166827089915in" Height="0.587499557203374in" Left="0in" Top="0in" Value="= Fields.RequisitionSubType" Name="textBox3" StyleName="Normal.TableGroup">
+                      <Style Visible="False" TextAlign="Left" VerticalAlign="Middle">
+                        <Font Name="Calibri" Size="9pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group">
+                      <ChildGroups>
+                        <TableGroup Name="group14">
+                          <ReportItem>
+                            <TextBox Width="3.11202623761406in" Height="0.187500027328778in" Left="0in" Top="0in" Value="= Fields.RequisitionSubType" Name="textBox43" StyleName="Normal.TableGroup">
+                              <Style BackgroundColor="217, 217, 217" VerticalAlign="Middle">
+                                <Font Name="Calibri" Size="10pt" Bold="True" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                    <TableGroup Name="ItemTitle1">
+                      <ChildGroups>
+                        <TableGroup Name="group9">
+                          <ReportItem>
+                            <TextBox Width="0.354166445491782in" Height="0.199999811954225in" Left="0in" Top="0in" Value="=RowNumber(&quot;crosstab1&quot;)&#xD;&#xA;" Name="textBox7" StyleName="">
+                              <Style TextAlign="Center" VerticalAlign="Middle">
+                                <Font Name="Calibri" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group2">
+                              <ReportItem>
+                                <TextBox Width="2.34676991216187in" Height="0.19999981392836in" Left="0in" Top="0in" Value="= Fields.ItemTitle" Name="textBox4" StyleName="Normal.TableGroup">
+                                  <Style TextAlign="Left" VerticalAlign="Middle">
+                                    <Font Name="Calibri" Size="9pt" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                              <ChildGroups>
+                                <TableGroup Name="Unit1">
+                                  <ChildGroups>
+                                    <TableGroup Name="group1">
+                                      <ReportItem>
+                                        <TextBox Width="0.411089581737712in" Height="0.199999991208301in" Left="0in" Top="0in" Value="= Fields.Unit" Name="textBox5" StyleName="Normal.TableGroup">
+                                          <Style TextAlign="Center" VerticalAlign="Middle">
+                                            <Font Name="Calibri" Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                      </ReportItem>
+                                    </TableGroup>
+                                  </ChildGroups>
+                                  <Groupings>
+                                    <Grouping Expression="= Fields.Unit" />
+                                  </Groupings>
+                                  <Sortings>
+                                    <Sorting Expression="= Fields.Unit" Direction="Asc" />
+                                  </Sortings>
+                                </TableGroup>
+                              </ChildGroups>
+                            </TableGroup>
+                          </ChildGroups>
+                        </TableGroup>
+                      </ChildGroups>
+                      <Groupings>
+                        <Grouping Expression="= Fields.ItemTitle" />
+                      </Groupings>
+                      <Sortings>
+                        <Sorting Expression="= Fields.ItemTitle" Direction="Asc" />
+                      </Sortings>
+                    </TableGroup>
+                    <TableGroup Name="group11">
+                      <ReportItem>
+                        <TextBox Width="0.354166445491782in" Height="0.199999811954225in" Left="0in" Top="0in" Name="textBox37" StyleName="Normal.SubTotal">
+                          <Style BackgroundColor="191, 191, 191" TextAlign="Right" VerticalAlign="Middle">
+                            <Font Name="Calibri" Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group3">
+                          <ReportItem>
+                            <TextBox Width="2.75785995785462in" Height="0.19999981392836in" Left="0in" Top="0in" KeepTogether="True" Value="Total" Name="textBox6" StyleName="Normal.SubTotal">
+                              <Style BackgroundColor="191, 191, 191" TextAlign="Right" VerticalAlign="Middle">
+                                <Font Name="Calibri" Size="9pt" Bold="True" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.RequisitionSubType" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.RequisitionSubType" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.Branch" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.Branch" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+            <TableGroup Name="group5">
+              <ReportItem>
+                <TextBox Width="0.10416666829073in" Height="0.199999860345238in" Left="0in" Top="0in" Name="textBox27" StyleName="Normal.GrandTotal">
+                  <Style Visible="False" TextAlign="Right" />
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup>
+                  <ReportItem>
+                    <TextBox Width="3.2161930345209in" Height="0.19999981392836in" Left="0in" Top="0in" Value="Total" Name="textBox8" StyleName="Normal.GrandTotal">
+                      <Style Visible="True" BackgroundColor="89, 89, 89" Color="255, 255, 255" TextAlign="Right" />
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="Grade1">
+              <ReportItem>
+                <TextBox Width="0.51525613796529in" Height="0.302083265958418in" Left="0in" Top="0in" Value="= Fields.Strength" Name="textBox40" StyleName="Normal.TableGroup">
+                  <Style BackgroundColor="242, 242, 242" TextAlign="Center" VerticalAlign="Middle">
+                    <Font Name="Calibri" Size="12pt" Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group4">
+                  <ReportItem>
+                    <TextBox Width="0.51525613796529in" Height="0.199999987331942in" Left="0in" Top="0in" Value="= Fields.Grade" Name="textBox1" StyleName="Normal.TableGroup">
+                      <Style TextAlign="Center" VerticalAlign="Middle" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                        <Font Name="Calibri" Bold="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.Grade" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.fkgrdMastID" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="2.30009017941458in" Height="0.302083265958418in" Left="0in" Top="0in" Name="textBox41" StyleName="Normal.GrandTotal">
+                  <Style TextAlign="Center" VerticalAlign="Middle">
+                    <Font Name="Calibri" Size="12pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group6">
+                  <ReportItem>
+                    <TextBox Width="0.598589662091388in" Height="0.199999987331942in" Left="0in" Top="0in" Value="Total" Name="textBox2" StyleName="Normal.GrandTotal">
+                      <Style TextAlign="Center" VerticalAlign="Middle" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                        <Font Name="Calibri" Size="9pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="group7">
+                  <ReportItem>
+                    <TextBox Width="0.655319291829932in" Height="0.199999987331942in" Left="0in" Top="0in" Value="InStock" Name="textBox20" StyleName="Normal.GrandTotal">
+                      <Style TextAlign="Center" VerticalAlign="Middle" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                        <Font Name="Calibri" Size="9pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="group8">
+                  <ReportItem>
+                    <TextBox Width="1.04618087509904in" Height="0.199999991208301in" Left="0in" Top="0in" Value="Quantity Delieverd" Name="textBox25" StyleName="Normal.GrandTotal">
+                      <Style TextAlign="Center" VerticalAlign="Middle" BackgroundColor="89, 89, 89" Color="255, 255, 255">
+                        <Font Name="Calibri" Size="9pt" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+          </ColumnGroups>
+          <Filters>
+            <Filter Expression="= Fields.Branch" Operator="Equal" Value="= Parameters.Branch.Value" />
+          </Filters>
+        </Crosstab>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="0.399999936421712in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="6.33566724119791in" Height="0.400000013057668in" Left="0in" Top="0in" Value="" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.300000031789144in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.193700659843424in" Left="4.05256779988607in" Top="0in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" Bold="True" Italic="False" Underline="False" Strikeout="False" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.GrandTotal" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.SubTotal" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="True">
+      <Margins>
+        <MarginsU Left="0.25in" Right="0in" Top="0.150000005960464in" Bottom="0.150000005960464in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Filters>
+    <Filter Expression="= Fields.BRANCH" Operator="Equal" Value="= Parameters.Branch.Value" />
+    <Filter Expression="= Fields.DListNo" Operator="Equal" Value="= Parameters.DListNo.Value" />
+  </Filters>
+  <ReportParameters>
+    <ReportParameter Name="System" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="IMS_RPT_Conn" DisplayMember="= Fields.SystemChoice" ValueMember="= Fields.SystemChoice" />
+    </ReportParameter>
+    <ReportParameter Name="Branch" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="IMS_RPT_Conn" DisplayMember="= Fields.Branch" ValueMember="=Fields.Branch" />
+    </ReportParameter>
+    <ReportParameter Name="DListNo" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="IMS_RPT_Conn" DisplayMember="= Fields.DListNo" ValueMember="=Fields.DListNo" />
+    </ReportParameter>
+    
+  </ReportParameters>
+</Report>

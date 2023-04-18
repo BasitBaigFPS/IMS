@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="DS_StoreTrans" Width="7.90000089009603in" Culture="en-GB" Name="DailyStoreTransactions" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT  [TrDate]&#xD;&#xA;      ,[BranchID]&#xD;&#xA;      ,[brhName]&#xD;&#xA;      ,[StoreID]&#xD;&#xA;      ,[StoreName]&#xD;&#xA;      ,[DeptID]&#xD;&#xA;      ,[deptName]&#xD;&#xA;      ,[DocCode]&#xD;&#xA;      ,[ItemID]&#xD;&#xA;      ,[InvCode]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[Description]&#xD;&#xA;      ,[Qtty]&#xD;&#xA;      ,[Typ]&#xD;&#xA;      ,[IsCancel]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_LedgerRecord]&#xD;&#xA;  where BranchID=@Branch and StoreID=@Store and DeptID=@Dept and convert(varchar(10),TrDate,103)=@TrsDate" Name="DS_StoreTrans">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@Branch">
+          <Value>
+            <String>= Parameters.Branch.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@Store">
+          <Value>
+            <String>= Parameters.Store.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@Dept">
+          <Value>
+            <String>= Parameters.Dept.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@TrsDate">
+          <Value>
+            <String>= Format("{0:dd/MM/yyyy}",Parameters.TrsDate.Value.Date)</String>
+            
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.209999998410543in" Name="detailSection1">
+      <Items>
+        <TextBox Width="0.599921445051829in" Height="0.200000002980232in" Left="0.400078614552816in" Top="0.01in" Value="= Fields.TrDate" Format="{0:d}" Name="textBox34" StyleName="Normal.TableBody">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="7pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.99433038632075in" Height="0.200000002980232in" Left="1.00566991170247in" Top="0.01in" Value="= Fields.DocCode" Name="textBox35" StyleName="Normal.TableBody">
+          <Style VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="6pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.05in" Height="0.200000122189522in" Left="2in" Top="0.01in" Value="= Fields.InvCode" Name="textBox36" StyleName="Normal.TableBody">
+          <Style TextAlign="Left" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="6pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.44984322786331in" Height="0.200000002980232in" Left="3.05015754699707in" Top="0.01in" Value="= Fields.ItemTitle + '-' + Fields.Description" Name="textBox37" StyleName="Normal.TableBody">
+          <Style VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="6pt" Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.800000011920929in" Height="0.200000002980232in" Left="6.5000794728597in" Top="0.01in" Value="=IIF(Fields.Typ='R',Fields.Qtty,0)" Name="textBox39" StyleName="Normal.TableBody">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.600000520547231in" Height="0.200000002980232in" Left="7.3000005086263in" Top="0.01in" Value="=IIF(Fields.Typ='I',Fields.Qtty,0)" Name="textBox40" StyleName="Normal.TableBody">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.394448657830556in" Height="0.200000002980232in" Left="0.00555149714152019in" Top="0.01in" Value="= RowNumber()" Name="textBox41" StyleName="Normal.TableBody">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="9pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="1.20000012715658in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="7.90000083901693in" Height="0.300000009084025in" Left="0in" Top="0in" Value="DAILY STORE TRANSACTION REPORT" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.99996058146159in" Height="0.200000127156576in" Left="0.00003941853841146in" Top="0.599842230478922in" Value="=&quot;Branch : &quot; + Fields.brhName" Name="textBox23">
+          <Style>
+            <Font Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.99996066093445in" Height="0.200000122189522in" Left="0.00003941853841146in" Top="0.799921035766602in" Value="=&quot;Store : &quot; + Fields.StoreName" Name="textBox24">
+          <Style>
+            <Font Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.59448885917664in" Height="0.200000122189522in" Left="4.30551211039225in" Top="0.799921035766602in" Value="=&quot;Department: &quot; + Fields.deptName" Name="textBox25">
+          <Style TextAlign="Right">
+            <Font Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="7.89996155103048in" Height="0.200000122189522in" Left="0.00003941853841161in" Top="0.300078709920247in" Value="=&quot;Report As OF: &quot; + Format(&quot;{0:D}&quot;,IIF(Len(Trim(Fields.brhName))=0,Parameters.TrsDate.Value.Date,Fields.TrDate.Date))" Format="{0:D}" Name="textBox26">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399960517883301in" Height="0.200000122189522in" Left="0.00003941853841145in" Top="1in" Value="S.NO" Name="textBox27">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.599921454985936in" Height="0.200000122189522in" Left="0.400078614552816in" Top="1in" Value="TR.DATE" Name="textBox28">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.999921123186747in" Height="0.200000122189522in" Left="1.00007883707682in" Top="1in" Value="DOCUMENT" Name="textBox29">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.05in" Height="0.200000122189522in" Left="2.00007883707682in" Top="1in" Value="INV.CODE" Name="textBox30">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.44984304904938in" Height="0.200000122189522in" Left="3.05015754699707in" Top="1in" Value="ITEM TITLE / DESCRIPTION" Name="textBox31">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.799920837084452in" Height="0.200000122189522in" Left="6.5000794728597in" Top="1in" Value="RECEIVED" Name="textBox32">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.599921365578969in" Height="0.200000122189522in" Left="7.30007934570313in" Top="1in" Value="ISSUED" Name="textBox33">
+          <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="9pt" Bold="True" Underline="False" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.489999930063883in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="0.899999732065755in" Height="0.190058895520508in" Left="7.00000127156575in" Top="0.299901644388835in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style TextAlign="Right" VerticalAlign="Middle">
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.50000015894572in" Height="0.210000197092692in" Left="0.199999809265137in" Top="0.18999989827474in" Value="Store Incharge" Name="textBox1">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" />
+            <BorderColor Top="Black" />
+            <BorderWidth Top="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.6000010172526in" Height="0.210000197092692in" Left="2.79999987284342in" Top="0.18999989827474in" Value="Building Incharge" Name="textBox2">
+          <Style TextAlign="Center" VerticalAlign="Top">
+            <BorderStyle Top="Solid" />
+            <BorderColor Top="Black" />
+            <BorderWidth Top="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.59992281595866in" Height="0.210000197092692in" Left="5.40000025431315in" Top="0.18999989827474in" Value="Building Head" Name="textBox3">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" />
+            <BorderColor Top="Black" />
+            <BorderWidth Top="1pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="0.15in" Right="0in" Top="0.25in" Bottom="0.25in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="Branch" Type="Integer" Text="Branch" AutoRefresh="True">
+      <Value>
+        <String></String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Store" Type="Integer" Text="Store" AutoRefresh="True">
+      <Value>
+        <String></String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Dept" Text="Dept" AutoRefresh="True" />
+    <ReportParameter Name="TrsDate" Type="DateTime" Visible="True" AutoRefresh="True" />
+  </ReportParameters>
+</Report>

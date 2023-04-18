@@ -1,0 +1,56 @@
+﻿
+div.hideSkiplink
+{
+    background-color:#4284CB;
+    width:100%;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #3981AE;
+    border: 1px #4e667d solid;
+    color: #dde4ec;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    
+}
+
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6;
+    color: #3981AE;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #3981AE;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 

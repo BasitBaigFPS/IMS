@@ -1,0 +1,30 @@
+/*=================================*/
+/* Cross Browser Css
+/* October 2015
+/* By: Syed Bilal Shah
+/* http://d3sig9er.wordpress.com
+/*=================================*/
+
+
+ 
+.ie8 a[data-pop] + img.default + img.hover,
+.ie8 a[data-pop]:hover + img.default {display:none;}
+.ie8 a[data-pop]:hover ~ img.default ~ img.hover {display:block !important;}
+.ie8 a span.titleTag {display:none;}
+.ie8 a:hover span.titleTag {display:inline-block;}
+.ie8 .linkWrap a {background:url(../images/spacer.gif) repeat 0 0;}
+.ie8 #linksPopUp .linkWrap a span.titleTag {display:inline-block;}
+
+@-moz-document url-prefix() {/* Firefox */
+	.button { padding:0 28px;}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {/* Chrome and safari */
+	.button { padding:3px 28px 4px 28px;}
+	.newsWrap header {padding:7px 11px 10px;}
+	.newsWrap section .news {padding:6px 10px 10px;}
+	a span.titleTag { line-height:24px;}
+	a span.titleTag2 { line-height:30px;}
+}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {/* Opera */
+	.button { padding:4px 28px;}
+}

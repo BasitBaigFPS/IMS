@@ -1,0 +1,467 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="IMS.Site1" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+
+<%--<%@ Register TagPrefix="telerik" Namespace="Telerik.QuickStart" %>--%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ 
+   <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="kickstart/js/kickstart.js"></script> <!-- KICKSTART -->
+    <link rel="stylesheet" href="kickstart/css/kickstart.css" media="all" /> <!-- KICKSTART -->--%>
+
+    <script src="JS/UserValidation.js" type="text/javascript">
+    </script>
+<%--    <asp:Button ID="btnSave" runat="server" Text="Create" OnClientClick="return userValid();"/> --%>
+
+    <title>Inventory Management System (IMS) 1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Stock, Inventory, Items, Issue,Receive,Current Balance" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <link href="css2/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <link href="css2/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!--js-->
+    <script type="application/x-javascript" src="js2/jquery-2.1.1.min.js"></script> 
+    <!--icons-css-->
+    <link href="css2/font-awesome.css" rel="stylesheet"/>
+    <!--Google Fonts-->
+    <link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'/>
+    <link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'/>
+    <!--//charts-->
+
+    <link href="css/IMScss.css" rel="stylesheet" type="text/css" media="all"/>
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=emulateie9" />
+    <link href="CSS/menu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/CSS3.css" type="text/css" />
+    <link rel="stylesheet" href="CSS/CSSTable.css" type="text/css" />
+    <link href="App_Themes/Dashboard/css/dashboard.css" rel="stylesheet" type="text/css" />
+    <link href="App_Themes/Dashboard/css/tabs.css" rel="stylesheet" type="text/css" />
+    <link href="App_Themes/Dashboard/css/inettuts.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <%--  <link href="css2/compiled-4.7.6.min.css" rel="stylesheet" />--%>
+    
+
+    <link href="styles.css" rel="stylesheet" />
+   <%-- <link rel="stylesheet" type="text/css" href="Styles/gridforms.css"/>--%>
+
+    <link href="CSS/Normalize.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            border-collapse: collapse;
+            height: 100%;
+        }
+
+        .auto-style2 {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .GridFont {
+            font-size: 11px;
+        }
+
+        .auto-style4 {
+            color: #FFFFFF;
+        }
+
+        .auto-style6 {
+            height: 10px;
+        }
+
+        .auto-style7 {
+            color: #DDE4EC;
+        }
+
+        .style3 {
+            font-size: small;
+        }
+
+        .auto-style8 {
+            height: 31px;
+            width: 694px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        function Confirm()
+           {
+              var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Do you want Full IBR With Zero Values? (Yes/No)")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+
+        function password() {
+            Ret = prompt('You need a password to enter this page', "The password is: password. Try some wrong entries first.")
+            if (Ret == "password") {
+            } else {
+                alert('Wrong Password. Try Again.')
+                location = "javascript:password()"
+            }
+        }
+
+        glow.ready(function () {
+            new glow.widgets.Sortable(
+                '#content .grid_5, #content .grid_6',
+                {
+                    draggableOptions: {
+                        handle: 'h2'
+                    }
+                }
+                );
+        });
+
+
+        function ClientSelectedTabChangedHandler(sender, args) {
+
+
+            alert("The new selected tab is: " + args.get_tab().get_text());
+            //alert("The previously selected tab is: " + args.get_previouslySelected().get_text());
+
+
+
+            //var tab0 = args.get_tabs().getTab(0);                  
+            //tab0.set_text("NewTab0");
+            var group0 = tab0.get_groups().getGroup(0);
+            //group0.set_text("NewGroup0");
+            var item0 = group0.get_items().getItem(0);
+            //returns the text of the first button in the first group of the first tab
+            //alert(args.get_tab().get_text() + "-" + item0.get_text());
+
+        };
+
+        function OnClientClicked(formbutton) {
+
+            alert("The new selected Button is: " + formbutton);
+        };
+
+
+
+
+        var clickCalledAfterRadconfirm = false;
+        var lastClickedItem = null;
+        function OnClientItemClickingHandler(sender, eventArgs) {
+            if (!clickCalledAfterRadconfirm) {
+                eventArgs.set_cancel(true);
+                lastClickedItem = eventArgs.get_item();
+                radconfirm("Are you sure you want to leave this page?", confirmCallbackFunction);
+            }
+        }
+        function confirmCallbackFunction(args) {
+            if (args) {
+                clickCalledAfterRadconfirm = true;
+                if (lastClickedItem.get_navigateUrl() != "" && lastClickedItem.get_navigateUrl() != "#") {
+                    window.location.href = lastClickedItem.get_navigateUrl();
+                }
+                else {
+                    lastClickedItem.click();
+                }
+            }
+            else
+                clickCalledAfterRadconfirm = false;
+
+            lastClickedItem = null;
+        }
+
+
+    </script>
+
+</head>
+
+<body id="desktop" style="margin: 0px">
+
+    <form id="form1" runat="server" >
+
+
+        <div>
+            <table cellpadding="0" class="auto-style1">
+                <tr>
+                    <td>
+                        <table cellpadding="0" class="auto-style2">
+
+                            <tr>
+                                <td>
+                                    <%--<telerik:RadFormDecorator Enabled="true" runat="server" />--%>
+
+                                    <asp:ScriptManager ID="ScriptManager1"   runat="server">
+                                    </asp:ScriptManager>
+
+                                    <table border="0" width="100%" style="background-color: #3981AE">
+                                        <tr>
+                                            <td align="left" width="76%" class="auto-style6" colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" class="auto-style8">
+                                                <h2 class="auto-style4" style="color: #dde4ec">&nbsp; Inventory Management System 1.0</h2>
+                                            </td>
+                                            <td align="right" width="76%" style="width: 38%">
+                                                <asp:Label ID="lblUser" runat="server" Font-Names="Calibri" Font-Size="11pt" ForeColor="#DDE4EC" Text="Label" Style="font-size: small"></asp:Label>
+                                                &nbsp;,
+                                                        <asp:Label ID="lblBranch" runat="server" Font-Names="Calibri" Font-Size="11pt" ForeColor="#DDE4EC" Style="font-size: x-small"></asp:Label>
+                                                <span class="auto-style7">,</span><asp:Label ID="lblCity" runat="server" Font-Names="Calibri" Font-Size="11pt" ForeColor="#DDE4EC" Style="font-size: x-small"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" class="auto-style8">
+                                                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Width="700px" CssClass="menu" StaticMenuItemStyle-HorizontalPadding="100px" OnMenuItemClick="Menu1_MenuItemClick">
+                                                    
+                                               
+                                                    <Items>
+                                                        
+                                                        <asp:MenuItem Text="Dashboard" Value="Dashboard" NavigateUrl="~/MainDashboard.aspx" Selected="True">
+                                                        </asp:MenuItem>                                                        
+                                                        
+                                                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Main.aspx">                                                            
+                                                            <asp:MenuItem NavigateUrl="~/PageLock.html" Text="Lock Screen" Value="Lock Screen"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/Logout.aspx" Text="Log Out" Value="Log Out"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Setup" Value="Setup">
+                                                            <asp:MenuItem Text="Add Store" Value="Store" NavigateUrl="~/StoreMain.aspx"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Add Vendors" Value="Vendors" NavigateUrl="~/NewVendor.aspx"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Add Item" Value="Item" NavigateUrl="~/ItemMain.aspx"></asp:MenuItem>   
+                                                            <asp:MenuItem Text="Add Item Head" Value="ItemHead" NavigateUrl="~/ItemHead.aspx"></asp:MenuItem>                                                        
+                                                            <asp:MenuItem Text="Add Locations" Value="Locations" NavigateUrl="~/Location.aspx"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/PostIMSBalances.aspx" Text="Post/Update Balance" Value="Post/Update Balance"></asp:MenuItem>
+                                                            
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Procurement" Value="Procurement">
+                                                            <asp:MenuItem NavigateUrl="~/RequisitionBudget.aspx" target="_new"  Text="Requisition Budget" Value="Requisition Budget"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/SyllabusRequisition.aspx" target="_new"  Text="Syllabus Requisition" Value="Syllabus Requisition"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ItemRates.aspx" Text="Item Rates" Value="Item Rates"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/quotation.aspx#" Text="New Quotation" Value="New Quotation"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/PurchaseOrderForm.aspx" Text="Purchase Order" Value="NewPO"></asp:MenuItem>
+                                                             <asp:MenuItem NavigateUrl="~/CustomBalanceUpdate.aspx" Text="Post/Update Custom Balance" Value="Post/Update Custom Balance"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Disbursement" Value="Disbursement">
+                                                            <asp:MenuItem Text="Work Orders" Value="Work Orders">
+                                                                <asp:MenuItem NavigateUrl="WOMain.aspx#" Text="New Work Order" Value="Work Order"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Material" Value="Material">
+                                                            <asp:MenuItem Text="MIR" Value="MIR" NavigateUrl="~/MIRequest.aspx" target="_new"  ToolTip="Material Issuing Request"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Requisition" Value="Requisition" NavigateUrl="~/Requisitions.aspx" target="_new"  ToolTip="Quarterly Requisitions"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Requisition-IT" Value="RequisitionIT" NavigateUrl="~/RequisitionsIT.aspx" target="_new"  ToolTip="Annaul I.T Requisitions"></asp:MenuItem>
+                                                            <asp:MenuItem Text="MIR-IT" Value="MIRIT" NavigateUrl="~/MIRequestIT.aspx" target="_new"  ToolTip="Material Issuing Request I.T"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Assets" Value="Assets">
+<%--                                                        <asp:MenuItem Text="Opening Stock" Value="Opening Stock" ImageUrl="~/images/Items.png" NavigateUrl="~/OpeningBalanceFA.aspx"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Opening Bulk Stock" Value="Opening Bulk Stock" ImageUrl="~/images/Stock.png" NavigateUrl="~/BulkOPBalanceFA.aspx"></asp:MenuItem>--%>
+<%--                                                        <asp:MenuItem Text="Department" Value="Department" ImageUrl="~/images/Department.png" NavigateUrl="~/DeptInventory.aspx"></asp:MenuItem>
+                                                            <asp:MenuItem Text="GIN Issued" Value="Issue Items" ImageUrl="~/images/inv_isu.png" NavigateUrl="~/IssueInventory.aspx" target="_new" ></asp:MenuItem>
+                                                            <asp:MenuItem Text="GRN Receive" Value="Received Items" ImageUrl="~/images/inv_recv.png" NavigateUrl="~/Received.aspx" target="_new" ></asp:MenuItem>--%>
+
+                                                            <asp:MenuItem Text="My Department" Value="Department" NavigateUrl="~/StoreInventoryBootstrap.aspx"></asp:MenuItem>
+                                                            <asp:MenuItem Text="GIN Issued" Value="Issue Items"  NavigateUrl="~/IssueInventory.aspx" target="_new" ></asp:MenuItem>
+                                                            <asp:MenuItem Text="GRN Receive" Value="Received Items" NavigateUrl="~/Received.aspx" target="_new" ></asp:MenuItem>  
+                                                            <asp:MenuItem NavigateUrl="~/MaterialReturn.aspx" target="_new"  Text="Material Return" Value="MaterialReturn"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Staff Search" Value="Staff Search" NavigateUrl="~/StaffSearch.aspx" target="_new" ></asp:MenuItem>  
+                                                            <asp:MenuItem Text="Sports Items" Value="Sports" NavigateUrl="~/SportsItemEntry.aspx" target="_new" ></asp:MenuItem>                                                                                               
+                                                            <asp:MenuItem NavigateUrl="~/SearchGINGRN.aspx" target="_new"  Text="GIN Search" Value="Issue Items"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Update Document" Value="DOCUpdate" NavigateUrl="~/UpdateDocument.aspx" target="_new" ></asp:MenuItem>                                     
+                                                            <asp:MenuItem Text="Item Status" Value="Item Status" ImageUrl="~/images/ItemStatus.png" NavigateUrl="~/InventoryStatus.aspx"></asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Store" Value="Store">
+<%--                                                        <asp:MenuItem NavigateUrl="~/OpeningBalance.aspx" Text="Opening Stock" Value="Opening Stock" ImageUrl="~/images/Items.png"></asp:MenuItem>
+                                                            <asp:MenuItem ImageUrl="~/images/Stock.png" NavigateUrl="~/BulkOPBalance.aspx" Text="Opening Bulk Stock" Value="Opening Bulk Stock"></asp:MenuItem>--%>
+                                                  <%--      <asp:MenuItem ImageUrl="~/images/Store.png" NavigateUrl="~/StoreInventory.aspx" Text="Store View" Value="Store"></asp:MenuItem>
+                                                            <asp:MenuItem ImageUrl="~/images/inv_isu.png" NavigateUrl="~/IssueInventory.aspx" target="_new"  Text="Issue Items" Value="Issue Items"></asp:MenuItem>
+                                                            <asp:MenuItem ImageUrl="~/images/inv_recv.png" NavigateUrl="~/Received.aspx" target="_new"  Text="Receive Items" Value="Receive Items"></asp:MenuItem>--%>
+
+                                                            <asp:MenuItem NavigateUrl="~/StoreInventoryBootstrap.aspx" Text="My Store" Value="Store"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/IssueInventory.aspx" target="_new"  Text="GIN Issued" Value="Issue Items"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/Received.aspx" target="_new"  Text="GRN Receive" Value="Receive Items"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/MaterialReturn.aspx" target="_new"  Text="Material Return" Value="MaterialReturn"></asp:MenuItem>
+                                                          
+                                                            <asp:MenuItem NavigateUrl="~/SearchGINGRN.aspx" target="_new"  Text="GIN Search" Value="Issue Items"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/SearchGINGRN.aspx" target="_new"  Text="GRN Search" Value="Receive Items"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Update Document" Value="DOCUpdate" NavigateUrl="~/UpdateDocument.aspx" target="_new" ></asp:MenuItem> 
+                                                            <asp:MenuItem ImageUrl="~/images/ItemStatus.png" NavigateUrl="~/InventoryStatus.aspx" target="_new"  Text="Item Status" Value="Item Status"></asp:MenuItem>
+
+                                                        </asp:MenuItem>
+                                                        <asp:MenuItem Text="Reports" Value="Reports">
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=ItemList"  target="_new" Text="Item List" Value="Item List"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=AssetsCodeLables"  target="_new" Text="Assets Code Lables" Value="AssetsCodeLables"></asp:MenuItem>
+
+                                                            <asp:MenuItem Text="IBR Reports" Value="IBR Reports">
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=StoreInventoryBalances" target="_new" Text="Inv. Balance" Value="Inv. Balance"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=FullStoreInventoryBalances" target="_new" Text="Full Inv. Balance" Value="Full Inv. Balance"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=ITInventoryBalances" target="_new" Text="IT Inv. Balance" Value="IT Inv. Balance"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=FAInventoryBalances" target="_new" Text="FA Inv. Balance" Value="FA Inv. Balance"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=SPInventoryBalances" target="_new" Text="SP Inv. Balance" Value="SP Inv. Balance"></asp:MenuItem>
+
+                                                                <asp:MenuItem Enabled="False" Selectable="False" SeparatorImageUrl="~/images/lineseparator.png"></asp:MenuItem>
+
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=StoreInventoryBalancesCustom" target="_new" Text="Custom Inv. Balance" Value="CInv. Balance"></asp:MenuItem>
+                                                                 
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=StoreInventoryValuation_ALL" target="_new" Text="Inventory Valuation" Value="Inventory Valuation"></asp:MenuItem>
+
+                                                            </asp:MenuItem>
+
+
+
+
+
+
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=ItemsFrequencyReport" target="_new"  Text="Item Frequency" Value="Item Frequency"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=MaterialIssueRequest" target="_new"  Text="MIR Report" Value="MIR"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=GoodsReceiptNote" target="_new"  Text="GRN Report" Value="GRN"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=GoodsIssueNote" target="_new"  Text="GIN Report" Value="GIN"></asp:MenuItem> 
+                                                           
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=GINAssetsCodeList"  target="_new" Text="GIN - Assets Code List" Value="GINAssetsCodeList"></asp:MenuItem>
+                                                              
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=MaterialReturnGIN" target="_new"  Text="Material Return GIN" Value="MRG"></asp:MenuItem> 
+                                                                                                                       
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=GIN_GRN_Info" target="_new"  Text="GIN-GRN Reference" Value="GINGRN"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=DailyStoreTransactions" target="_new"  Text="Daily Trans." Value="Daily Trans. Report"></asp:MenuItem>
+                                                            <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=GatePass" target="_new"  Text="GatePass Report" Value="GatePass"></asp:MenuItem>
+                                                            <asp:MenuItem Text="Admin Reports" Value="Admin Reports">
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=StoreTransactionsInfo" target="_new"  Text="Store Trans." Value="Store Trans."></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=BW_ConsQuartRequisition" target="_new"  Text="Requisition" Value="Requisition"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=BW_Dyn_ConsStockBalance_Requisition" target="_new"  Text="Requisition/Stock" Value="RequisitionStock"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=OABW_Dyn_ConsStockBalance_Requisition" target="_new"  Text="Cons. Requisition/Stock" Value="Cons.RequisitionStock"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=SYB_DistributionList" target="_new"  Text="Syllabus Distribution List" Value="SyllabusDistributionList"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=OABW_Dyn_ConsSyllabusRequisition" target="_new"  Text="Cons. Syllabus Requisition" Value="Cons.SyllabusRequisition"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=SYB_AnnualRequisition" target="_new"  Text="Annual Syllabus Requisition" Value="AnnualSybRequisition"></asp:MenuItem>
+                                                                <asp:MenuItem NavigateUrl="~/ReportsMain.aspx?rptname=BW_DateW_ConsStockInhand" target="_new"  Text="Branch Date Wise Stock Balance" Value="DateWiseStockBalance"></asp:MenuItem>
+                                                            </asp:MenuItem>
+                                                        </asp:MenuItem>
+                                                    </Items>
+                                                    <StaticMenuItemStyle HorizontalPadding="10px" />
+                                                </asp:Menu>
+
+                                            </td>
+                                            <td align="right" width="76%" style="width: 38%">
+
+
+
+                                                <asp:Label ID="Label1" runat="server" Font-Names="Calibri" Font-Size="16pt" ForeColor="#FF9900" Style="font-size: medium" Font-Italic="True" Font-Underline="True" BackColor="Yellow"> <a href="Logout.aspx">Logout</a> </asp:Label>
+
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="text-align: right; height: 10px; vertical-align: bottom; padding-right: 10px">&nbsp;</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <%--OnClientSelectedTabChanged="ClientSelectedTabChangedHandler"--%>
+
+
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+
+
+                                </td>
+                            </tr>
+
+                            <%--                            <tr>
+                                <td class="auto-style3" style="text-align: right; height: 30px; vertical-align: bottom; padding-right: 10px">Inventory Management System 1.0</td>
+                            </tr>--%>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <%--<td class="auto-style3" style="text-align: right; height: 30px; vertical-align: bottom; padding-right: 10px">                                   
+                                    <asp:Label ID="lblUser" runat="server" Text="Label" ForeColor="#FFCC00" Font-Names="Calibri" Font-Size="11pt"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblBranch" runat="server" Font-Bold="True" Font-Names="Calibri" Font-Size="11pt" ForeColor="#FFCC00" CssClass="style3"></asp:Label>
+                                    <asp:Label ID="lblBranch0" runat="server" Font-Bold="True" Font-Names="Calibri" Font-Size="14pt" ForeColor="Black" CssClass="style3">----</asp:Label>
+                                    <asp:Label ID="lblCity" runat="server" Font-Bold="True" Font-Names="Calibri" Font-Size="11pt" ForeColor="#FFCC00" CssClass="style3"></asp:Label>
+
+                                </td>--%>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </div>
+
+        <div class="main">
+        </div>
+        <div class="clear">
+        </div>
+        <div class="footer" style="text-align: center;font-size: 14px;">
+            &copy; Copyright(s) FPS & HSS 
+        </div>
+
+
+
+    </form>
+
+    <script src="App_Themes/Dashboard/libs/activatables.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        activatables('page', ['page-1', 'page-2', 'page-3']);
+    </script>
+
+    <script type="text/javascript" src="App_Themes/Dashboard/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="App_Themes/Dashboard/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="App_Themes/Dashboard/libs/inettuts.js"></script>
+
+
+
+    <script type="text/javascript" src="JS/jquery-3.3.1.js"></script>
+
+    <!-- Bootstrap Js -->
+    <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+
+
+	 
+    <!-- Metis Menu Js -->
+    <script src="JS/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="JS/morris/raphael-2.1.0.min.js"></script>
+    <script src="js/morris/morris.js"></script>
+	
+	
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	
+	
+
+
+  
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+
+<head>
+
+    <title>horizontal menubar</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            color: #FFFFFF;
+            text-transform: capitalize;
+            background: #003333;
+        }
+
+        #main {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #header {
+            width: 100%;
+            height: 112px;
+            border-bottom: 1px solid #FFCC33;
+            border-radius: 10px;
+        }
+
+        .logo {
+            padding-top: 12px;
+        }
+
+        <!-- -->
+
+        #menuCtr {
+            height: 40px;
+            width: 100%;
+            border-bottom: 1px solid #FFCC33;
+            border-top: 1px solid #FFCC33;
+            border-radius: 50px;
+        }
+
+        .menubox {
+            height: 40px;
+            margin: 0 auto;
+            width: 980px;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 2px 0;
+        }
+
+            .menu li {
+                float: left;
+                position: relative;
+            }
+
+                .menu li a {
+                    padding: 10px 28px 10px 28px;
+                    display: block;
+                    background: #FF9933;
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    font-weight: bold;
+                    font-size: 13px;
+                    border-left: 1px solid #330066;
+                }
+
+                    .menu li a:hover, .menu li.first a {
+                        background: #0094ff;
+                    }
+
+            .menu ul {
+                top: 36px;
+                position: absolute;
+            }
+
+                .menu ul li {
+                    float: none;
+                    display: none;
+                }
+
+                    .menu ul li a {
+                        border: none;
+                        margin: 1px 0px;
+                    }
+
+
+
+            .menu li:hover > a {
+                background: #330066;
+            }
+
+            .menu li:hover > ul li a:hover {
+                background: #00ff21;
+            }
+
+
+
+            .menu li:hover > ul li, .menu li:hover > ul li a {
+                display: block;
+                background: #FF9933;
+            }
+
+        #slideCtr {
+            height: 400px;
+            width: 980px;
+            margin-top: 12px;
+            border-radius: 10px;
+            border: 1px solid #FFCC00;
+            margin: 0 auto;
+            border-top: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <div id="header">
+
+            <center>
+
+                <img src="logo.png" class="logo" />
+
+            </center>
+
+        </div>
+
+        <div id="menuCtr">
+
+            <div class="menubox">
+
+                <ul class="menu">
+
+                    <li class="first"> <a href="#">Home</a>
+                    
+                        <ul>
+
+                            <li><a href="#">Dashboard</a></li>
+
+                            <li><a href="#">Screen Lock</a></li>
+
+                            <li><a href="#">Logout</a></li>
+
+                        </ul>
+
+
+                    </li>
+
+                    <li>
+                        <a href="#">Setup</a>
+
+                        <ul>
+
+                            <li><a href="#">Post Balances</a></li>
+
+                            <li><a href="#">Items Master</a></li>
+
+                            <li><a href="#">Vendor Master</a></li>
+
+                        </ul>
+
+
+                    </li>
+
+                    <li>
+                        <a href="#">Material</a>
+
+                        <ul>
+
+                            <li><a href="#">MIR</a></li>
+
+                            <li><a href="#">Requisition</a></li>    
+
+                        </ul>
+
+
+                    </li>
+
+
+                    <li>
+                        <a href="#">Store</a>
+
+                        <ul>
+
+                            <li><a href="#">Single Opening Balance</a></li>
+
+                            <li><a href="#">Bulk Opening Balance</a></li>
+
+                            <li><a href="#">Store View</a></li>
+
+                            <li><a href="#">Goods Issued (GIN)</a></li>
+
+                            <li><a href="#">Goods Received (GRN)</a></li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <li> <a href="#">Procurement</a></li>
+
+                    <li> <a href="#">Assets</a></li>
+
+                    <li> <a href="#">Work Order</a></li>
+
+
+                    <li> <a href="#">Reports</a></li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div id="slideCtr"> </div>
+
+    </div>
+
+</body>
+
+</head>
+
+</html>

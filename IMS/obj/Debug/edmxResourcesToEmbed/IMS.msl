@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="INVENTORYModelStoreContainer" CdmEntityContainer="INVENTORYEntities1">
+    <EntitySetMapping Name="DUM_Items">
+      <EntityTypeMapping TypeName="INVENTORYModel.DUM_Items">
+        <MappingFragment StoreEntitySet="DUM_Items">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="INVENTORYModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblApprovals">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblApproval">
+        <MappingFragment StoreEntitySet="tblApproval">
+          <ScalarProperty Name="pkAprID" ColumnName="pkAprID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkQuotID" ColumnName="fkQuotID" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBrands">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblBrand">
+        <MappingFragment StoreEntitySet="tblBrands">
+          <ScalarProperty Name="pkBrandID" ColumnName="pkBrandID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBudgets">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblBudget">
+        <MappingFragment StoreEntitySet="tblBudget">
+          <ScalarProperty Name="pkBudgTrID" ColumnName="pkBudgTrID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkBudgID" ColumnName="fkBudgID" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="YearID" ColumnName="YearID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBudgetMains">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblBudgetMain">
+        <MappingFragment StoreEntitySet="tblBudgetMain">
+          <ScalarProperty Name="pkBudgID" ColumnName="pkBudgID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="BudgTitle" ColumnName="BudgTitle" />
+          <ScalarProperty Name="BudgYear" ColumnName="BudgYear" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGLReferences">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblGLReference">
+        <MappingFragment StoreEntitySet="tblGLReference">
+          <ScalarProperty Name="pkGLID" ColumnName="pkGLID" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInventories">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblInventory">
+        <MappingFragment StoreEntitySet="tblInventory">
+          <ScalarProperty Name="pkInvID" ColumnName="pkInvID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="fkModelID" ColumnName="fkModelID" />
+          <ScalarProperty Name="fkBrandID" ColumnName="fkBrandID" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkgrdID" ColumnName="fkgrdID" />
+          <ScalarProperty Name="fkStoreID" ColumnName="fkStoreID" />
+          <ScalarProperty Name="fkLocID" ColumnName="fkLocID" />
+          <ScalarProperty Name="OPBDate" ColumnName="OPBDate" />
+          <ScalarProperty Name="OPBalance" ColumnName="OPBalance" />
+          <ScalarProperty Name="OrderLimit" ColumnName="OrderLimit" />
+          <ScalarProperty Name="LastOrderDate" ColumnName="LastOrderDate" />
+          <ScalarProperty Name="LastRate" ColumnName="LastRate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="QttyIssued" ColumnName="QttyIssued" />
+          <ScalarProperty Name="QttyReceived" ColumnName="QttyReceived" />
+          <ScalarProperty Name="CRBalance" ColumnName="CRBalance" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIssueds">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblIssued">
+        <MappingFragment StoreEntitySet="tblIssued">
+          <ScalarProperty Name="pkIssuID" ColumnName="pkIssuID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkLocID" ColumnName="fkLocID" />
+          <ScalarProperty Name="IssuDate" ColumnName="IssuDate" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemCategories">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblItemCategory">
+        <MappingFragment StoreEntitySet="tblItemCategory">
+          <ScalarProperty Name="pkCatID" ColumnName="pkCatID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CatCode" ColumnName="CatCode" />
+          <ScalarProperty Name="CTag" ColumnName="CTag" />
+          <ScalarProperty Name="CatTitle" ColumnName="CatTitle" />
+          <ScalarProperty Name="fkGLCode" ColumnName="fkGLCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemDisposals">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblItemDisposal">
+        <MappingFragment StoreEntitySet="tblItemDisposal">
+          <ScalarProperty Name="pkIDspoID" ColumnName="pkIDspoID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkLocID" ColumnName="fkLocID" />
+          <ScalarProperty Name="DisposalDate" ColumnName="DisposalDate" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemReturns">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblItemReturn">
+        <MappingFragment StoreEntitySet="tblItemReturn">
+          <ScalarProperty Name="pkIRetuID" ColumnName="pkIRetuID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkLocID" ColumnName="fkLocID" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="RetuDate" ColumnName="RetuDate" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItems">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblItem">
+        <MappingFragment StoreEntitySet="tblItems">
+          <ScalarProperty Name="pkItemID" ColumnName="pkItemID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkCatID" ColumnName="fkCatID" />
+          <ScalarProperty Name="fkSubCatID" ColumnName="fkSubCatID" />
+          <ScalarProperty Name="fkItemHeadID" ColumnName="fkItemHeadID" />
+          <ScalarProperty Name="fkItemTypeID" ColumnName="fkItemTypeID" />
+          <ScalarProperty Name="CTag" ColumnName="CTag" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ItemTitle" ColumnName="ItemTitle" />
+          <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemsHeads">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblItemsHead">
+        <MappingFragment StoreEntitySet="tblItemsHead">
+          <ScalarProperty Name="pkItemHeadID" ColumnName="pkItemHeadID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkCatID" ColumnName="fkCatID" />
+          <ScalarProperty Name="fkSubCatID" ColumnName="fkSubCatID" />
+          <ScalarProperty Name="fkItemTypeID" ColumnName="fkItemTypeID" />
+          <ScalarProperty Name="ItemHeadCode" ColumnName="ItemHeadCode" />
+          <ScalarProperty Name="ItemHeadTitle" ColumnName="ItemHeadTitle" />
+          <ScalarProperty Name="ItemHeadDescription" ColumnName="ItemHeadDescription" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblItemTypes">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblItemType">
+        <MappingFragment StoreEntitySet="tblItemType">
+          <ScalarProperty Name="pkItemTypeID" ColumnName="pkItemTypeID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkSubCatID" ColumnName="fkSubCatID" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocations">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblLocation">
+        <MappingFragment StoreEntitySet="tblLocations">
+          <ScalarProperty Name="pkLocID" ColumnName="pkLocID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkStoreID" ColumnName="fkStoreID" />
+          <ScalarProperty Name="RackNo" ColumnName="RackNo" />
+          <ScalarProperty Name="ShelfNo" ColumnName="ShelfNo" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModels">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblModel">
+        <MappingFragment StoreEntitySet="tblModel">
+          <ScalarProperty Name="pkModelID" ColumnName="pkModelID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOrderDetails">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblOrderDetail">
+        <MappingFragment StoreEntitySet="tblOrderDetail">
+          <ScalarProperty Name="pkOrdDtID" ColumnName="pkOrdDtID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkOrdID" ColumnName="fkOrdID" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="ItemSpecs" ColumnName="ItemSpecs" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="POQtty" ColumnName="POQtty" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="PORate" ColumnName="PORate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="OKQtty" ColumnName="OKQtty" />
+          <ScalarProperty Name="DefQtty" ColumnName="DefQtty" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOrders">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblOrder">
+        <MappingFragment StoreEntitySet="tblOrders">
+          <ScalarProperty Name="pkOrdID" ColumnName="pkOrdID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkPOID" ColumnName="fkPOID" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="fkLocID" ColumnName="fkLocID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPurchases">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblPurchase">
+        <MappingFragment StoreEntitySet="tblPurchase">
+          <ScalarProperty Name="pkPoTrID" ColumnName="pkPoTrID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkPOID" ColumnName="fkPOID" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="ItemSpecs" ColumnName="ItemSpecs" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPurchaseMains">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblPurchaseMain">
+        <MappingFragment StoreEntitySet="tblPurchaseMain">
+          <ScalarProperty Name="pkPOID" ColumnName="pkPOID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomid" ColumnName="fkcomid" />
+          <ScalarProperty Name="fkProjID" ColumnName="fkProjID" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="fkQuotID" ColumnName="fkQuotID" />
+          <ScalarProperty Name="QuotDate" ColumnName="QuotDate" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="RefPerson" ColumnName="RefPerson" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkDeptID" ColumnName="fkDeptID" />
+          <ScalarProperty Name="ShipAt" ColumnName="ShipAt" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuotations">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblQuotation">
+        <MappingFragment StoreEntitySet="tblQuotation">
+          <ScalarProperty Name="pkQuotTrID" ColumnName="pkQuotTrID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkQuotID" ColumnName="fkQuotID" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsConfirm" ColumnName="IsConfirm" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuotationMains">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblQuotationMain">
+        <MappingFragment StoreEntitySet="tblQuotationMain">
+          <ScalarProperty Name="pkQuotID" ColumnName="pkQuotID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkReqID" ColumnName="fkReqID" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="QuotationID" ColumnName="QuotationID" />
+          <ScalarProperty Name="QuotDate" ColumnName="QuotDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReceiveds">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblReceived">
+        <MappingFragment StoreEntitySet="tblReceived">
+          <ScalarProperty Name="pkRecvID" ColumnName="pkRecvID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkLocID" ColumnName="fkLocID" />
+          <ScalarProperty Name="RecvDate" ColumnName="RecvDate" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Qtty" ColumnName="Qtty" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReqTypes">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblReqType">
+        <MappingFragment StoreEntitySet="tblReqType">
+          <ScalarProperty Name="pkReqTypID" ColumnName="pkReqTypID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRequisitions">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblRequisition">
+        <MappingFragment StoreEntitySet="tblRequisition">
+          <ScalarProperty Name="pkReqTrID" ColumnName="pkReqTrID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkReqID" ColumnName="fkReqID" />
+          <ScalarProperty Name="fkItemID" ColumnName="fkItemID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="InStockBalance" ColumnName="InStockBalance" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="QttyRequired" ColumnName="QttyRequired" />
+          <ScalarProperty Name="QttyApproved" ColumnName="QttyApproved" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRequisitionMains">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblRequisitionMain">
+        <MappingFragment StoreEntitySet="tblRequisitionMain">
+          <ScalarProperty Name="pkReqID" ColumnName="pkReqID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="fkdeptID" ColumnName="fkdeptID" />
+          <ScalarProperty Name="fkReqTypID" ColumnName="fkReqTypID" />
+          <ScalarProperty Name="ReqDate" ColumnName="ReqDate" />
+          <ScalarProperty Name="ReqNumber" ColumnName="ReqNumber" />
+          <ScalarProperty Name="ReqTitle" ColumnName="ReqTitle" />
+          <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+          <ScalarProperty Name="ExpDelivDate" ColumnName="ExpDelivDate" />
+          <ScalarProperty Name="SubmitBy" ColumnName="SubmitBy" />
+          <ScalarProperty Name="SubmitTo" ColumnName="SubmitTo" />
+          <ScalarProperty Name="VerifyBy" ColumnName="VerifyBy" />
+          <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="POfficerID" ColumnName="POfficerID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStores">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblStore">
+        <MappingFragment StoreEntitySet="tblStores">
+          <ScalarProperty Name="pkStoreID" ColumnName="pkStoreID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="fkbrhid" ColumnName="fkbrhid" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubCategories">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblSubCategory">
+        <MappingFragment StoreEntitySet="tblSubCategory">
+          <ScalarProperty Name="pkSubCatID" ColumnName="pkSubCatID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="SubCatCode" ColumnName="SubCatCode" />
+          <ScalarProperty Name="CTag" ColumnName="CTag" />
+          <ScalarProperty Name="fkCatID" ColumnName="fkCatID" />
+          <ScalarProperty Name="SubCatTitle" ColumnName="SubCatTitle" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVendCategories">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblVendCategory">
+        <MappingFragment StoreEntitySet="tblVendCategory">
+          <ScalarProperty Name="pkVendCatID" ColumnName="pkVendCatID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="VCatName" ColumnName="VCatName" />
+          <ScalarProperty Name="TaxPerc" ColumnName="TaxPerc" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVendors">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblVendor">
+        <MappingFragment StoreEntitySet="tblVendors">
+          <ScalarProperty Name="pkVendID" ColumnName="pkVendID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="GLCode" ColumnName="GLCode" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="fkVendCatID" ColumnName="fkVendCatID" />
+          <ScalarProperty Name="fkVendTypID" ColumnName="fkVendTypID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="LandPhone" ColumnName="LandPhone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="CPName1" ColumnName="CPName1" />
+          <ScalarProperty Name="CPName2" ColumnName="CPName2" />
+          <ScalarProperty Name="CPNumber1" ColumnName="CPNumber1" />
+          <ScalarProperty Name="CPNumber2" ColumnName="CPNumber2" />
+          <ScalarProperty Name="SkypeID" ColumnName="SkypeID" />
+          <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+          <ScalarProperty Name="RefBranchID" ColumnName="RefBranchID" />
+          <ScalarProperty Name="RefDeptID" ColumnName="RefDeptID" />
+          <ScalarProperty Name="ReferBy" ColumnName="ReferBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVendorTypes">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblVendorType">
+        <MappingFragment StoreEntitySet="tblVendorType">
+          <ScalarProperty Name="pkVendTypID" ColumnName="pkVendTypID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="VendType" ColumnName="VendType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMastParas">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblMastPara">
+        <MappingFragment StoreEntitySet="tblMastPara">
+          <ScalarProperty Name="MastParaID" ColumnName="MastParaID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="ProgPath" ColumnName="ProgPath" />
+          <ScalarProperty Name="DBFPath" ColumnName="DBFPath" />
+          <ScalarProperty Name="NewyearOK" ColumnName="NewyearOK" />
+          <ScalarProperty Name="LastEstimateNo" ColumnName="LastEstimateNo" />
+          <ScalarProperty Name="PrintEstno" ColumnName="PrintEstno" />
+          <ScalarProperty Name="PrintPONo" ColumnName="PrintPONo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPayments">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblPayment">
+        <MappingFragment StoreEntitySet="tblPayments">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="EstimateNo" ColumnName="EstimateNo" />
+          <ScalarProperty Name="Workno" ColumnName="Workno" />
+          <ScalarProperty Name="PayID" ColumnName="PayID" />
+          <ScalarProperty Name="EntDate" ColumnName="EntDate" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="GlCode" ColumnName="GlCode" />
+          <ScalarProperty Name="PaidAmt" ColumnName="PaidAmt" />
+          <ScalarProperty Name="PayRecmd" ColumnName="PayRecmd" />
+          <ScalarProperty Name="Taxamt" ColumnName="Taxamt" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="PayDetail" ColumnName="PayDetail" />
+          <ScalarProperty Name="Hold" ColumnName="Hold" />
+          <ScalarProperty Name="ChqReady" ColumnName="ChqReady" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="Chqno" ColumnName="Chqno" />
+          <ScalarProperty Name="ChqDate" ColumnName="ChqDate" />
+          <ScalarProperty Name="BkAccount" ColumnName="BkAccount" />
+          <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="RecvdBy" ColumnName="RecvdBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+          <ScalarProperty Name="UsrID" ColumnName="UsrID" />
+          <ScalarProperty Name="UsrDT" ColumnName="UsrDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWODetails">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblWODetail">
+        <MappingFragment StoreEntitySet="tblWODetail">
+          <ScalarProperty Name="EstDetailID" ColumnName="EstDetailID" />
+          <ScalarProperty Name="EstimateNo" ColumnName="EstimateNo" />
+          <ScalarProperty Name="fkVendID" ColumnName="fkVendID" />
+          <ScalarProperty Name="WorkNo" ColumnName="WorkNo" />
+          <ScalarProperty Name="PayID" ColumnName="PayID" />
+          <ScalarProperty Name="EntDate" ColumnName="EntDate" />
+          <ScalarProperty Name="GrossAmt" ColumnName="GrossAmt" />
+          <ScalarProperty Name="PaidAmt" ColumnName="PaidAmt" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="PayRecmd" ColumnName="PayRecmd" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="BillInvoice" ColumnName="BillInvoice" />
+          <ScalarProperty Name="PayDetail" ColumnName="PayDetail" />
+          <ScalarProperty Name="LockDele" ColumnName="LockDele" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="NewTrans" ColumnName="NewTrans" />
+          <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWOMains">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblWOMain">
+        <MappingFragment StoreEntitySet="tblWOMain">
+          <ScalarProperty Name="EstMainID" ColumnName="EstMainID" />
+          <ScalarProperty Name="EstimateID" ColumnName="EstimateID" />
+          <ScalarProperty Name="EstimateNo" ColumnName="EstimateNo" />
+          <ScalarProperty Name="fkbrhID" ColumnName="fkbrhID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="ProjtypeID" ColumnName="ProjtypeID" />
+          <ScalarProperty Name="fkcomID" ColumnName="fkcomID" />
+          <ScalarProperty Name="SystemID" ColumnName="SystemID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EstDate" ColumnName="EstDate" />
+          <ScalarProperty Name="Acdyear" ColumnName="Acdyear" />
+          <ScalarProperty Name="fkUserID" ColumnName="fkUserID" />
+          <ScalarProperty Name="UsrDT" ColumnName="UsrDT" />
+          <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+          <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWOMasters">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblWOMaster">
+        <MappingFragment StoreEntitySet="tblWOMaster">
+          <ScalarProperty Name="EstMastID" ColumnName="EstMastID" />
+          <ScalarProperty Name="EstimateNo" ColumnName="EstimateNo" />
+          <ScalarProperty Name="EstDate" ColumnName="EstDate" />
+          <ScalarProperty Name="WorkNo" ColumnName="WorkNo" />
+          <ScalarProperty Name="WorkDesc" ColumnName="WorkDesc" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="LockDele" ColumnName="LockDele" />
+          <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWOTypes">
+      <EntityTypeMapping TypeName="INVENTORYModel.tblWOType">
+        <MappingFragment StoreEntitySet="tblWOType">
+          <ScalarProperty Name="ProjtypeID" ColumnName="ProjtypeID" />
+          <ScalarProperty Name="ProjTitle" ColumnName="ProjTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

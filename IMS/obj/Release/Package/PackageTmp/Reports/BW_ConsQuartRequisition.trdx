@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="ERP01" Width="12.9999224344889in" Name="BW_ConsQuartRequisition" xmlns="http://schemas.telerik.com/reporting/2012/3.4">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT   [fkReqSubTypID],&#xD;&#xA;[acdDescription],[ReqMonths]&#xD;&#xA;      ,[ReqTitle]&#xD;&#xA;      ,[ItemHeadTitle]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[Unit]&#xD;&#xA;      ,[Rate]&#xD;&#xA;      ,[ECD]&#xD;&#xA;      ,[ELP]&#xD;&#xA;      ,[JNC]&#xD;&#xA;      ,[NCJ]&#xD;&#xA;      ,[ONC]&#xD;&#xA;      ,[ODC]&#xD;&#xA;      ,[ALV]&#xD;&#xA;      ,[ABC]&#xD;&#xA;      ,[ELH]&#xD;&#xA;      ,[DCH]&#xD;&#xA;      ,[HSP]&#xD;&#xA;      ,[HKP]&#xD;&#xA;      ,[HJP]&#xD;&#xA;      ,[HJH]&#xD;&#xA;      ,[HKG]&#xD;&#xA;      ,[HJG]&#xD;&#xA;      ,[HKC]&#xD;&#xA;      ,[HCC]&#xD;&#xA;      ,[HKN]&#xD;&#xA;      ,[HOG]&#xD;&#xA;  ,[HO]&#xD;&#xA;&#x9;  ,[TotalQtty]&#xD;&#xA;&#x9;  ,TotalAmount&#xD;&#xA;  FROM [INVENTORY].[dbo].[tblConsoRequisition_BW]" Name="ERP01" />
+  </DataSources>
+  <Items>
+    <ReportFooterSection PageBreak="None" Height="0.256647189458212in" Name="reportFooter">
+      <Style Visible="True" />
+      <Items>
+        <TextBox Width="2.97916668390435in" Height="0.256568352381388in" Left="0.0208333333333333in" Top="0in" Value="Grand Total :" CanGrow="True" Name="itemTitleCountFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Right">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+            <Padding Left="0.1in" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921593419736in" Height="0.256568352381388in" Left="3.00007883707682in" Top="0in" Value="=Sum(Fields.ECD*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="eLMSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399920957636858in" Height="0.256568352381388in" Left="3.40007909138997in" Top="0in" Value="=Sum(Fields.ELP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="eLPSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921593419736in" Height="0.256568352381388in" Left="3.80007870992025in" Top="0in" Value="=Sum(Fields.JNC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="jNCSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="4.2000789642334in" Top="0in" Value="=Sum(Fields.NCJ*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="nCJSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="4.60007890065511in" Top="0in" Value="=Sum(Fields.ONC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="oNCSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="5.00007851918538in" Top="0in" Value="=Sum(Fields.ODC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="oDCSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="5.40007877349854in" Top="0in" Value="=Sum(Fields.ALV*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="aLVSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.39992063974542in" Height="0.256568352381388in" Left="5.80007902781169in" Top="0in" Value="=Sum(Fields.ABC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="aBCSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921911311175in" Height="0.256568352381388in" Left="6.20007864634196in" Top="0in" Value="=Sum(Fields.ELH*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="eLHSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="6.60007890065511in" Top="0in" Value="=Sum(Fields.DCH*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="dCHSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="7.00007851918538in" Top="0in" Value="=Sum(Fields.HSP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hSPSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="7.40007877349854in" Top="0in" Value="=Sum(Fields.HKP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKPSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.4in" Height="0.256568336486816in" Left="7.80007902781169in" Top="0in" Value="=Sum(Fields.HJP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hJPSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399841802668597in" Height="0.256568352381388in" Left="8.20015811920166in" Top="0in" Value="=Sum(Fields.HJH*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hJHSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921911311175in" Height="0.256568352381388in" Left="8.60007890065511in" Top="0in" Value="=Sum(Fields.HKG*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKGSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="9.00007915496826in" Top="0in" Value="=Sum(Fields.HJG*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hJGSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921268224716in" Height="0.256568342447281in" Left="9.40000025431315in" Top="0in" Value="=Sum(Fields.HOG*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hOGSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>                                
+        <TextBox Width="0.399921275528297in" Height="0.256568352381388in" Left="9.8000005086263in" Top="0in" Value="=Sum(Fields.HKN*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKNSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921911311175in" Height="0.256568352381388in" Left="10.2000007629395in" Top="0in" Value="=Sum(Fields.HKC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKCSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.39992318287693in" Height="0.256568352381388in" Left="10.5999997456868in" Top="0in" Value="=Sum(Fields.HCC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hCCSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699921148371722in" Height="0.256568352381388in" Left="11.0000012715658in" Top="0in" Value="=Sum(Fields.TotalQtty)" Format="{0:N0}" CanGrow="True" Name="totalQttySumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Right">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" Bold="True" />
+            <Padding Right="0.02in" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.499921656998024in" Height="0.256568352381388in" Left="11.7000007629395in" Top="0in" Value=" " Format="{0:#.00}" CanGrow="True" Name="rateSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Center">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.799922165624326in" Height="0.256568352381388in" Left="12.2000007629395in" Top="0in" Value="=Sum(Fields.TotalAmount)" Format="{0:N0}" CanGrow="True" Name="totalAmountSumFunctionTextBox2" StyleName="Data">
+          <Style BackgroundColor="166, 166, 166" TextAlign="Right">
+            <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" Bold="True" />
+            <Padding Right="0.02in" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportFooterSection>
+    <PageHeaderSection Height="0.900000095367432in" Name="pageHeader">
+      <Items>
+        <TextBox Width="12.9790895148601in" Height="0.358333326522786in" Left="0.0208333333333333in" Top="0in" Value="BRANCH WISE CONSOLIDATED QUARTERLY REQUISITION" Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" />
+        </TextBox>
+        <TextBox Width="12.9582552009901in" Height="0.268710533777873in" Left="0.0416666666666667in" Top="0.631289482116699in" Value="=Fields.acdDescription" CanGrow="True" Name="acdDescriptionDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <Font Size="12pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="12.9374218676568in" Height="0.249901533126831in" Left="0.0625in" Top="0.381309270858765in" Value="=Fields.ReqMonths" CanGrow="True" Name="reqMonthsDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <Font Size="10pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.441666682561239in" Name="pageFooter">
+      <Items>
+        <TextBox Width="2.47916687351893in" Height="0.400000015894572in" Left="0.0208333333333333in" Top="0.0208333333333333in" Value="=NOW()" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Width="4.39980400425624in" Height="0.400000015894572in" Left="8.60007878961593in" Top="0.0208333333333333in" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="2.47916708037119in" Height="0.179166714350383in" Left="5.70000012715658in" Top="0.131250063578288in" Value="BW_ConsQuartRequisition" Name="reportNameTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.0520833304964292in" Name="reportHeader" />
+    <DetailSection Height="0.260833511749903in" Name="detail">
+      <Items>
+        <TextBox Width="2.47916668390435in" Height="0.237499952316284in" Left="0.0208333333333333in" Top="0.0208333333333333in" Value="=RowNumber() + &quot;.  &quot; +Fields.ItemTitle" CanGrow="True" Name="itemTitleDataTextBox" StyleName="Data">
+          <Style>
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+            <Padding Left="0.1in" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.499921339106585in" Height="0.237499952316284in" Left="2.50007883707682in" Top="0.0208333333333333in" Value="=Fields.Unit" CanGrow="True" TextWrap="False" Name="unitDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921593419736in" Height="0.237499952316284in" Left="3.00007883707682in" Top="0.0208333333333333in" Value="=Fields.ECD" CanGrow="True" Name="eLMDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399920957636858in" Height="0.237499952316284in" Left="3.40007909138997in" Top="0.0208333333333333in" Value="=Fields.ELP" CanGrow="True" Name="eLPDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921593419736in" Height="0.237499952316284in" Left="3.80007870992025in" Top="0.0208333333333333in" Value="=Fields.JNC" CanGrow="True" Name="jNCDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="4.2000789642334in" Top="0.0208333333333333in" Value="=Fields.NCJ" CanGrow="True" Name="nCJDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="4.60007890065511in" Top="0.0208333333333333in" Value="=Fields.ONC" CanGrow="True" Name="oNCDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="5.00007851918538in" Top="0.0208333333333333in" Value="=Fields.ODC" CanGrow="True" Name="oDCDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="5.40007877349854in" Top="0.0208333333333333in" Value="=Fields.ALV" CanGrow="True" Name="aLVDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.39992063974542in" Height="0.237499952316284in" Left="5.80007902781169in" Top="0.0208333333333333in" Value="=Fields.ABC" CanGrow="True" Name="aBCDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921911311175in" Height="0.237499952316284in" Left="6.20007864634196in" Top="0.0208333333333333in" Value="=Fields.ELH" CanGrow="True" Name="eLHDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="6.60007890065511in" Top="0.0208333333333333in" Value="=Fields.DCH" CanGrow="True" Name="dCHDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="7.00007851918538in" Top="0.0208333333333333in" Value="=Fields.HSP" CanGrow="True" Name="hSPDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="7.40007877349854in" Top="0.0208333333333333in" Value="=Fields.HKP" CanGrow="True" Name="hKPDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.4in" Height="0.24in" Left="7.80007902781169in" Top="0.0208333333333333in" Value="=Fields.HJP" CanGrow="True" Name="hJPDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399841709931691in" Height="0.24in" Left="8.20015811920166in" Top="0.0208333333333333in" Value="=Fields.HJH" CanGrow="True" Name="hJHDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921162923177in" Height="0.24in" Left="8.60007890065511in" Top="0.0208333333333333in" Value="=Fields.HKG" CanGrow="True" Name="hKGDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="9.00007915496826in" Top="0.0208333333333333in" Value="=Fields.HJG" CanGrow="True" Name="hJGDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921268224716in" Height="0.237499952316284in" Left="9.40000025431315in" Top="0.0233335494995117in" Value="=Fields.HOG" CanGrow="True" Name="hOGDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>                        
+        <TextBox Width="0.399921275528297in" Height="0.237499952316284in" Left="9.8000005086263in" Top="0.0208333333333333in" Value="=Fields.HKN" CanGrow="True" Name="hKNDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.399921911311175in" Height="0.237499952316284in" Left="10.2000007629395in" Top="0.0208333333333333in" Value="=Fields.HKC" CanGrow="True" Name="hKCDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.39992318287693in" Height="0.237499952316284in" Left="10.5999997456868in" Top="0.0208333333333333in" Value="=Fields.HCC" CanGrow="True" Name="hCCDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699921148371722in" Height="0.237499952316284in" Left="11.0000012715658in" Top="0.0208333333333333in" Value="=Fields.TotalQtty" Format="{0:N2}" CanGrow="True" Name="totalQttyDataTextBox" StyleName="Data">
+          <Style TextAlign="Right">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" Size="9pt" Bold="True" />
+            <Padding Right="0.02in" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.499921656998024in" Height="0.237499952316284in" Left="11.7000007629395in" Top="0.0208333333333333in" Value="=Fields.Rate" Format="{0:#.00}" CanGrow="True" Name="rateDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.799922165624326in" Height="0.237499952316284in" Left="12.2000007629395in" Top="0.0208333333333333in" Value="=Fields.TotalAmount" Format="{0:N0}" CanGrow="True" Name="totalAmountDataTextBox" StyleName="Data">
+          <Style TextAlign="Right">
+            <BorderStyle Default="Solid" />
+            <Font Name="Calibri" Size="9pt" Bold="True" />
+            <Padding Right="0.02in" />
+          </Style>
+        </TextBox>
+
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style BackgroundColor="241, 238, 232" Color="50, 50, 50">
+        <Font Name="Verdana" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="50, 50, 50" Color="227, 222, 209" VerticalAlign="Middle">
+        <Font Name="Verdana" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Verdana" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="160, 160, 160" VerticalAlign="Middle">
+        <Font Name="Verdana" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Legal" Landscape="True">
+      <Margins>
+        <MarginsU Left="0.5in" Right="0.150000005960464in" Top="0.150000005960464in" Bottom="0.150000005960464in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Filters>
+    <Filter Expression="=Fields.fkReqSubTypID" Operator="Equal" Value="=Parameters.ReqTypeID.Value" />
+  </Filters>
+  <Groups>
+    <Group Name="fkReqSubTypIDGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" PageBreak="None" Height="0.239681800206502in" Name="fkReqSubTypIDGroupHeaderSection">
+          <Style Visible="True" />
+          <Items>
+            <TextBox Width="0.864583190727839in" Height="0.208431800206502in" Left="0.135416666666667in" Top="0.03125in" Value="=Fields.fkReqSubTypID" CanGrow="True" Name="fkReqSubTypIDDataTextBox" StyleName="Data">
+              <Style Visible="False" />
+            </TextBox>
+            <TextBox Width="12.958255836773in" Height="0.239642222722372in" Left="0.041666666666667in" Top="0in" KeepTogether="True" Value="=Fields.ReqTitle" CanGrow="True" Name="reqTitleDataTextBox" StyleName="Data">
+              <Style Visible="True" TextAlign="Center">
+                <Font Size="12pt" Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PrintOnEveryPage="False" PageBreak="None" Height="0.28000013033549in" Name="fkReqSubTypIDGroupFooterSection">
+          <Items>
+            <TextBox Width="2.97916668390435in" Height="0.279166618982951in" Left="0.0208333333333333in" Top="0in" Value="Group Total :" CanGrow="True" Name="itemTitleCountFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Right">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+                <Padding Left="0.1in" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921593419736in" Height="0.279166618982951in" Left="3.00007883707682in" Top="0in" Value="=Sum(Fields.ECD*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="eLMSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399920957636858in" Height="0.279166618982951in" Left="3.40007909138997in" Top="0in" Value="=Sum(Fields.ELP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="eLPSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921593419736in" Height="0.279166618982951in" Left="3.80007870992025in" Top="0in" Value="=Sum(Fields.JNC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="jNCSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="4.2000789642334in" Top="0in" Value="=Sum(Fields.NCJ*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="nCJSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="4.60007890065511in" Top="0in" Value="=Sum(Fields.ONC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="oNCSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="5.00007851918538in" Top="0in" Value="=Sum(Fields.ODC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="oDCSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="5.40007877349854in" Top="0in" Value="=Sum(Fields.ALV*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="aLVSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.39992063974542in" Height="0.279166618982951in" Left="5.80007902781169in" Top="0in" Value="=Sum(Fields.ABC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="aBCSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.279166618982951in" Left="6.20007864634196in" Top="0in" Value="=Sum(Fields.ELH*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="eLHSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="6.60007890065511in" Top="0in" Value="=Sum(Fields.DCH*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="dCHSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="7.00007851918538in" Top="0in" Value="=Sum(Fields.HSP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hSPSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="7.40007877349854in" Top="0in" Value="=Sum(Fields.HKP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKPSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.4in" Height="0.28in" Left="7.80007902781169in" Top="0in" Value="=Sum(Fields.HJP*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hJPSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399841802668597in" Height="0.279166618982951in" Left="8.20015811920166in" Top="0in" Value="=Sum(Fields.HJH*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hJHSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.279166618982951in" Left="8.60007890065511in" Top="0in" Value="=Sum(Fields.HKG*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKGSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="9.00007915496826in" Top="0in" Value="=Sum(Fields.HJG*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hJGSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.279166618982951in" Left="9.8000005086263in" Top="0in" Value="=Sum(Fields.HKN*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKNSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.279166618982951in" Left="10.2000007629395in" Top="0in" Value="=Sum(Fields.HKC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hKCSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.39992318287693in" Height="0.279166618982951in" Left="10.5999997456868in" Top="0in" Value="=Sum(Fields.HCC*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hCCSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.699921148371722in" Height="0.279166618982951in" Left="11.0000012715658in" Top="0in" Value="=Sum(Fields.TotalQtty)" Format="{0:N0}" CanGrow="True" Name="totalQttySumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Right">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+                <Padding Right="0.02in" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.499921656998024in" Height="0.279166618982951in" Left="11.7000007629395in" Top="0in" Value=" " Format="{0:#.00}" CanGrow="True" Name="rateSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.799922165624326in" Height="0.279166618982951in" Left="12.2000007629395in" Top="0in" Value="=Sum(Fields.TotalAmount)" Format="{0:N0}" CanGrow="True" Name="totalAmountSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Right">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+                <Padding Right="0.02in" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921268224716in" Height="0.279166609048843in" Left="9.40000025431315in" Top="0in" Value="=Sum(Fields.HOG*Fields.Rate)" Format="{0:#.}" CanGrow="True" Name="hOGSumFunctionTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.fkReqSubTypID" />
+      </Groupings>
+    </Group>
+    <Group Name="itemHeadTitleGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.241666714350382in" Name="itemHeadTitleGroupHeaderSection">
+          <Items>
+            <TextBox Width="12.9790889585501in" Height="0.220833381017049in" Left="0.0208332538604734in" Top="0.0208333333333333in" Value="=RowNumber() + &quot;.  &quot; + Fields.ItemHeadTitle" CanGrow="True" Name="itemHeadTitleDataTextBox" StyleName="Data">
+              <Style BackgroundColor="217, 217, 217">
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="None" Height="0.229999999205272in" Name="itemHeadTitleGroupFooterSection">
+          <Items>
+            <TextBox Width="2.97916668390435in" Height="0.227083603541056in" Left="0.0208333333333333in" Top="0in" Value="Total Amount :" CanGrow="True" Name="itemTitleCountFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Right">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+                <Padding Left="0.1in" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921593419736in" Height="0.227083603541056in" Left="3.00007883707682in" Top="0in" Value="=Sum(Fields.ECD*Fields.Rate)" CanGrow="True" Name="eLMSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399920957636858in" Height="0.227083603541056in" Left="3.40007909138997in" Top="0in" Value="=Sum(Fields.ELP*Fields.Rate)" CanGrow="True" Name="eLPSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921593419736in" Height="0.227083603541056in" Left="3.80007870992025in" Top="0in" Value="=Sum(Fields.JNC*Fields.Rate)" CanGrow="True" Name="jNCSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="4.2000789642334in" Top="0in" Value="=Sum(Fields.NCJ*Fields.Rate)" CanGrow="True" Name="nCJSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="4.60007890065511in" Top="0in" Value="=Sum(Fields.ONC*Fields.Rate)" CanGrow="True" Name="oNCSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="5.00007851918538in" Top="0in" Value="=Sum(Fields.ODC*Fields.Rate)" CanGrow="True" Name="oDCSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="5.40007877349854in" Top="0in" Value="=Sum(Fields.ALV*Fields.Rate)" CanGrow="True" Name="aLVSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.39992063974542in" Height="0.227083603541056in" Left="5.80007902781169in" Top="0in" Value="=Sum(Fields.ABC*Fields.Rate)" CanGrow="True" Name="aBCSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.227083603541056in" Left="6.20007864634196in" Top="0in" Value="=Sum(Fields.ELH*Fields.Rate)" CanGrow="True" Name="eLHSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="6.60007890065511in" Top="0in" Value="=Sum(Fields.DCH*Fields.Rate)" CanGrow="True" Name="dCHSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="7.00007851918538in" Top="0in" Value="=Sum(Fields.HSP*Fields.Rate)" CanGrow="True" Name="hSPSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="7.40007877349854in" Top="0in" Value="=Sum(Fields.HKP*Fields.Rate)" CanGrow="True" Name="hKPSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.4in" Height="0.23in" Left="7.80007902781169in" Top="0in" Value="=Sum(Fields.HJP*Fields.Rate)" CanGrow="True" Name="hJPSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399841802668597in" Height="0.227083603541056in" Left="8.20015811920166in" Top="0in" Value="=Sum(Fields.HJH*Fields.Rate)" CanGrow="True" Name="hJHSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.227083603541056in" Left="8.60007890065511in" Top="0in" Value="=Sum(Fields.HKG*Fields.Rate)" CanGrow="True" Name="hKGSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="9.00007915496826in" Top="0in" Value="=Sum(Fields.HJG*Fields.Rate)" CanGrow="True" Name="hJGSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.227083603541056in" Left="9.8000005086263in" Top="0in" Value="=Sum(Fields.HKN*Fields.Rate)" CanGrow="True" Name="hKNSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.227083603541056in" Left="10.2000007629395in" Top="0in" Value="=Sum(Fields.HKC*Fields.Rate)" CanGrow="True" Name="hKCSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.39992318287693in" Height="0.227083603541056in" Left="10.5999997456868in" Top="0in" Value="=Sum(Fields.HCC*Fields.Rate)" CanGrow="True" Name="hCCSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.699921148371722in" Height="0.227083603541056in" Left="11.0000012715658in" Top="0in" Value="=Sum(Fields.TotalQtty)" Format="{0:N2}" CanGrow="True" Name="totalQttySumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Right">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+                <Padding Right="0.02in" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.499921656998024in" Height="0.227083603541056in" Left="11.7000007629395in" Top="0in" Value=" " Format="{0:#.00}" CanGrow="True" Name="rateSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.799922165624326in" Height="0.227083603541056in" Left="12.2000007629395in" Top="0in" Value="=Sum(Fields.TotalAmount)" Format="{0:N0}" CanGrow="True" Name="totalAmountSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Right">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+                <Padding Right="0.02in" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921268224716in" Height="0.22708360850811in" Left="9.40000025431315in" Top="0in" Value="=Sum(Fields.HOG*Fields.Rate)" CanGrow="True" Name="hOGSumFunctionTextBox1" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.ItemHeadTitle" />
+      </Groupings>
+    </Group>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.420833349227905in" Name="labelsGroupHeaderSection">
+          <Items>
+            <TextBox Width="2.4999605913957in" Height="0.400000005960464in" Left="0.00003937880198154in" Top="0.0208333333333333in" Value="Item Title" CanGrow="True" Name="itemTitleCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.499921339106585in" Height="0.400000015894572in" Left="2.50007883707682in" Top="0.0208333333333333in" Value="Unit" CanGrow="True" Name="unitCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921593419736in" Height="0.400000015894572in" Left="3.00007883707682in" Top="0.0208333333333333in" Value="ECD" CanGrow="True" Name="eLMCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399920957636858in" Height="0.400000015894572in" Left="3.40007909138997in" Top="0.0208333333333333in" Value="ELP" CanGrow="True" Name="eLPCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921593419736in" Height="0.400000015894572in" Left="3.80007870992025in" Top="0.0208333333333333in" Value="JNC" CanGrow="True" Name="jNCCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="4.2000789642334in" Top="0.0208333333333333in" Value="NCJ" CanGrow="True" Name="nCJCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="4.60007890065511in" Top="0.0208333333333333in" Value="ONC" CanGrow="True" Name="oNCCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="5.00007851918538in" Top="0.0208333333333333in" Value="ODC" CanGrow="True" Name="oDCCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="5.40007877349854in" Top="0.0208333333333333in" Value="ALV" CanGrow="True" Name="aLVCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.39992063974542in" Height="0.400000015894572in" Left="5.80007902781169in" Top="0.0208333333333333in" Value="ABC" CanGrow="True" Name="aBCCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.400000015894572in" Left="6.20007864634196in" Top="0.0208333333333333in" Value="ELH" CanGrow="True" Name="eLHCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="6.60007890065511in" Top="0.0208333333333333in" Value="DCH" CanGrow="True" Name="dCHCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="7.00007851918538in" Top="0.0208333333333333in" Value="HSP" CanGrow="True" Name="hSPCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="7.40007877349854in" Top="0.0208333333333333in" Value="HKP" CanGrow="True" Name="hKPCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.4in" Height="0.4in" Left="7.80007902781169in" Top="0.0208333333333333in" Value="HJP" CanGrow="True" Name="hJPCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399841802668597in" Height="0.400000015894572in" Left="8.20015811920166in" Top="0.0208333333333333in" Value="HJH" CanGrow="True" Name="hJHCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.400000015894572in" Left="8.60007890065511in" Top="0.0208333333333333in" Value="HKG" CanGrow="True" Name="hKGCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="9.00007915496826in" Top="0.0208333333333333in" Value="HJG" CanGrow="True" Name="hJGCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921275528297in" Height="0.400000015894572in" Left="9.8000005086263in" Top="0.0208333333333333in" Value="HKN" CanGrow="True" Name="hKNCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921911311175in" Height="0.400000015894572in" Left="10.2000007629395in" Top="0.0208333333333333in" Value="HKC" CanGrow="True" Name="hKCCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.39992318287693in" Height="0.400000015894572in" Left="10.5999997456868in" Top="0.0208333333333333in" Value="HCC" CanGrow="True" Name="hCCCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.699921148371722in" Height="0.400000015894572in" Left="11.0000012715658in" Top="0.0208333333333333in" Value="Total Qtty" CanGrow="True" Name="totalQttyCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.499921656998024in" Height="0.400000015894572in" Left="11.7000007629395in" Top="0.0208333333333333in" Value="Rate" CanGrow="True" Name="rateCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.799922165624326in" Height="0.400000015894572in" Left="12.2000007629395in" Top="0.0208333333333333in" Value="Total Amount" CanGrow="True" Name="totalAmountCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.399921268224716in" Height="0.400000005960464in" Left="9.40000025431315in" Top="0.0199999995529652in" Value="HOG" CanGrow="True" Name="hOGCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="Gray" Color="Black" TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Calibri" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="None" Height="0in" Name="labelsGroupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="ReqTypeID" Type="Integer" Visible="True" AllowBlank="False" AutoRefresh="True">
+      <Value>
+        <String>5</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

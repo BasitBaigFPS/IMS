@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="INVENTORY" Width="19.9999995962779cm" Name="StoreInventoryBalances" DocumentMapText="= Fields.CatTitle" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT [fksysid]&#xD;&#xA;      ,[fkbrhID]&#xD;&#xA;      ,[fkStoreID]&#xD;&#xA;      ,[fkDeptID]&#xD;&#xA;      ,[SystemName]&#xD;&#xA;      ,[brhName]&#xD;&#xA;      ,[StoreName]&#xD;&#xA;      ,[deptName]&#xD;&#xA;      ,[pkSubCatID]&#xD;&#xA;      ,[pkCatID]&#xD;&#xA;      ,[pkItemHeadID]&#xD;&#xA;      ,[CatTitle]&#xD;&#xA;      ,[SubCatTitle]&#xD;&#xA;      ,[ItemHeadTitle]&#xD;&#xA;      ,[fkItemTypeID]&#xD;&#xA;      ,[ItemCode]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[InvCode]&#xD;&#xA;      ,[Model]&#xD;&#xA;      ,[Brand]&#xD;&#xA;      ,[OPBDate]&#xD;&#xA;      ,[OPBalance]&#xD;&#xA;      ,[YearOPBDate]&#xD;&#xA;      ,[YearOPBalance]&#xD;&#xA;      ,QttyIssued&#xD;&#xA;      ,QttyReceived&#xD;&#xA;      ,[CRBalance]&#xD;&#xA;      ,[IsActive]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_StoreInventoryBalance]&#xD;&#xA; " Name="INVENTORY" />
+  </DataSources>
+  <Items>
+    <ReportFooterSection Height="0.568123211952597cm" Name="reportFooter">
+      <Style Visible="True" />
+      <Items>
+        <TextBox Width="4.67545769851094cm" Height="0.515206546757834cm" Left="0.0529168670558211cm" Top="0.0529166651947631cm" Value="=&quot;Total Record : &quot; + Count(Fields.ItemTitle)" CanGrow="True" Name="itemTitleCountFunctionTextBox3" StyleName="Data" />
+        <TextBox Width="1.57800311598737cm" Height="0.515206546757834cm" Left="12.5460006530205cm" Top="0.0529166651947631cm" Value="=Sum(Fields.YearOPBalance)" CanGrow="True" Name="oPBalanceSumFunctionTextBox3" StyleName="Data">
+          <Style Visible="False" />
+        </TextBox>
+        <TextBox Width="1.79979997210231cm" Height="0.515206546757834cm" Left="18.0999993439516cm" Top="0.0529166651947631cm" Value="=Sum(Fields.CRBalance)" CanGrow="True" Name="cRBalanceSumFunctionTextBox3" StyleName="Data">
+          <Style Visible="False" />
+        </TextBox>
+      </Items>
+    </ReportFooterSection>
+    <PageHeaderSection Height="1.49989992738048cm" Name="pageHeader">
+      <Items>
+        <TextBox Width="19.9470828933302cm" Height="0.899900028311013cm" Left="0.0529166651947631cm" Top="0.599999899069471cm" Value="Item Wise Inventory Balance Report" Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" />
+        </TextBox>
+        <TextBox Width="3.59979963302612cm" Height="0.592969059944153cm" Left="16.3247912125844cm" Top="0.00683097820354761cm" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="4.26508330532957cm" Height="0.592969059944153cm" Left="0.0529166651947631cm" Top="0cm" Value="=NOW()" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Width="10.4198999404907cm" Height="0.592969119548798cm" Left="4.82600051171778cm" Top="0.00683097820354761cm" Value="=Parameters.PrintBy.Value" Name="textBox12" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.645885743613247cm" Name="pageFooter">
+      <Items>
+        <TextBox Width="10.4198998117061cm" Height="0.59296909669724cm" Left="5.50000005046526cm" Top="0.0529166651947631cm" Value="=Parameters.PrintBy.Value" Name="reportNameTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.909488201141357in" Name="reportHeader">
+      <Items>
+        <TextBox Width="2.74708265564289cm" Height="0.699899725519426cm" Left="0.0529168670558211cm" Top="0cm" Value="Branch Name :" CanGrow="True" Name="brhNameCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Left" />
+        </TextBox>
+        <TextBox Width="11.7997991755987cm" Height="0.689442515269527cm" Left="2.8002000443085cm" Top="0.0105573333346791cm" Value="=Fields.brhName" CanGrow="True" Name="brhNameDataTextBox" StyleName="Data">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.74708285750395cm" Height="0.699799602434646cm" Left="0.0529168670558211cm" Top="0.700199691051651cm" Value="Store Name   :" CanGrow="True" Name="storeNameCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Left" />
+        </TextBox>
+        <TextBox Width="4.81979906457512cm" Height="0.699799602434646cm" Left="2.8002000443085cm" Top="0.700199691051651cm" Value="=Fields.StoreName" CanGrow="True" Name="storeNameDataTextBox" StyleName="Data">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.74708285750395cm" Height="0.699699479349866cm" Left="0.0529168670558211cm" Top="1.40019974151692cm" Value="Dept. Name   :" CanGrow="True" Name="deptNameCaptionTextBox" StyleName="Caption">
+          <Style BackgroundColor="89, 89, 89" Color="White" TextAlign="Left" />
+        </TextBox>
+        <TextBox Width="7.49979851955026cm" Height="0.699799602434646cm" Left="2.8002000443085cm" Top="1.40019974151692cm" Value="=Fields.deptName" CanGrow="True" Name="deptNameDataTextBox" StyleName="Data">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.72677040100097in" Height="0.199999968210856in" Left="5.1000010172526in" Top="0.709488232930501in" Value="=&quot;As Of : &quot; + CStr(Now())" Name="textBox11">
+          <Style TextAlign="Right">
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+    <DetailSection Height="0.790000005046526cm" Name="detail">
+      <Items>
+        <TextBox Width="2.24708330075079cm" Height="0.747082729222063cm" Left="0.0529168153577331cm" Top="0.04cm" Value="=Fields.InvCode" CanGrow="True" Name="invCodeDataTextBox" StyleName="Data">
+          <Style Color="Blue" TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Underline="True" />
+          </Style>
+          <Action>
+            <NavigateToReportAction>
+              <ReportSource>
+                <UriReportSource Uri="..\\IMS\\Reports\\ItemLedger.trdx">
+                  <Parameters>
+                    <Parameter Name="invcode">
+                      <Value>
+                        <String>=Fields.InvCode</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="datefrom">
+                      <Value>
+                        <String>="2016-06-01"</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="dateto">
+                      <Value>
+                        <String>="2050-12-31"</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="PrintBy">
+                      <Value>
+                        <String>= Parameters.PrintBy.Value</String>
+                      </Value>
+                    </Parameter>
+                  </Parameters>
+                </UriReportSource>
+              </ReportSource>
+            </NavigateToReportAction>
+          </Action>
+        </TextBox>
+        <TextBox Width="1.69979961884546cm" Height="0.747082729222063cm" Left="2.30020036227808cm" Top="0.04cm" Value="=Fields.ItemCode" CanGrow="True" Name="itemCodeDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="8.95360205036284cm" Height="0.747082729222063cm" Left="4.0002002272931cm" Top="0.04cm" Value="=&quot; &quot; + Fields.ItemTitle" CanGrow="True" Name="itemTitleDataTextBox" StyleName="Data">
+          <Style>
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.52600065302052cm" Height="0.75cm" Left="14.7320008821328cm" Top="0.04cm" Value="= Fields.QttyReceived" CanGrow="True" Name="modelDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.77779842887453cm" Height="0.747082729222063cm" Left="12.9540022234996cm" Top="0.04cm" Value="= Fields.YearOPBalance" CanGrow="True" Name="oPBalanceDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.78cm" Height="0.75cm" Left="18.0999993439516cm" Top="0.04cm" Value="=Fields.CRBalance" CanGrow="True" Name="cRBalanceDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.78cm" Height="0.75cm" Left="16.3001996910516cm" Top="0.04cm" Value="= Fields.QttyIssued" CanGrow="True" Name="textBox2" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style BackgroundColor="241, 238, 232" Color="50, 50, 50">
+        <Font Name="Verdana" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="50, 50, 50" Color="227, 222, 209" VerticalAlign="Middle">
+        <Font Name="Verdana" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Verdana" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="160, 160, 160" VerticalAlign="Middle">
+        <Font Name="Verdana" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4">
+      <Margins>
+        <MarginsU Left="0.5cm" Right="0.5cm" Top="0.25cm" Bottom="0.25mm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Filters>
+    <Filter Expression="=Fields.fksysid" Operator="Equal" Value="=Parameters.System.Value" />
+    <Filter Expression="=Fields.fkbrhID" Operator="Equal" Value="=Parameters.Branch.Value" />
+    <Filter Expression="= Fields.fkDeptID" Operator="Equal" Value="=Parameters.Department.Value" />
+  </Filters>
+  <Groups>
+    <Group Name="System">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.600100526806896cm" Name="groupHeaderSection">
+          <Style VerticalAlign="Middle" />
+          <Items>
+            <TextBox Width="6.24990015447417cm" Height="0.499899422727839cm" Left="7.40000030279159cm" Top="0.100100476341632cm" Value="=Fields.SystemName" Name="SystemName">
+              <Style Color="31, 73, 125" TextAlign="Center">
+                <Font Bold="True" Italic="True" Underline="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.439991602579986cm" Name="groupFooterSection" />
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.SystemName" />
+      </Groupings>
+    </Group>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.802916670324076cm" Name="labelsGroupHeaderSection">
+          <Items>
+            <TextBox Width="2.24708340168132cm" Height="0.74708313294418cm" Left="0.0529166651947631cm" Top="0.0529166651947631cm" Value="Inv.Code" CanGrow="True" Name="catTitleCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="9pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.79999991548029cm" Height="0.74708313294418cm" Left="2.2cm" Top="0.0529166651947631cm" Value="Item Code" CanGrow="True" Name="subCatTitleCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="9pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="8.69960028105065cm" Height="0.74708313294418cm" Left="4.0002002272931cm" Top="0.0529166651947631cm" Value="Item Title" CanGrow="True" Name="itemTitleCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Size="9pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.59259057884163cm" Height="0.75cm" Left="14.7320008821328cm" Top="0.0529166651947631cm" Value="Received" CanGrow="True" Name="modelCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Size="9pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="2.03179856688742cm" Height="0.74708313294418cm" Left="12.7000012616316cm" Top="0.0529166651947631cm" Value="Op.Balanace-01-06-2016" CanGrow="True" Name="oPBalanceCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Size="8pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.89979957720201cm" Height="0.74708313294418cm" Left="18.1001995901211cm" Top="0.0529166651947631cm" Value="CR. Balance" CanGrow="True" Name="cRBalanceCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Size="8pt" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.77520844024071cm" Height="0.747083127498627cm" Left="16.3247912125844cm" Top="0.0529166651947631cm" Value="Issued" CanGrow="True" Name="textBox1" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Size="9pt" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.54426585908786cm" Name="labelsGroupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+    <Group Name="catTitleGroup">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.788332632707244cm" Name="catTitleGroupHeaderSection">
+          <Style BackgroundColor="241, 238, 232" />
+          <Items>
+            <TextBox Width="12.6470833007508cm" Height="0.735415967512481cm" Left="0.0529166651947631cm" Top="0.0529166651947631cm" Value="=Fields.CatTitle" CanGrow="True" Name="catTitleDataTextBox" StyleName="Data">
+              <Style>
+                <Font Bold="True" />
+              </Style>
+              <Action>
+                <ToggleVisibilityAction>
+                  <Targets>
+                    <Target ItemName="subCatTitleGroupHeaderSection" />
+                    <Target ItemName="itemHeadTitleGroupHeaderSection" />
+                    <Target ItemName="detail" />
+                  </Targets>
+                </ToggleVisibilityAction>
+              </Action>
+            </TextBox>
+          </Items>
+          <Action>
+            <ToggleVisibilityAction>
+              <Targets>
+                <Target ItemName="catTitleGroupHeaderSection" />
+              </Targets>
+            </ToggleVisibilityAction>
+          </Action>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.855733232537383cm" Name="catTitleGroupFooterSection">
+          <Style Visible="False" />
+          <Items>
+            <TextBox Width="1.52320833550874cm" Height="0.75cm" Left="0.499999949534735cm" Top="0cm" Value="=Count(Fields.ItemTitle)" CanGrow="True" Name="itemTitleCountFunctionTextBox" StyleName="Data" />
+            <TextBox Width="1.77759697153862cm" Height="0.75cm" Left="12.9540022234996cm" Top="0.105733207304746cm" Value="=Sum(Fields.YearOPBalance)" CanGrow="True" Name="oPBalanceSumFunctionTextBox" StyleName="Data" />
+            <TextBox Width="1.79979997210231cm" Height="0.75cm" Left="18.0999993439516cm" Top="0.105733207304746cm" Value="=Sum(Fields.CRBalance)" CanGrow="True" Name="cRBalanceSumFunctionTextBox" StyleName="Data" />
+            <TextBox Width="1.526000505201cm" Height="0.75cm" Left="14.7019155100449cm" Top="0.105734014748978cm" Value="=Sum(Fields.QttyReceived)" CanGrow="True" Name="textBox9" StyleName="Data" />
+            <TextBox Width="1.77500820159912cm" Height="0.75cm" Left="16.2999994448821cm" Top="0.105734014748978cm" Value="=Sum(Fields.QttyIssued)" CanGrow="True" Name="textBox10" StyleName="Data" />
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.CatTitle" />
+      </Groupings>
+    </Group>
+    <Group Name="subCatTitleGroup">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.800000201861058cm" Name="subCatTitleGroupHeaderSection">
+          <Style BackgroundColor="185, 205, 229" />
+          <Items>
+            <TextBox Width="12.6470849156392cm" Height="0.747083536666295cm" Left="0.0529167825361057cm" Top="0.0529166651947631cm" Value="=Fields.SubCatTitle" CanGrow="True" Name="subCatTitleDataTextBox" StyleName="Data">
+              <Style>
+                <Font Bold="True" />
+              </Style>
+              <Action>
+                <ToggleVisibilityAction>
+                  <Targets>
+                    <Target ItemName="itemHeadTitleGroupHeaderSection" />
+                    <Target ItemName="detail" />
+                  </Targets>
+                </ToggleVisibilityAction>
+              </Action>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.868951902061057cm" Name="subCatTitleGroupFooterSection">
+          <Style Visible="False" />
+          <Items>
+            <TextBox Width="4.67545820316358cm" Height="0.750000025232633cm" Left="0.0529167825361057cm" Top="0.0529166651947631cm" Value="Sub-total:" CanGrow="True" Name="textBox3" StyleName="Caption">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Width="1.52320833550874cm" Height="0.75cm" Left="0.499999949534735cm" Top="0.118851753743639cm" Value="=Count(Fields.ItemTitle)" CanGrow="True" Name="itemTitleCountFunctionTextBox1" StyleName="Data">
+              <Style Color="White" />
+            </TextBox>
+            <TextBox Width="1.77759697153862cm" Height="0.75cm" Left="12.9540022234996cm" Top="0.0633738754446621cm" Value="=Sum(Fields.YearOPBalance)" CanGrow="True" Name="oPBalanceSumFunctionTextBox1" StyleName="Data" />
+            <TextBox Width="1.79979997210231cm" Height="0.75cm" Left="18.0999993439516cm" Top="0.0529166651947631cm" Value="=Sum(Fields.CRBalance)" CanGrow="True" Name="cRBalanceSumFunctionTextBox1" StyleName="Data" />
+            <TextBox Width="1.77500820159912cm" Height="0.75cm" Left="16.3cm" Top="0.06cm" Value="=Sum(Fields.QttyIssued)" CanGrow="True" Name="textBox7" StyleName="Data" />
+            <TextBox Width="1.526000505201cm" Height="0.75cm" Left="14.7239993469795cm" Top="0.06cm" Value="=Sum(Fields.QttyReceived)" CanGrow="True" Name="textBox8" StyleName="Data" />
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.SubCatTitle" />
+      </Groupings>
+    </Group>
+    <Group Name="itemHeadTitleGroup">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.800000201861058cm" Name="itemHeadTitleGroupHeaderSection">
+          <Style BackgroundColor="">
+            <Font Bold="True" />
+          </Style>
+          <Items>
+            <TextBox Width="12.6470849156393cm" Height="0.747083536666295cm" Left="0.0529166980163907cm" Top="0.0529166651947631cm" Value="=Fields.ItemHeadTitle" CanGrow="True" Name="itemHeadTitleDataTextBox" StyleName="Data">
+              <Action>
+                <ToggleVisibilityAction>
+                  <Targets>
+                    <Target ItemName="detail" />
+                  </Targets>
+                </ToggleVisibilityAction>
+              </Action>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.813373900677294cm" Name="itemHeadTitleGroupFooterSection">
+          <Style Visible="False" />
+          <Items>
+            <TextBox Width="4.67545810223305cm" Height="0.750000025232633cm" Left="0.0529166980163907cm" Top="0.0529166651947631cm" Value="Sub-total:" CanGrow="True" Name="textBox4" StyleName="Caption">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Width="1.52320833550874cm" Height="0.75cm" Left="0.499999949534735cm" Top="0.0529166651947631cm" Value="=Count(Fields.ItemTitle)" CanGrow="True" Name="itemTitleCountFunctionTextBox2" StyleName="Data">
+              <Style Color="White" />
+            </TextBox>
+            <TextBox Width="1.77759697153862cm" Height="0.75cm" Left="12.9540022234996cm" Top="0.06cm" Value="=Sum(Fields.YearOPBalance)" CanGrow="True" Name="oPBalanceSumFunctionTextBox2" StyleName="Data" />
+            <TextBox Width="1.79979997210231cm" Height="0.75cm" Left="18.1cm" Top="0.06cm" Value="=Sum(Fields.CRBalance)" CanGrow="True" Name="cRBalanceSumFunctionTextBox2" StyleName="Data" />
+            <TextBox Width="1.52600052978205cm" Height="0.75cm" Left="14.7320008821328cm" Top="0.0633738754446621cm" Value="=Sum(Fields.QttyReceived)" CanGrow="True" Name="textBox5" StyleName="Data" />
+            <TextBox Width="1.7750082565187cm" Height="0.75cm" Left="16.32cm" Top="0.06cm" Value="=Sum(Fields.QttyIssued)" CanGrow="True" Name="textBox6" StyleName="Data" />
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.ItemHeadTitle" />
+      </Groupings>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="System" Type="Integer" Text="=Fields.SystemName" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="INVENTORY" DisplayMember="=Fields.SystemName" ValueMember="= Fields.fksysid" />
+      <Value>
+        <String>= Fields.fksysid</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Branch" Type="Integer" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="INVENTORY" DisplayMember="=Fields.brhName" ValueMember="= Fields.fkbrhID" />
+      <Value>
+        <String>= Fields.fkbrhID</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Department" Type="Integer" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="INVENTORY" DisplayMember="=Fields.deptName" ValueMember="= Fields.fkDeptID" />
+      <Value>
+        <String>= Fields.fkDeptID</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="PrintBy">
+      <Value>
+        <String></String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

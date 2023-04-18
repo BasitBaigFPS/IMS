@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="INVENTORY" Width="7.80000050862629in" Name="StoreTransactionsInfo" xmlns="http://schemas.telerik.com/reporting/2012/3.4">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT   [CreatedDate]&#xD;&#xA;      ,[DocCode]&#xD;&#xA;      ,[InvCode]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[RecvQtty]&#xD;&#xA;      ,[IssueQtty]&#xD;&#xA;      ,[Branch]&#xD;&#xA;      ,[Store]&#xD;&#xA;      ,[VendorName]&#xD;&#xA;      ,[branchid]&#xD;&#xA;      ,[storeid]&#xD;&#xA;&#x9;  ,[DeptiD]&#xD;&#xA;      ,[StoreName]&#xD;&#xA;      ,[brhName]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_StoreTransactions]" Name="INVENTORY" />
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1.55426502227783in" Name="pageHeader">
+      <Items>
+        <TextBox Width="7.79996109008789in" Height="0.358333326522786in" Left="0.00003941853841146in" Top="0.00003941853841146in" Value="Store Transactions Info" Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" VerticalAlign="Middle" />
+        </TextBox>
+        <TextBox Width="1.17908795674642in" Height="0.3in" Left="0.0208333333333333in" Top="0.35845144589742in" Value="Branch Name:" CanGrow="True" Name="brhNameCaptionTextBox" StyleName="Caption">
+          <Style TextAlign="Left">
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.79999987284343in" Height="0.3in" Left="1.20000012715658in" Top="0.35845144589742in" Value="=Fields.brhName" CanGrow="True" Name="brhNameDataTextBox" StyleName="Data">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.17908795674642in" Height="0.304116566975911in" Left="0.0208333333333333in" Top="0.65441377957662in" Value="Store Name:" CanGrow="True" Name="storeNameCaptionTextBox" StyleName="Caption">
+          <Style TextAlign="Left">
+            <Font Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.79999987284343in" Height="0.304116566975911in" Left="1.20000012715658in" Top="0.658530473709106in" Value="=Fields.StoreName" CanGrow="True" Name="storeNameDataTextBox" StyleName="Data">
+          <Style>
+            <Font Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="7.77916717529297in" Height="0.399999936421712in" Left="0.0208333333333335in" Top="1.10000006357829in" Value="=&quot;Date From : &quot; +  Format(&quot;{0:d}&quot;,Parameters.DateFrom.Value) + &quot; Date To : &quot; +  Format(&quot;{0:d}&quot;,Parameters.DateTo.Value)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" Name="textBox3">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Verdana" Bold="True" Underline="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.0999997456868489in" Height="0.400000095367432in" Left="6.2000789642334in" Top="0.42388383547465in" Value="=Fields.branchid" Angle="0" Name="textBox4">
+          <Style Visible="False" />
+        </TextBox>
+        <TextBox Width="0.0999997456868489in" Height="0.399999936421712in" Left="6.40000025431315in" Top="0.423884073893229in" Value="=Fields.storeid" Name="textBox5">
+          <Style Visible="False" />
+        </TextBox>
+        <TextBox Width="0.0520833333333335in" Height="0.400000095367432in" Left="6.60000038146973in" Top="0.423884073893229in" Value="=Fields.DeptiD" Name="textBox6">
+          <Style Visible="False" />
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.441666682561239in" Name="pageFooter">
+      <Items>
+        <TextBox Width="2.37916692097982in" Height="0.400000015894572in" Left="0.0208333333333333in" Top="0.0208333333333333in" Value="=NOW()" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Width="1.80000050862631in" Height="0.400000015894572in" Left="6in" Top="0.0208333333333333in" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="3.00000003973643in" Height="0.400000005960464in" Left="2.80000019073486in" Top="0.0208333333333333in" Value="StoreTransactionsInfo" Name="reportNameTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.0918439002278255in" Name="reportHeader">
+      <Style Visible="False" />
+    </ReportHeaderSection>
+    <ReportFooterSection Height="0.28125in" Name="reportFooter" />
+    <DetailSection Height="0.420833587646484in" Name="detail">
+      <Items>
+        <TextBox Width="1.07916673024496in" Height="0.30398948987325in" Left="0.0208333333333333in" Top="0.0208333333333333in" Value="=Fields.InvCode" CanGrow="True" Name="invCodeDataTextBox" StyleName="Data">
+          <Style TextAlign="Left">
+            <BorderStyle Bottom="Solid" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1pt" />
+            <Font Name="Calibri" Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.89992078145345in" Height="0.30398948987325in" Left="2.30007934570312in" Top="0.0208333333333333in" Value="=Fields.ItemTitle" CanGrow="True" Name="itemTitleDataTextBox" StyleName="Data">
+          <Style>
+            <BorderStyle Bottom="Solid" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1pt" />
+            <Font Name="Verdana" Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.75in" Height="0.30398948987325in" Left="7.00007883707682in" Top="0.0208333333333333in" Value="=Fields.IssueQtty" CanGrow="True" Name="issueQttyDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Bottom="Solid" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1pt" />
+            <Font Name="Verdana" Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.799921353658043in" Height="0.30398948987325in" Left="6.20007832845052in" Top="0.0208333333333333in" Value="=Fields.RecvQtty" CanGrow="True" Name="recvQttyDataTextBox" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Bottom="Solid" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1pt" />
+            <Font Name="Verdana" Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.19992160797119in" Height="0.303989410400391in" Left="1.10007890065511in" Top="0.0208333333333333in" Value="=Fields.DocCode" Name="textBox1">
+          <Style Color="31, 73, 125" VerticalAlign="Middle">
+            <BorderStyle Bottom="Solid" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1pt" />
+            <Font Name="Calibri" Size="8pt" />
+          </Style>
+          <Action>
+            <NavigateToReportAction>
+              <ReportSource>
+                <UriReportSource Uri="=IIF(Fields.RecvQtty&lt;&gt;0,'..\Reports\LinkGoodsReceiptNote.trdx','..\Reports\LinkGoodsIssueNote.trdx')">
+                  <Parameters>
+                    <Parameter Name="Branch">
+                      <Value>
+                        <String>=Fields.branchid</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="Store">
+                      <Value>
+                        <String>=Fields.storeid</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="Dept">
+                      <Value>
+                        <String>=Fields.DeptiD</String>
+                      </Value>
+                    </Parameter>
+                    <Parameter Name="Docno">
+                      <Value>
+                        <String>=Fields.DocCode</String>
+                      </Value>
+                    </Parameter>
+                  </Parameters>
+                </UriReportSource>
+              </ReportSource>
+            </NavigateToReportAction>
+          </Action>
+        </TextBox>
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="18pt" Bold="True" Italic="False" Underline="False" Strikeout="False" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter">
+      <Margins>
+        <MarginsU Left="0.28in" Right="0in" Top="0.2in" Bottom="0.2in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Filters>
+    <Filter Expression="=Fields.storeid" Operator="Equal" Value="=Parameters.StoreID.Value" />
+    <Filter Expression="=Fields.CreatedDate" Operator="GreaterOrEqual" Value="=Parameters.DateFrom.Value" />
+    <Filter Expression="=Fields.CreatedDate" Operator="LessOrEqual" Value="=Parameters.DateTo.Value" />
+  </Filters>
+  <Groups>
+    <Group Name="DateGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.253891229629517in" Name="createdDateGroupHeaderSection">
+          <Items>
+            <TextBox Width="1.37916660308838in" Height="0.233057896296183in" Left="0.0208333333333333in" Top="0.0208333333333333in" Value="Transaction Date:" CanGrow="True" Name="createdDateCaptionTextBox" StyleName="Caption">
+              <Style Visible="True" TextAlign="Left">
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="2.29992151260376in" Height="0.233057896296183in" Left="1.40007877349853in" Top="0.0208333333333333in" Value="=Fields.CreatedDate" Format="{0:d}" CanGrow="True" Name="createdDateDataTextBox" StyleName="Data">
+              <Style Visible="True">
+                <Font Bold="True" Underline="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="After" Height="0.099999745686849in" Name="createdDateGroupFooterSection" />
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Format(&quot;{0:d}&quot;,Fields.CreatedDate)" />
+      </Groupings>
+      <Sortings>
+        <Sorting Expression="=Fields.CreatedDate" Direction="Asc" />
+      </Sortings>
+    </Group>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.36648964881897in" Name="labelsGroupHeaderSection">
+          <Items>
+            <TextBox Width="1.07916673024496in" Height="0.345656315485636in" Left="0.0208333333333333in" Top="0.0208333333333333in" Value="Inventory Code" CanGrow="True" Name="invCodeCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="8pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="3.89992078145345in" Height="0.345656315485636in" Left="2.30007934570312in" Top="0.0208333333333333in" Value="Item Title" CanGrow="True" Name="itemTitleCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="8pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.75in" Height="0.345656315485636in" Left="7.0000794728597in" Top="0.0208333333333333in" Value="Quantity Issue" CanGrow="True" Name="issueQttyCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="8pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="0.799921353658043in" Height="0.345656315485636in" Left="6.2000789642334in" Top="0.0208333333333333in" Value="Quantity Receive" CanGrow="True" Name="recvQttyCaptionTextBox" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="8pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.19992156823476in" Height="0.345656305551529in" Left="1.10007890065511in" Top="0.0208333333333333in" Value="Document Code" CanGrow="True" Name="textBox2" StyleName="Caption">
+              <Style TextAlign="Center">
+                <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Verdana" Size="8pt" Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.100000381469727in" Name="labelsGroupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="DateFrom" Type="DateTime" Visible="True" />
+    <ReportParameter Name="DateTo" Type="DateTime" Visible="True" />
+    <!--<ReportParameter Name="StoreID" Type="Integer" Visible="True" AutoRefresh="True" />-->
+
+    <ReportParameter Name="StoreID" Type="Integer" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="INVENTORY" DisplayMember="= Fields.StoreName" ValueMember="= Fields.storeid" />
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    
+ 
+  </ReportParameters>
+</Report>

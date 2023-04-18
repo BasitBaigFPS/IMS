@@ -1,0 +1,12 @@
+\\200.168.0.5\ims\DAL\bin\Debug\DAL.dll
+\\200.168.0.5\ims\DAL\bin\Debug\DAL.pdb
+\\200.168.0.5\ims\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+\\200.168.0.5\ims\DAL\obj\Debug\DAL.dll
+\\200.168.0.5\ims\DAL\obj\Debug\DAL.pdb
+D:\IMS\DAL\bin\Debug\DAL.dll
+D:\IMS\DAL\bin\Debug\DAL.pdb
+D:\IMS\DAL\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\IMS\DAL\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+D:\IMS\DAL\obj\Debug\DAL.dll
+D:\IMS\DAL\obj\Debug\DAL.pdb
+D:\IMS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

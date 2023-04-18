@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site3.master.cs" Inherits="IMS.Site3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+
+
+ 
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+
+
+     <script type="text/javascript">
+ 
+         $(document).ready(function () {
+             var table = $('#dataTables-dbstudents').DataTable();
+
+             $('#btn-export').on('click', function () {
+                 $('<table>').append(table.$('tr').clone()).table2excel({
+                     exclude: ".excludeThisClass",
+                     name: "MyStore_Department",
+                     filename: "IMS_Store_Document" //do not include extension
+                 });
+             });
+         })
+
+
+
+
+         //function doit(type, fn, dl) {
+         //    var elt = document.getElementById('dataTables-dbstudents');
+         //    var wb = XLSX.utils.table_to_book(elt, { sheet: "IMS_Store" });
+         //    return dl ?
+         //        XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+         //        XLSX.writeFile(wb, fn || ('IMS_Store_Document.' + (type || 'xlsx')));
+         //}
+
+
+
+    </script>
+
+
+</body>
+</html>

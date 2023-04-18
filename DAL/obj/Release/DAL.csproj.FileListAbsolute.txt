@@ -1,0 +1,7 @@
+D:\IMS\DAL\bin\Release\DAL.dll
+D:\IMS\DAL\bin\Release\DAL.pdb
+D:\IMS\DAL\obj\Release\DAL.dll
+D:\IMS\DAL\obj\Release\DAL.pdb
+D:\IMS\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\IMS\DAL\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\IMS\DAL\bin\Release\Microsoft.ReportViewer.WebForms.dll

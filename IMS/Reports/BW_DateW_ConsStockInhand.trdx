@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="INVENTORY" Width="6.5in" Name="BW_DateW_ConsStockInhand" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="sp_ConsolidateItemLedger" SelectCommandType="StoredProcedure" Name="INVENTORY" ParameterValues="{&quot;@fkcomid&quot;:&quot;1&quot;,&quot;@fkcityid&quot;:&quot;1&quot;,&quot;@Uptodate&quot;:&quot;2020-08-31&quot;,&quot;@Token&quot;:&quot;SST&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="Int32" Name="@fkcomid">
+          <Value>
+            <String>= Parameters.fkcomid.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="Int32" Name="@fkcityid">
+          <Value>
+            <String>= Parameters.fkcityid.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Uptodate">
+          <Value>
+            <String>= Parameters.AsofDate.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@Token">
+          <Value>
+            <String>= Parameters.Token.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.0520833333333333in" Name="detailSection1">
+      <Style Visible="False" />
+    </DetailSection>
+    <PageHeaderSection Height="0.400000095367432in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="5.905511805in" Height="0.300000009084025in" Left="0in" Top="0in" Value="Branch Wise Consolidated Stock Balance Asof Date: {Parameters.AsofDate.Value}" Name="ReportNameTextBox">
+          <Style>
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.300000031789144in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.199999996594727in" Left="4.925196852in" Top="0.100000063578288in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.50000007947286in" Name="reportHeaderSection1">
+      <Items>
+        <Crosstab DataSourceName="INVENTORY" Width="3.59583242604444in" Height="0.399999996723218in" Left="0.100000063578288in" Top="0.100000063578288in" ColumnHeadersPrintOnEveryPage="True" Name="crosstab1" StyleName="Corporate.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.891666784247702in" Height="0.2in" Left="0in" Top="0in" Value="= Sum(Fields.CRBALANCE)" Format="{0:N0}" Name="textBox4" StyleName="Corporate.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.891666496508094in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.199999974519751in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.70416598311842in" Height="0.200000046045324in" Left="0in" Top="0in" Value="Item Title" Name="textBox3" StyleName="Corporate.TableHeader">
+                    <Style TextAlign="Center" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="itemtitle1">
+              <ReportItem>
+                <TextBox Width="2.70416598311842in" Height="0.199999938756965in" Left="0in" Top="0in" Value="= Fields.itemtitle" Name="textBox2" StyleName="Corporate.TableGroup" />
+              </ReportItem>
+              <Groupings>
+                <Grouping Expression="= Fields.itemtitle" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.itemtitle" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="brhname1">
+              <ReportItem>
+                <TextBox Width="0.891666784247702in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.brhname" Name="textBox1" StyleName="Corporate.TableGroup">
+                  <Style TextAlign="Center" VerticalAlign="Middle" />
+                </TextBox>
+              </ReportItem>
+              <Groupings>
+                <Grouping Expression="= Fields.brhname" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.brhname" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </ColumnGroups>
+          <Sortings>
+            <Sorting Expression="= Fields.itemtitle" Direction="Asc" />
+          </Sortings>
+        </Crosstab>
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Corporate.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="227, 230, 237">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Legal" Landscape="True">
+      <Margins>
+        <MarginsU Left="0.100000001490116in" Right="0in" Top="0.100000001490116in" Bottom="0.100000001490116in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="fkcomid" Type="Integer" Text="Compay" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="fkcityid" Type="Integer" Text="City" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="AsofDate" Text="AsofDate" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>2021-08-31</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Token" Text="REPORT TYPE (WHS, SST, ITS)" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>SST</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

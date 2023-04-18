@@ -1,0 +1,107 @@
+2.2.13 (Powerful Penny)
+f55dd57ac087f2f1111d4efe3dc7ee442d892887
+o:Sass::Tree::Node:@children[o:Sass::Tree::RuleNode
+;[o:Sass::Tree::PropNode;[:@prop_syntax:new:@value".#F7F4E9 url(body.png) repeat-x top center:@filename"colour.sass:
+@options{:
+filename@:
+style:nested:load_paths[".:property_syntax0:
+cacheT:cache_location"./.sass-cache:
+@linei:
+@name"background;@;
+@
+;i:@rules[" bodyo;
+;[o;;[; ;
+;" #888;@;
+@
+;i
+;"
+color;@;
+@
+;i ;["
+smallo;
+;[o;;[; ;
+;"#434A48;@;
+@
+;i
+;"backgroundo;;[; ;
+;" #fff;@;
+@
+;i;"
+color;@;
+@
+;i;["Xth, #navigation, .active, input[type=submit], .pagination a:hover, .date td a:hovero;
+;[o;;[; ;
+;",#fff url(gradient.png) repeat-x 0 -28px;@;
+@
+;i;"background;@;
+@
+;i;["1select, textarea, input, td, #content, #footo;
+;[o;;[; ;
+;"0 -18px;@;
+@
+;i;"background-position;@;
+@
+;i;["tro;
+;[o;;[; ;
+;"
+0 1px;@;
+@
+;i;"background-position;@;
+@
+;i;["
+#contento;
+;[o;;[; ;
+;" #fff;@;
+@
+;i;"
+color;@;
+@
+;i;["&.active, th, #head, #navigation ao;
+;[o;;[; ;
+;" #ddd;@;
+@
+;i;"border-coloro;
+;[o;;[; ;
+;" #fff;@;
+@
+;i ;"
+color;@;
+@
+;i;["&[type=submit];@;
+@
+;i;["
+inputo;
+;[o;;[; ;
+;" #ddd;@;
+@
+;i#;"border-color;@;
+@
+;i";["-select, textarea, h1, h2, h3, h4, h5, h6o;
+;[o;;[; ;
+;" #888;@;
+@
+;i&;"
+coloro;
+;[o;;[; ;
+;"url(edit.png);@;
+@
+;i(;"background-image;@;
+@
+;i';["&.edito;
+;[o;;[; ;
+;"url(trash.png);@;
+@
+;i*;"background-image;@;
+@
+;i);["
+&.delete;@;
+@
+;i%;["ao;
+;[o;;[; ;
+;"#313230;@;
+@
+;i-;"background;@;
+@
+;i,;["
+#heado;
+;[o;

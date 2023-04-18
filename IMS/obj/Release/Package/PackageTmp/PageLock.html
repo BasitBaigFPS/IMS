@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script language="javascript">
+
+
+        function password() {
+            Ret = prompt('You need a password to enter this page', "The password is: password. Try some wrong entries first.")
+            if (Ret == "password") {
+                Redirect();
+            }
+            else {
+                alert('Wrong Password. Try Again.')
+                location = "javascript:password()"
+            }
+        }
+
+        function Redirect() {
+            window.location = "TestLogin.html";
+        }
+        // End of JavaScript-->
+
+    </script>
+
+    <title>JavaFILE</title>
+    <base target="leftframe" />
+</head>
+
+<body bgcolor="#ffffff" link="#CC0033" vlink="#333399" alink="#FF0000" onload="password(); return true;">
+    <!--content start-->
+    <!--content stop-->
+</body>
+</html>

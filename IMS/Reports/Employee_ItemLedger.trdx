@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="sqlDataSource1" Width="8.3000005086263in" Name="Employee_ItemLedger" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="INVENTORY1" SelectCommand="SELECT  [fkIssuedToID]&#xD;&#xA;      ,[IssuedToID]&#xD;&#xA;      ,[IssuDate]&#xD;&#xA;      ,[IssuedStatus]&#xD;&#xA;      ,[IssuedType]&#xD;&#xA;      ,[MIRNumber]&#xD;&#xA;&#x9;  ,Branch&#xD;&#xA;&#x9;  ,Department&#xD;&#xA;      ,[EmployeesName]&#xD;&#xA;      ,[empName]&#xD;&#xA;      ,[GINCode]&#xD;&#xA;      ,[InvCode]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[Qtty]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_EmployeeWiseItemIssued]&#xD;&#xA;  where year(IssuDate) &gt; 2015" Name="sqlDataSource1" />
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0.899999936421712in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="1.29992071787516in" Height="0.199999968210856in" Left="0.0999999841054281in" Top="0.699999968210856in" Value="Issue Date" Name="textBox5">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.69992160797119in" Height="0.199999888737996in" Left="1.39999961853027in" Top="0.699999968210856in" Value="GIN Code" Name="textBox7">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2999210357666in" Height="0.199999968210856in" Left="3.10000006357829in" Top="0.699999968210856in" Value="Inventory Code" Name="textBox8">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.09992249806722in" Height="0.199999968210856in" Left="4.39999993642171in" Top="0.699999968210856in" Value="Item Title" Name="textBox9">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.700000127156576in" Height="0.199999968210856in" Left="7.50000127156575in" Top="0.699999968210856in" Value="Quantity" Name="textBox10">
+          <Style TextAlign="Center">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <DetailSection Height="0.399999936421712in" Name="detailSection1">
+      <Items>
+        <TextBox Width="1.69992160797119in" Height="0.199999968210856in" Left="1.39999961853027in" Top="0.0999999046325684in" Value="= Fields.GINCode" Name="textBox1">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.2999210357666in" Height="0.199999968210856in" Left="3.10000006357829in" Top="0.0999999046325684in" Value="= Fields.InvCode" Name="textBox2">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="3.09992218017578in" Height="0.199999968210856in" Left="4.39999993642171in" Top="0.0999999046325684in" Value="= Fields.ItemTitle" Name="textBox3">
+          <Style>
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.700000127156575in" Height="0.199999968210856in" Left="7.50000063578288in" Top="0.0999999046325684in" Value="= Fields.Qtty" Name="textBox4">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.29992071787516in" Height="0.199999968210856in" Left="0.100000063578288in" Top="0.0999999046325684in" Value="= Fields.IssuDate" Name="textBox6">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Name="Calibri" Size="9pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="0.300000190734863in" Name="pageFooterSection1" />
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="Branch" Text="Select Branch" Visible="True">
+      <AvailableValues DataSourceName="sqlDataSource1" ValueMember="= Fields.Branch" />
+    </ReportParameter>
+    <ReportParameter Name="Department" Text="Select Department" Visible="True">
+      <AvailableValues DataSourceName="sqlDataSource1" DisplayMember="= Fields.Department" ValueMember="= Fields.Department" />
+      <Value>
+        <String>= Fields.Department</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Employee" Text="Select Employee" Visible="True">
+      <AvailableValues DataSourceName="sqlDataSource1" DisplayMember="= Fields.EmployeesName" ValueMember="= Fields.EmployeesName" />
+    </ReportParameter>
+  </ReportParameters>
+</Report>

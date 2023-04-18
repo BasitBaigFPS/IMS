@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="INVENTORY" Width="19.3499973001083cm" Name="QuarterlyRequisition" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="/****** Script for SelectTopNRows command from SSMS  ******/&#xD;&#xA;SELECT [fkReqTypID]&#xD;&#xA;      ,[fkReqSubTypID]&#xD;&#xA;      ,[RequisitionType]&#xD;&#xA;      ,[RequisitionSubType]&#xD;&#xA;      ,[fkacdid]&#xD;&#xA;      ,[acdDescription]&#xD;&#xA;      ,[fkQuatID]&#xD;&#xA;      ,[QuarterName]&#xD;&#xA;      ,[QuarterDescription]&#xD;&#xA;      ,[fkItemHeadID]&#xD;&#xA;      ,[ItemHeadTitle]&#xD;&#xA;      ,[fkItemID]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[Unit]&#xD;&#xA;      ,[EstRate]&#xD;&#xA;      ,[ActRate]&#xD;&#xA;      ,[IsActive]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_RequisitionItemList]&#xD;&#xA;order by ItemHeadTitle" Name="INVENTORY" />
+  </DataSources>
+  <Items>
+    <ReportFooterSection Height="0.254000103958439cm" Name="reportFooter">
+      <Style Visible="True" TextAlign="Right" VerticalAlign="Middle" />
+    </ReportFooterSection>
+    <PageHeaderSection PrintOnFirstPage="False" PrintOnLastPage="False" Height="0.132291662986905cm" Name="pageHeader" />
+    <PageFooterSection Height="1.10583343132006cm" Name="pageFooter">
+      <Items>
+        <TextBox Width="4.84708326546351cm" Height="1.00000010093053cm" Left="0.0529166651947631cm" Top="0.0529166651947631cm" Value="=NOW()" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Width="4.86970098957092cm" Height="0.747083536666295cm" Left="14.480296291661cm" Top="0.0999987383683874cm" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="9.20000026714635cm" Height="0.74708354473114cm" Left="5.0999998486042cm" Top="0.179375351048996cm" Value="Inventory Management System - ItemsRateList.trdx" Name="reportNameTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="2.15370851566013cm" Name="reportHeader">
+      <Items>
+        <TextBox Width="19.2498950958252cm" Height="0.593999400300201cm" Left="0.100102091230096cm" Top="1.52400011909802cm" Value="= Fields.QuarterDescription + '- ( ' + Fields.acdDescription + ' )'&#xD;&#xA; " Name="textBox16" StyleName="Title">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Bottom="None" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1.5pt" />
+            <Font Size="11pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="19.2498950958252cm" Height="0.632000148195421cm" Left="0.100102091230096cm" Top="0.892000195805226cm" Value="='REGULAR, KITCHEN &amp; ART ITEM RATE LIST'" Name="textBox8" StyleName="Title">
+          <Style Color="Black" TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Bottom="None" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1.5pt" />
+            <Font Size="12pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="19.2498951711253cm" Height="0.799799955691498cm" Left="0.100102091230096cm" Top="0.0920001958052263cm" Value="FOUNDATION PUBLIC SCHOOL / HEAD START SCHOOL SYSTEM" Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Bottom="None" />
+            <BorderColor Bottom="Black" />
+            <BorderWidth Bottom="1.5pt" />
+            <Font Size="14pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+    <DetailSection Height="0.742916670241289cm" Name="detail">
+      <Style>
+        <BorderStyle Bottom="Solid" />
+      </Style>
+      <Items>
+        <TextBox Width="9.39780012323618cm" Height="0.69cm" Left="1.01619965269806cm" Top="0.0529166651947631cm" Value="= &quot; &quot; + Fields.ItemTitle" CanGrow="True" Name="itemTitleDataTextBox" StyleName="Data">
+          <Style>
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Bold="False" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.01599986242454cm" Height="0.689999997615814cm" Left="0cm" Top="0.0529166651947631cm" Value="" CanGrow="True" Name="textBox5" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="4.06380141437845cm" Height="0.689999997615814cm" Left="10.6682002724115cm" Top="0.052816542109983cm" Value="= Fields.Unit" CanGrow="True" Name="textBox14" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.03199881444775cm" Height="0.689999997615814cm" Left="14.9860002291123cm" Top="0.0529166651947631cm" Value="= Fields.EstRate" Format="{0:N2}" CanGrow="True" Name="textBox18" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.03199887275696cm" Height="0.689999997615814cm" Left="17.2177954652923cm" Top="0.0529166651947631cm" Value="= Fields.ActRate" Format="{0:N2}" CanGrow="True" Name="textBox7" StyleName="Data">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </TextBox>
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="28, 58, 112">
+        <Font Name="Tahoma" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Book Antiqua" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Apex.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="105, 103, 109" Color="206, 185, 102" VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Book Antiqua" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Apex.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Book Antiqua" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Apex.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4">
+      <Margins>
+        <MarginsU Left="1cm" Right="0.25cm" Top="0.25cm" Bottom="0.15cm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Sortings>
+    <Sorting Expression="=Fields.ItemHeadTitle" Direction="Asc" />
+    <Sorting Expression="=Fields.ItemTitle" Direction="Asc" />
+  </Sortings>
+  <Groups>
+    <Group Name="ReqType">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" PageBreak="None" KeepTogether="True" Height="0.599999904632568in" Name="groupHeaderSection">
+          <Items>
+            <TextBox Width="7.55782636006673in" Height="0.300000190734863in" Left="0.0208333333333335in" Top="0.025597095489502in" Value="= Fields.RequisitionSubType" Name="textBox4">
+              <Style TextAlign="Center">
+                <Font Name="Gill Sans MT" Size="14pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="9.39780007196184cm" Height="0.696782587061413cm" Left="1.01619975362857cm" Top="0.827216926453437cm" Value="Item Title" CanGrow="True" Name="itemTitleCaptionTextBox" StyleName="Caption">
+              <Style BackgroundColor="242, 242, 242" Color="Black" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Arial" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="2.03199965030077cm" Height="0.696782160129917cm" Left="14.9860002291123cm" Top="0.827216926453437cm" Value="Est. Rate" CanGrow="True" Name="textBox1" StyleName="Caption">
+              <Style BackgroundColor="242, 242, 242" Color="Black" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Arial" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="1.01589988902688cm" Height="0.696782160129917cm" Left="0.00010002215425112cm" Top="0.827216926453437cm" Value="S.No" CanGrow="True" Name="textBox3" StyleName="Caption">
+              <Style BackgroundColor="242, 242, 242" Color="Black" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Arial" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="4.06400164742375cm" Height="0.696782160129917cm" Left="10.668000026242cm" Top="0.827216926453437cm" Value="Unit" CanGrow="True" Name="textBox2" StyleName="Caption">
+              <Style BackgroundColor="242, 242, 242" Color="Black" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Arial" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="2.0319995880127cm" Height="0.696782171726227cm" Left="17.2177954652923cm" Top="0.82721773389767cm" Value="Act. Rate" CanGrow="True" Name="textBox6" StyleName="Caption">
+              <Style BackgroundColor="242, 242, 242" Color="Black" TextAlign="Center">
+                <BorderStyle Default="Solid" Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Name="Arial" Size="9pt" Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection PageBreak="After" KeepTogether="False" Height="0.174402872721354in" Name="groupFooterSection" />
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.fkReqSubTypID" />
+      </Groupings>
+    </Group>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="1.00901642694825cm" Name="labelsGroupHeaderSection">
+          <Items>
+            <TextBox Width="19.1969787711825cm" Height="0.689999997615814cm" Left="0.0529166651947631cm" Top="0.319016371436458cm" Value="= &quot; &quot; + RowNumber()  + &quot;.    &quot; + Fields.ItemHeadTitle" CanGrow="True" Name="textBox9" StyleName="Data">
+              <Style BackgroundColor="242, 242, 242">
+                <BorderStyle Default="Solid" Top="None" Bottom="None" Left="None" Right="None" />
+                <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+                <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.132291662986908cm" Name="labelsGroupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="=Fields.ItemHeadTitle" />
+      </Groupings>
+      <Sortings>
+        <Sorting Expression="=Fields.ItemHeadTitle" Direction="Asc" />
+        <Sorting Expression="=Fields.ItemTitle" Direction="Asc" />
+      </Sortings>
+    </Group>
+  </Groups>
+</Report>

@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="ERP01" Width="8.179168065389in" Name="BW_ConsQuartRequisition" xmlns="http://schemas.telerik.com/reporting/2012/3.4">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="dbo.ConsoRequ_Balance_BW" SelectCommandType="StoredProcedure" Name="ERP01">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@rpttype">
+          <Value>
+            <String>=Parameters.ReqType.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+      <DefaultValues>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@rpttype">
+          <Value>
+            <String>B</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </DefaultValues>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <ReportFooterSection PageBreak="None" Height="0.256568352381389in" Name="reportFooter">
+      <Style Visible="True" />
+    </ReportFooterSection>
+    <PageHeaderSection Height="0.5in" Name="pageHeader">
+      <Items>
+        <TextBox Width="8.17912842477224in" Height="0.358333326522786in" Left="0.00003957748413086in" Top="0in" Value="BRANCH WISE CONSOLIDATED QUARTERLY REQUISITION" Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.441666682561239in" Name="pageFooter">
+      <Items>
+        <TextBox Width="0.799999443912812in" Height="0.400000015894572in" Left="5.40000025431315in" Top="0in" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Width="2.47916708037119in" Height="0.179166714350383in" Left="1.47291787465413in" Top="0.110416730244954in" Value="BW_ConsQuartRequisition" Name="reportNameTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.0520833304964292in" Name="reportHeader" />
+    <DetailSection Height="2.24791677792867in" Name="detail">
+      <Items>
+        <Crosstab DataSourceName="ERP01" Width="4.38750076293945in" Height="1.78750002384186in" Left="0.199999968210856in" Top="0.147916634877523in" Name="crosstab1" StyleName="Office.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.435416966676712in" Height="0.200000017881393in" Left="0in" Top="0in" Value="=Sum(Fields.Quantity)" Name="textBox11" StyleName="Office.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.520833849906921in" Height="0.200000032782555in" Left="0in" Top="0in" Value="=Sum(Fields.Quantity)" Name="textBox17" StyleName="Office.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104167327284813in" Height="0.200000107288361in" Left="0in" Top="0in" Name="textBox19" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.531249940395355in" Height="0.200000032782555in" Left="0in" Top="0in" Value="=Fields.Rate*Sum(Fields.Quantity)" Name="vgrossamt" StyleName="Office.TableBody">
+                    <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.435416966676712in" Height="0.187500059604645in" Left="0in" Top="0in" Name="textBox22" StyleName="Office.TableBody">
+                    <Style BackgroundColor="112, 48, 160" TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.5208340883255in" Height="0.187500059604645in" Left="0in" Top="0in" Name="textBox23" StyleName="Office.TableBody">
+                    <Style BackgroundColor="112, 48, 160" TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.531249582767487in" Height="0.187500059604645in" Left="0in" Top="0in" Name="textBox24" StyleName="Office.TableBody">
+                    <Style BackgroundColor="112, 48, 160" TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104167327284813in" Height="0.187500029802322in" Left="0in" Top="0in" Name="textBox25" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.435416787862778in" Height="0.270833343267441in" Left="0in" Top="0in" Value="=Sum(Fields.Quantity*Fields.Rate)" Name="grossamt" StyleName="Office.TableBody">
+                    <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.520833671092987in" Height="0.270833343267441in" Left="0in" Top="0in" Name="textBox41" StyleName="Office.TableBody">
+                    <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.531249523162842in" Height="0.270833343267441in" Left="0in" Top="0in" Value="=Sum(Fields.Amount)" Name="textBox42" StyleName="Office.TableBody">
+                    <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104167327284813in" Height="0.270833104848862in" Left="0in" Top="0in" Name="textBox43" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.43541693687439in" Height="0.291666656732559in" Left="0in" Top="0in" Value="=Sum(Fields.Quantity* Fields.Rate)" Name="textBox27" StyleName="Office.TableBody">
+                    <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.520833969116211in" Height="0.291666656732559in" Left="0in" Top="0in" Name="textBox28" StyleName="Office.TableBody">
+                    <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Center" VerticalAlign="Middle" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.531249582767487in" Height="0.291666656732559in" Left="0in" Top="0in" Value="=Sum(Fields.Amount)" Name="textBox29" StyleName="Office.TableBody">
+                    <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Center" VerticalAlign="Middle">
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104167327284813in" Height="0.291666626930237in" Left="0in" Top="0in" Name="textBox33" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.435417121988088in" />
+              <Column Width="0.520834084904979in" />
+              <Column Width="0.531249395608298in" />
+              <Column Width="0.104166632285705in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.187500039346587in" />
+              <Row Height="0.200000112110699in" />
+              <Row Height="0.270833094213683in" />
+              <Row Height="0.291666624288706in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="2" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.104166798293591in" Height="0.400000065565109in" Left="0in" Top="0in" Value="-" Name="textBox7" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="1" RowSpan="2" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.61249995231628in" Height="0.400000154972076in" Left="0in" Top="0in" Value="Item Title" Name="textBox8" StyleName="Office.TableHeader">
+                    <Style TextAlign="Center">
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="2" RowSpan="2" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.71666693687439in" Height="0.400000065565109in" Left="0in" Top="0in" Value="Unit" Name="textBox9" StyleName="Office.TableHeader">
+                    <Style TextAlign="Center">
+                      <Font Size="8pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="3" RowSpan="2" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.362500160932541in" Height="0.400000035762787in" Left="0in" Top="0in" Value="Rate" Name="textBox10" StyleName="Office.TableHeader">
+                    <Style>
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="2" ColumnSpan="4">
+                <ReportItem>
+                  <TextBox Width="2.79583406448364in" Height="0.437500089406967in" Left="0in" Top="0in" Name="textBox32" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="ItemHeadTitle1">
+              <ChildGroups>
+                <TableGroup Name="group11">
+                  <ReportItem>
+                    <TextBox Width="2.79583406448364in" Height="0.187500044703484in" Left="0in" Top="0in" Value="=Fields.ItemHeadTitle" Name="textBox3" StyleName="Office.TableGroup">
+                      <Style BackgroundColor="112, 48, 160" Color="White" VerticalAlign="Middle" />
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="group12">
+                  <ReportItem>
+                    <TextBox Width="0.104166798293591in" Height="0.200000122189522in" Left="0in" Top="0in" Name="textBox26" StyleName="Office.TableGroup" />
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="ItemTitle1">
+                      <ReportItem>
+                        <TextBox Width="1.61249995231628in" Height="0.200000077486038in" Left="0in" Top="0in" Value="=Fields.ItemTitle" Name="textBox4" StyleName="Office.TableGroup" />
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="Unit1">
+                          <ReportItem>
+                            <TextBox Width="0.71666693687439in" Height="0.200000107288361in" Left="0in" Top="0in" Value="=Fields.Unit" Name="textBox5" StyleName="Office.TableGroup">
+                              <Style TextAlign="Left">
+                                <Font Size="8pt" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="Rate1">
+                              <ReportItem>
+                                <TextBox Width="0.362500160932541in" Height="0.200000032782555in" Left="0in" Top="0in" Value="=Fields.Rate" Name="textBox6" StyleName="Office.TableGroup" />
+                              </ReportItem>
+                              <Groupings>
+                                <Grouping Expression="=Fields.Rate" />
+                              </Groupings>
+                              <Sortings>
+                                <Sorting Expression="=Fields.Rate" Direction="Asc" />
+                              </Sortings>
+                            </TableGroup>
+                          </ChildGroups>
+                          <Groupings>
+                            <Grouping Expression="=Fields.Unit" />
+                          </Groupings>
+                          <Sortings>
+                            <Sorting Expression="=Fields.Unit" Direction="Asc" />
+                          </Sortings>
+                        </TableGroup>
+                      </ChildGroups>
+                      <Groupings>
+                        <Grouping Expression="=Fields.ItemTitle" />
+                      </Groupings>
+                      <Sortings>
+                        <Sorting Expression="=Fields.ItemTitle" Direction="Asc" />
+                      </Sortings>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+                <TableGroup Name="group14">
+                  <ReportItem>
+                    <TextBox Width="2.79583406448364in" Height="0.270833104848862in" Left="0in" Top="0in" Value="Total Amount" Name="textBox36" StyleName="Office.TableGroup">
+                      <Style BackgroundColor="166, 166, 166" Color="Black" TextAlign="Right" VerticalAlign="Middle">
+                        <Font Bold="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="=Fields.ItemHeadTitle" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="=Fields.ItemHeadTitle" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+            <TableGroup Name="group15">
+              <ChildGroups>
+                <TableGroup Name="group16">
+                  <ReportItem>
+                    <TextBox Width="2.79583406448364in" Height="0.291666626930237in" Left="0in" Top="0in" Value="Grand Total" Name="textBox14" StyleName="Office.TableGroup">
+                      <Style BackgroundColor="112, 48, 160" Color="White" TextAlign="Right" VerticalAlign="Middle">
+                        <Font Bold="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="group10">
+              <ReportItem>
+                <TextBox Width="1.48749995231628in" Height="0.197916641831398in" Left="0in" Top="0in" Value="BRANCH WISE CONSOLIDATED STOCK BALANCE" Name="textBox30" StyleName="Office.TableGroup">
+                  <Style BackgroundColor="White" Color="Black" TextAlign="Center" VerticalAlign="Middle">
+                    <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                    <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="Company">
+                  <ReportItem>
+                    <TextBox Width="1.48749995231628in" Height="0.239583373069763in" Left="0in" Top="0in" Value="=Fields.acdDescription" Name="textBox12" StyleName="Office.TableGroup">
+                      <Style BackgroundColor="White" Color="Black" TextAlign="Center" VerticalAlign="Middle">
+                        <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                        <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                        <Font Bold="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group1">
+                      <ReportItem>
+                        <TextBox Width="1.48750102519989in" Height="0.200000032782555in" Left="0in" Top="0in" Value="=Fields.Company" Name="textBox1" StyleName="Office.TableGroup">
+                          <Style BackgroundColor="112, 48, 160" Color="White" TextAlign="Center" VerticalAlign="Middle">
+                            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+                            <BorderColor Top="White" Bottom="White" Left="White" Right="White" />
+                            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="brhCode">
+                          <ReportItem>
+                            <TextBox Width="0.435417085886002in" Height="0.200000002980232in" Left="0in" Top="0in" Value="=Fields.brhCode" Name="textBox2" StyleName="Office.TableGroup">
+                              <Style TextAlign="Center" VerticalAlign="Middle">
+                                <Font Bold="True" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group" />
+                          </ChildGroups>
+                          <Groupings>
+                            <Grouping Expression="=Fields.brhCode" />
+                          </Groupings>
+                        </TableGroup>
+                        <TableGroup Name="group3">
+                          <ReportItem>
+                            <TextBox Width="0.520833849906921in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Total" Name="textBox16" StyleName="Office.TableGroup">
+                              <Style TextAlign="Center" VerticalAlign="Middle">
+                                <Font Bold="True" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group4" />
+                          </ChildGroups>
+                        </TableGroup>
+                        <TableGroup Name="group7">
+                          <ReportItem>
+                            <TextBox Width="0.531249940395355in" Height="0.200000002980232in" Left="0in" Top="0in" Value="Amount" Name="textBox20" StyleName="Office.TableGroup">
+                              <Style BackgroundColor="217, 217, 217" TextAlign="Center" VerticalAlign="Middle">
+                                <Font Bold="True" />
+                              </Style>
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group8" />
+                          </ChildGroups>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="=Fields.Company" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="=Fields.fkbrhID" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+            <TableGroup Name="group13">
+              <ReportItem>
+                <TextBox Width="0.104167327284813in" Height="0.197916656732559in" Left="0in" Top="0in" Name="textBox31" StyleName="Office.TableGroup">
+                  <Style TextAlign="Center" VerticalAlign="Middle">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group2">
+                  <ReportItem>
+                    <TextBox Width="0.104167327284813in" Height="0.239583387970924in" Left="0in" Top="0in" Name="textBox13" StyleName="Office.TableGroup">
+                      <Style TextAlign="Center" VerticalAlign="Middle">
+                        <Font Bold="True" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group9">
+                      <ReportItem>
+                        <TextBox Width="0.104167327284813in" Height="0.200000017881393in" Left="0in" Top="0in" Name="textBox15" StyleName="Office.TableGroup">
+                          <Style TextAlign="Center" VerticalAlign="Middle">
+                            <Font Bold="True" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group5">
+                          <ReportItem>
+                            <TextBox Width="0.104167327284813in" Height="0.200000017881393in" Left="0in" Top="0in" Value="" Name="textBox18" StyleName="Office.TableGroup">
+                              <Style TextAlign="Center" VerticalAlign="Middle" />
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group6" />
+                          </ChildGroups>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+          </ColumnGroups>
+        </Crosstab>
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style BackgroundColor="241, 238, 232" Color="50, 50, 50">
+        <Font Name="Verdana" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="50, 50, 50" Color="227, 222, 209" VerticalAlign="Middle">
+        <Font Name="Verdana" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Verdana" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="160, 160, 160" VerticalAlign="Middle">
+        <Font Name="Verdana" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Legal" Landscape="True">
+      <Margins>
+        <MarginsU Left="0.5in" Right="0.150000005960464in" Top="0.150000005960464in" Bottom="0.150000005960464in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="ReqType" Visible="True" AllowBlank="False" AutoRefresh="True">
+      <Value>
+        <String>B</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

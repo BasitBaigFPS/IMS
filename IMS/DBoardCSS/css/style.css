@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.utils a {
+position:absolute;
+top:5px;
+right:10px;
+border:1px solid;
+padding:1px 8px;
+}
+
+a, a:visited{color:#000; font-weight:bold; text-decoration:none;}
+ul.navigation{-moz-border-radius-bottomleft:10px;margin:0px auto;padding:10px 30px;width:940px; height: 25px;}
+ul.navigation li{ background:Silver; display:inline;margin:0; color:Blue;}
+
+
+
+ul.navigation li a:hover{ color:#06C;}
+ul.navigation li.highlight{ background:#10246B;}
+ul.navigation li.highlight a, ul.navigation li.highlight a:hover { color:#f5f5f5; cursor:default;}
+
+ul.navigation ul.childNav{ position:absolute; top:2.5em; left:0; list-style:none; margin:0; padding:0;}
+ul.navigation ul.childNav li{ float:none;}
+ul.navigation li.highlight ul.childNav a { color:#444; cursor:pointer;}
+ul.navigation li.highlight ul.childNav a:hover{ color:#06c;}
+ul.navigation li.highlight ul.childNav li.highlight{ background:#999; }
+ul.navigation li.highlight ul.childNav li.highlight a, ul.navigation li.highlight ul.childNav li.highlight a:hover{color:#fff}

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="7.90000152587891in" Name="GINAssetsCodeList" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="IMS_RPT_Conn" SelectCommand="SELECT [fkbrhid]&#xD;&#xA;      ,[brhName]&#xD;&#xA;      ,[deptName]&#xD;&#xA;      ,[InvCode]&#xD;&#xA;      ,[AssetCode]&#xD;&#xA;      ,[ItemTitle]&#xD;&#xA;      ,[GINNumber]&#xD;&#xA;  FROM [INVENTORY].[dbo].[View_GINAssetCodeList]&#xD;&#xA;Order By AssetCode" Name="sqlDataSource1" />
+  </DataSources>
+  <Items>
+    <DetailSection Height="1.71249930063884in" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="sqlDataSource1" Width="7.7541672214074in" Height="1.71249930094824in" Left="0in" Top="0in" Name="table1" StyleName="Corporate.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.87291643142226in" Height="0.3354164389749in" Left="0in" Top="0in" Value="= Fields.AssetCode" Name="textBox7" StyleName="Corporate.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.95625066714203in" Height="0.3354164389749in" Left="0in" Top="0in" Value="= Fields.InvCode" Name="textBox11" StyleName="Corporate.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="3.36249976682379in" Height="0.3354164389749in" Left="0in" Top="0in" Value="= Fields.ItemTitle" Name="textBox12" StyleName="Corporate.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.562500036320493in" Height="0.3354164389749in" Left="0in" Top="0in" Value="=RowNumber() + &quot;.  &quot;" Name="textBox21" StyleName="Corporate.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="8pt" Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.562500405351324in" />
+              <Column Width="1.87291659148191in" />
+              <Column Width="1.95625063106953in" />
+              <Column Width="3.36249999791598in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.3354164389749in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <Style>
+            <Font Name="Calibri" Size="8pt" />
+          </Style>
+          <RowGroups>
+            <TableGroup Name="Detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="group10">
+              <ReportItem>
+                <TextBox Width="0.562500036320493in" Height="0.729166271538501in" Left="0in" Top="0in" Name="textBox16" StyleName="Corporate.TableHeader" />
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group13">
+                  <ReportItem>
+                    <TextBox Width="0.562500036320493in" Height="0.270833325098967in" Left="0in" Top="0in" Name="textBox19" StyleName="Corporate.TableHeader">
+                      <Style BackgroundColor="White" />
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group14">
+                      <ReportItem>
+                        <TextBox Width="0.562500036320493in" Height="0.377083265335872in" Left="0in" Top="0in" Value="S.No." Name="textBox20" StyleName="Corporate.TableHeader">
+                          <Style TextAlign="Center" />
+                        </TextBox>
+                      </ReportItem>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="1.87291643142226in" Height="0.197916621390433in" Left="0in" Top="0in" Value="Branch Name:" Name="textBox8" StyleName="Corporate.TableHeader" />
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group3">
+                  <ReportItem>
+                    <TextBox Width="1.87291643142226in" Height="0.260416580231382in" Left="0in" Top="0in" Value="Department:" Name="textBox4" StyleName="Corporate.TableHeader" />
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group5">
+                      <ReportItem>
+                        <TextBox Width="1.87291643142226in" Height="0.270833069916686in" Left="0in" Top="0in" Value="GINNumber" Name="textBox2" StyleName="Corporate.TableHeader" />
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group">
+                          <ReportItem>
+                            <TextBox Width="1.87291643142226in" Height="0.270833325098967in" Left="0in" Top="0in" Name="textBox13" StyleName="Corporate.TableHeader">
+                              <Style BackgroundColor="White" />
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group7">
+                              <ReportItem>
+                                <TextBox Width="1.87291643142226in" Height="0.377083265335872in" Left="0in" Top="0in" Value="Asset Code" Name="textBox1" StyleName="Corporate.TableHeader">
+                                  <Style TextAlign="Center">
+                                    <Font Bold="False" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableGroup>
+                          </ChildGroups>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="5.31875062898551in" Height="0.197916621390433in" Left="0in" Top="0in" Value="= Fields.brhName" Name="textBox9" StyleName="Corporate.TableHeader">
+                  <Style BackgroundColor="White" Color="Black" />
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group4">
+                  <ReportItem>
+                    <TextBox Width="5.31875062898551in" Height="0.260416580231382in" Left="0in" Top="0in" Value="= Fields.deptName" Name="textBox10" StyleName="Corporate.TableHeader">
+                      <Style BackgroundColor="White" Color="Black" />
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group6">
+                      <ReportItem>
+                        <TextBox Width="5.31875062898551in" Height="0.270833069916686in" Left="0in" Top="0in" Value="= Fields.GINNumber" Name="textBox3" StyleName="Corporate.TableHeader">
+                          <Style BackgroundColor="White" Color="Black" />
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group1">
+                          <ReportItem>
+                            <TextBox Width="5.3187506289855in" Height="0.270833325098967in" Left="0in" Top="0in" Name="textBox14" StyleName="Corporate.TableHeader">
+                              <Style BackgroundColor="White" />
+                            </TextBox>
+                          </ReportItem>
+                          <ChildGroups>
+                            <TableGroup Name="group8">
+                              <ReportItem>
+                                <TextBox Width="1.95625066714203in" Height="0.377083265335872in" Left="0in" Top="0in" Value="Inv Code" Name="textBox5" StyleName="Corporate.TableHeader">
+                                  <Style TextAlign="Center">
+                                    <Font Bold="False" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableGroup>
+                            <TableGroup Name="group9">
+                              <ReportItem>
+                                <TextBox Width="3.36249976682379in" Height="0.377083265335872in" Left="0in" Top="0in" Value="Item Title" Name="textBox6" StyleName="Corporate.TableHeader">
+                                  <Style TextAlign="Center">
+                                    <Font Bold="False" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableGroup>
+                          </ChildGroups>
+                        </TableGroup>
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+          </ColumnGroups>
+          <Filters>
+            <Filter Expression="= Fields.GINNumber" Operator="Equal" Value="= Parameters.GINNo.Value" />
+            <Filter Expression="= Fields.fkbrhid" Operator="Equal" Value="= Parameters.Branch.Value" />
+          </Filters>
+        </Table>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="0.499999999999996in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="7.79996103900879in" Height="0.300000009084025in" Left="0in" Top="0in" Value="GIN Assets Code List" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.287500699361165in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.187500505221029in" Left="6.1793638865153in" Top="0.0875005722045898in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportFooterSection Height="0.887500762939454in" Name="reportFooterSection1">
+      <Items>
+        <SubReport Width="7.65416717529297in" Height="0.70000012715658in" Left="0.100000063578288in" Top="0.0875005722045902in" Name="subReport1">
+          <ReportSource>
+            <UriReportSource Uri="AssetsCodeLablesTag.trdx">
+              <Parameters>
+                <Parameter Name="BranchID">
+                  <Value>
+                    <String>= Parameters.Branch.Value</String>
+                  </Value>
+                </Parameter>
+                <Parameter Name="GINNumber">
+                  <Value>
+                    <String>= Parameters.GINNo.Value</String>
+                  </Value>
+                </Parameter>
+              </Parameters>
+            </UriReportSource>
+          </ReportSource>
+        </SubReport>
+      </Items>
+    </ReportFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Corporate.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Corporate.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="0.2in" Right="0.2in" Top="0.2in" Bottom="0.2in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="Branch" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="sqlDataSource1" DisplayMember="= Fields.brhName" ValueMember="= Fields.fkbrhid" />
+    </ReportParameter>
+    <ReportParameter Name="GINNo" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="sqlDataSource1" DisplayMember="= Fields.GINNumber" ValueMember="= Fields.GINNumber">
+        <Filters>
+          <Filter Expression="= Fields.fkbrhid" Operator="Equal" Value="= Parameters.Branch.Value" />
+        </Filters>
+      </AvailableValues>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

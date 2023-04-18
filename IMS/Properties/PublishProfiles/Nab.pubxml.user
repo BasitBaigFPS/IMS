@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Project\IMS\WebIMS</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/RadCaptcha/0.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/1.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/2.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/3.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/4.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/5.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/6.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/7.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/8.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/9.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/A.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/B.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/C.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/D.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/E.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/F.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/G.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/H.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/I.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/J.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/K.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/L.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/M.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/N.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/O.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/P.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/Q.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/R.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/S.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/T.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/U.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/V.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/W.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/X.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/Y.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadCaptcha/Z.wav">
+      <publishTime>10/15/2013 12:15:34</publishTime>
+    </File>
+    <File Include="App_Data/RadSpell/de-DE.tdf">
+      <publishTime>10/15/2013 12:18:26</publishTime>
+    </File>
+    <File Include="App_Data/RadSpell/en-US.tdf">
+      <publishTime>10/15/2013 12:18:26</publishTime>
+    </File>
+    <File Include="App_Data/RadSpell/fr-FR.tdf">
+      <publishTime>10/15/2013 12:18:26</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>07/31/2011 23:09:32</publishTime>
+    </File>
+    <File Include="bin/BLL.dll">
+      <publishTime>04/17/2014 10:29:56</publishTime>
+    </File>
+    <File Include="bin/DAL.dll">
+      <publishTime>04/17/2014 10:29:56</publishTime>
+    </File>
+    <File Include="bin/IMS.dll">
+      <publishTime>04/19/2014 12:58:04</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>10/14/2013 12:39:42</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.Skins.dll">
+      <publishTime>10/14/2013 12:39:42</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>02/21/2014 10:24:19</publishTime>
+    </File>
+    <File Include="images/box.png">
+      <publishTime>03/11/2014 11:35:49</publishTime>
+    </File>
+    <File Include="images/brand.png">
+      <publishTime>03/11/2014 11:09:35</publishTime>
+    </File>
+    <File Include="images/Company.png">
+      <publishTime>02/24/2014 12:11:32</publishTime>
+    </File>
+    <File Include="images/Dashboard.png">
+      <publishTime>03/10/2014 18:14:28</publishTime>
+    </File>
+    <File Include="images/dep.png">
+      <publishTime>02/24/2014 12:11:31</publishTime>
+    </File>
+    <File Include="images/FPSLogo.gif">
+      <publishTime>06/20/2012 11:50:24</publishTime>
+    </File>
+    <File Include="images/inventory.jpg">
+      <publishTime>02/21/2014 16:30:20</publishTime>
+    </File>
+    <File Include="images/Items.png">
+      <publishTime>03/10/2014 16:21:32</publishTime>
+    </File>
+    <File Include="images/location.png">
+      <publishTime>03/11/2014 12:01:02</publishTime>
+    </File>
+    <File Include="images/lock.png">
+      <publishTime>03/10/2014 18:23:02</publishTime>
+    </File>
+    <File Include="images/Order64.png">
+      <publishTime>03/10/2014 17:41:20</publishTime>
+    </File>
+    <File Include="images/PO.png">
+      <publishTime>03/10/2014 17:41:20</publishTime>
+    </File>
+    <File Include="images/Quotation64.png">
+      <publishTime>03/10/2014 17:41:20</publishTime>
+    </File>
+    <File Include="images/Report.png">
+      <publishTime>03/10/2014 18:11:55</publishTime>
+    </File>
+    <File Include="images/Report1.png">
+      <publishTime>04/14/2014 13:25:52</publishTime>
+    </File>
+    <File Include="images/Report2.png">
+      <publishTime>04/14/2014 13:33:13</publishTime>
+    </File>
+    <File Include="images/Report3.png">
+      <publishTime>04/14/2014 13:32:59</publishTime>
+    </File>
+    <File Include="images/Report4.png">
+      <publishTime>04/15/2014 09:20:59</publishTime>
+    </File>
+    <File Include="images/Stock.png">
+      <publishTime>03/10/2014 18:09:12</publishTime>
+    </File>
+    <File Include="images/Store.png">
+      <publishTime>03/10/2014 17:30:05</publishTime>
+    </File>
+    <File Include="images/Vendor.png">
+      <publishTime>03/10/2014 15:42:17</publishTime>
+    </File>
+    <File Include="images/WO.png">
+      <publishTime>03/10/2014 18:07:18</publishTime>
+    </File>
+    <File Include="IssueInventory.aspx">
+      <publishTime>04/11/2014 09:49:49</publishTime>
+    </File>
+    <File Include="Item.aspx">
+      <publishTime>04/02/2014 16:54:33</publishTime>
+    </File>
+    <File Include="ItemMain.aspx">
+      <publishTime>03/24/2014 10:10:33</publishTime>
+    </File>
+    <File Include="ItemsList.aspx">
+      <publishTime>04/03/2014 09:48:42</publishTime>
+    </File>
+    <File Include="Main.aspx">
+      <publishTime>02/21/2014 11:13:51</publishTime>
+    </File>
+    <File Include="NewVendor.aspx">
+      <publishTime>03/10/2014 17:32:37</publishTime>
+    </File>
+    <File Include="OpeningBalance.aspx">
+      <publishTime>04/02/2014 15:38:38</publishTime>
+    </File>
+    <File Include="OpeningBalanceFA.aspx">
+      <publishTime>04/03/2014 12:31:33</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/19/2014 11:53:03</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>04/19/2014 12:58:07</publishTime>
+    </File>
+    <File Include="RecvInventory.aspx">
+      <publishTime>04/18/2014 16:51:27</publishTime>
+    </File>
+    <File Include="Reports/CategoryWiseItemList.trdx">
+      <publishTime>04/10/2014 11:38:40</publishTime>
+    </File>
+    <File Include="Reports/GoodsIssueNote.trdx">
+      <publishTime>04/15/2014 17:43:59</publishTime>
+    </File>
+    <File Include="Reports/StoreInventoryBalances.trdx">
+      <publishTime>04/10/2014 10:32:24</publishTime>
+    </File>
+    <File Include="ReportsMain.aspx">
+      <publishTime>04/18/2014 16:52:32</publishTime>
+    </File>
+    <File Include="Requisitions.aspx">
+      <publishTime>03/20/2014 14:34:28</publishTime>
+    </File>
+    <File Include="Site1.Master">
+      <publishTime>04/18/2014 17:08:05</publishTime>
+    </File>
+    <File Include="Store.aspx">
+      <publishTime>03/25/2014 14:39:08</publishTime>
+    </File>
+    <File Include="StoreList.aspx">
+      <publishTime>04/02/2014 15:38:33</publishTime>
+    </File>
+    <File Include="StoreMain.aspx">
+      <publishTime>03/25/2014 11:21:47</publishTime>
+    </File>
+    <File Include="Vendor-Dashboard.aspx">
+      <publishTime>03/10/2014 14:10:26</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>04/19/2014 12:58:05</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

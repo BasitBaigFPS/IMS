@@ -1,0 +1,295 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="IMS.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            border-collapse: collapse;
+            height: 100%;
+        }
+        .auto-style2 {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .auto-style3 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #666633;
+            font-size: 12pt;
+        }
+    </style>
+       
+
+</head>
+<body id="desktop" style="margin:0px">
+    
+    <form id="form1" runat="server"> 
+       
+    <div >
+        <table cellpadding="0" class="auto-style1">
+            <tr>
+                <td>
+                    <table cellpadding="0" class="auto-style2">
+                        <tr>
+                            <td>
+	        <asp:ScriptManager ID="ScriptManager1" runat="server">
+       
+		<Scripts>
+			<asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+			<asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+			<asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js" />
+		</Scripts>
+	 </asp:ScriptManager>
+                                 <telerik:RadFormDecorator Enabled="true" runat="server" />
+                                <telerik:RadWindowManager runat="Server" ID="RadWindowManager1" Skin="Vista" />
+                               <telerik:RadSkinManager ShowChooser="false" runat="server"></telerik:RadSkinManager>
+
+
+                                <telerik:RadContextMenu runat="server" ID="ChooseDesktopImage" Skin="Vista"
+                                      EnableRoundedCorners="true" EnableShadows="true">
+                                      <Targets>
+                                           <telerik:ContextMenuElementTarget ElementID="desktop" />
+                                      </Targets>
+                                      <Items>
+                                           <telerik:RadMenuItem Text="Home" >
+                                            <Items>
+                                                <telerik:RadMenuItem Text="Dashboard" NavigateUrl="Main.aspx" />
+                                                <telerik:RadMenuItem Text="Lock Screen" />
+                                            </Items>
+                                           </telerik:RadMenuItem>
+                                           <telerik:RadMenuItem Text="Requistion" NavigateUrl="requisitions.aspx" />
+                                           <telerik:RadMenuItem Text="Quotation" />
+                                          <telerik:RadMenuItem Text="Purchase Order" />
+                                          <telerik:RadMenuItem Text="Work Order" />
+                                          <telerik:RadMenuItem Text="Stock/Inventory" />
+                                          <telerik:RadMenuItem Text="Reports" />
+                                          <telerik:RadMenuItem Text="Exit" />
+                                      </Items>
+                                 </telerik:RadContextMenu>
+
+
+
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <telerik:RadRibbonBar ID="RadRibbonBar1" runat="server" EnableMinimizing="true" KeyboardNavigationSettings-Activated="true" Minimized="true" EnableQuickAccessToolbar="False" >
+                                    <Tabs>
+                                        <telerik:RibbonBarTab ID="RibbonBarTab1" runat="server" Text="Home">
+                                             <telerik:RibbonBarGroup Text="Dashboard">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/Dashboard.png" Image-IsBackgroundImage="true" ToolTip="Dashboard" Width="64" Height="64" PostBackUrl="Main.aspx" BorderStyle="None"  AlternateText="Dashboard">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+                                            <telerik:RibbonBarGroup Text="Lock Screen">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                       <telerik:radbutton  runat="server" Image-ImageUrl="images/lock.png" Image-IsBackgroundImage="true" ToolTip="Lock Screen" Width="64" Height="64" PostBackUrl="Main.aspx" BorderStyle="None"  AlternateText="Lock Screen">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+
+                                        </telerik:RibbonBarTab>
+                                        <telerik:RibbonBarTab ID="RibbonBarTab2" runat="server" Text="Setups">
+                                           
+                                             <telerik:RibbonBarGroup Text="Stores">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                          <telerik:radbutton  runat="server" Image-ImageUrl="images/Store.png" Image-IsBackgroundImage="true" ToolTip="New Store" Width="64" Height="64" PostBackUrl="StoreMain.aspx" BorderStyle="None"  AlternateText="Add New Store">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                           <telerik:RibbonBarGroup Text="Vendors">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/Vendor.png" Image-IsBackgroundImage="true" ToolTip="New Vendor" Width="64" Height="64" PostBackUrl="NewVendor.aspx" BorderStyle="None"  AlternateText="Add New Vendor">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                            <telerik:RibbonBarGroup Text="Items">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/Items.png" Image-IsBackgroundImage="true" ToolTip="Item Dashboard" Width="64" Height="64" PostBackUrl="ItemMain.aspx" BorderStyle="None"  AlternateText="Item Dashboard">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+                                                <telerik:RibbonBarGroup Text="Brand">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/brand.png" Image-IsBackgroundImage="true" ToolTip="New Brand" Width="64" Height="64" PostBackUrl="NewItem.aspx" BorderStyle="None"  AlternateText="Add New Brand">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+                                            <telerik:RibbonBarGroup Text="Model">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/box.png" Image-IsBackgroundImage="true" ToolTip="New Model" Width="64" Height="64" PostBackUrl="NewItem.aspx" BorderStyle="None"  AlternateText="Add New Model">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem> 
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                            <telerik:RibbonBarGroup Text="Location">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                          <telerik:radbutton  runat="server" Image-ImageUrl="images/location.png" Image-IsBackgroundImage="true" ToolTip="New Location" Width="64" Height="64" PostBackUrl="Location.aspx" BorderStyle="None"  AlternateText="Add New Location">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                             <telerik:RibbonBarGroup Text="Requisition">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/Order64.png" Image-IsBackgroundImage="true" ToolTip="New Requisition" Width="64" Height="64" PostBackUrl="requisitions.aspx" BorderStyle="None"  AlternateText="Add New Requisition"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>                                   
+                                    </telerik:RibbonBarTab>
+
+                                        <telerik:RibbonBarTab ID="RibbonBarTab3" runat="server" Text="Requisitions">
+                                            <telerik:RibbonBarGroup Text="Requisitions">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/Order64.png" Image-IsBackgroundImage="true" ToolTip="New Requisition" Width="64" Height="64" PostBackUrl="requisitions.aspx" BorderStyle="None"  AlternateText="Add New Requisition"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                        </telerik:RibbonBarTab>
+
+                                        <telerik:RibbonBarTab ID="RibbonBarTab4" runat="server" Text="Quotations">
+                                            <telerik:RibbonBarGroup Text="Quotations">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/Quotation64.png" Image-IsBackgroundImage="true" ToolTip="New Quotation" Width="64" Height="64" PostBackUrl="quotation.aspx" BorderStyle="None"  AlternateText="Add New Quotation"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                        </telerik:RibbonBarTab>
+
+                                        <telerik:RibbonBarTab runat="server" Text ="Purchase Order">
+                                            <telerik:RibbonBarGroup Text="Purchase Order">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/PO.png" Image-IsBackgroundImage="true" ToolTip="New Requisition" Width="64" Height="64" PostBackUrl="PO.aspx" BorderStyle="None"  AlternateText="Add New PO"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                        </telerik:RibbonBarTab>
+
+                                        <telerik:RibbonBarTab runat="server" Text="Work Order">
+                                                   <telerik:RibbonBarGroup Text="Work Orders">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/WO.png" Image-IsBackgroundImage="true" ToolTip="New Work Order" Width="64" Height="64" PostBackUrl="WO.aspx" BorderStyle="None"  AlternateText="Add New WO"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+                                        </telerik:RibbonBarTab>
+                                        
+                                        <telerik:RibbonBarTab runat="server" Text="Stock">
+                                                 <telerik:RibbonBarGroup Text="Opening">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/Items.png" Image-IsBackgroundImage="true" ToolTip="Item Dashboard" Width="64" Height="64" PostBackUrl="OpeningBalance.aspx" BorderStyle="None"  AlternateText="Item Dashboard">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+
+                                            </telerik:RibbonBarGroup>
+
+                                            <telerik:RibbonBarGroup Text="Opening Fixed">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/Items.png" Image-IsBackgroundImage="true" ToolTip="Item Dashboard" Width="64" Height="64" PostBackUrl="OpeningBalanceFA.aspx" BorderStyle="None"  AlternateText="Item Dashboard">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+
+                                            </telerik:RibbonBarGroup>
+
+
+                                            <telerik:RibbonBarGroup Text="Issue Inventory">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:radbutton  runat="server" Image-ImageUrl="images/Items.png" Image-IsBackgroundImage="true" ToolTip="Item Dashboard" Width="64" Height="64" PostBackUrl="IssueInventory.aspx" BorderStyle="None"  AlternateText="Item Dashboard">
+                                                        </telerik:radbutton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+
+                                            </telerik:RibbonBarGroup>
+
+
+                                                   <telerik:RibbonBarGroup Text="Stock">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                       <telerik:RadButton runat="server" Image-ImageUrl="images/Stock.png" Image-IsBackgroundImage="true" ToolTip="Stock" Width="64" Height="64" PostBackUrl="Stock.aspx" BorderStyle="None"  AlternateText="Stock"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+                                        </telerik:RibbonBarTab>
+
+                                         <telerik:RibbonBarTab runat="server" Text="Reports">
+                                            <telerik:RibbonBarGroup Text="Item List">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/Report1.png" Image-IsBackgroundImage="true" ToolTip="Stock" Width="64" Height="64" PostBackUrl="ReportsMain.aspx?field1=ItemList" BorderStyle="None"  AlternateText="Reports"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+                                            <telerik:RibbonBarGroup Text="Item Balance">
+                                                <Items>
+                                                    <telerik:RibbonBarTemplateItem>
+                                                        <telerik:RadButton runat="server" Image-ImageUrl="images/Report3.png" Image-IsBackgroundImage="true" ToolTip="Stock" Width="84" Height="64" PostBackUrl="ReportsMain.aspx?field1=ItemBalanceGroup" BorderStyle="None"  AlternateText="Reports"></telerik:RadButton>
+                                                    </telerik:RibbonBarTemplateItem>
+                                                </Items>
+                                            </telerik:RibbonBarGroup>
+
+
+                                        </telerik:RibbonBarTab>
+
+
+
+
+
+
+                                    </Tabs>
+<KeyboardNavigationSettings CommandKey="Alt"></KeyboardNavigationSettings>
+                                </telerik:RadRibbonBar>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3" style="text-align: right; height: 30px; vertical-align: bottom;padding-right:10px">Inventory Management System 1.0</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+</body>
+</html>
